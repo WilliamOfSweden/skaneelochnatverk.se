@@ -24,9 +24,10 @@
         "url": "https://github.com/WilliamOfSweden/skaneelochnatverk.se/issues"
     },
     "dependencies": {
+        "@fontsource/poppins": "^4.5.0",
+        "@fontsource/roboto": "^4.5.0",
         "gatsby": "^3.9.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
     }
 }
-  
