@@ -68,6 +68,52 @@ const theme = responsiveFontSizes(createTheme({
             },
 
         },
+
+        MuiTypography: {
+
+            h1: {
+
+                color: PALETTE.primary,
+                fontFamily: `poppins`,
+                fontWeight: 900,
+                marginBottom: `1rem`,
+
+            },
+
+            h2: {
+
+                color: PALETTE.primary,
+                fontFamily: `poppins`,
+                fontWeight: 700,
+                marginBottom: `1rem`,
+
+            },
+
+            h3: {
+
+                color: PALETTE.primary,
+                fontFamily: `poppins`,
+                fontWeight: 700,
+                marginBottom: `1rem`,
+
+            },
+
+            h4: {
+
+                color: PALETTE.primary,
+                fontFamily: `poppins`,
+                fontWeight: 700,
+                marginBottom: `1rem`,
+
+            },
+
+            paragraph: {
+
+                marginBottom: `2rem`,
+
+            },
+
+        },
       
     },
 
@@ -84,8 +130,6 @@ const theme = responsiveFontSizes(createTheme({
             main: PALETTE.secondary,
 
         },
-
-        
       
     },
 
