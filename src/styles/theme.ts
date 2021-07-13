@@ -8,6 +8,8 @@ export const PALETTE = {
     primary: '#033270',
     secondary: `#ffca1c`,
     accentColor1: `#00a6ff`, // lightblue
+    accentColor2: `#2ecc71`, // green
+    accentColor3: `#ff6666`, // red
 
 }
 

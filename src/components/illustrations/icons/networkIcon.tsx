@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import { PALETTE } from '../../../styles/theme'
 
 
 const StyledSVG = styled.svg`
@@ -10,7 +11,7 @@ const StyledSVG = styled.svg`
 
     .b964bb04-bd4c-4748-84dc-d9b7f0b4e477 {
 
-        fill: #00a6ff;
+        fill: ${ PALETTE.accentColor1 };
       
     }
 

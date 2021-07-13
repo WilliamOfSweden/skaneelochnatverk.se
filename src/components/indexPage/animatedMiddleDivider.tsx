@@ -9,7 +9,7 @@ const StyledSVG = styled.svg`
 
     animation: middleDivider 70s linear infinite;
     transform: rotate(180deg) scale(3);
-    width: 100vw;
+    width: 100%;
 
     @media (min-width: 600px) {
 

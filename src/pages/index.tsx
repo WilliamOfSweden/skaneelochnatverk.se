@@ -8,6 +8,8 @@ import AnimatedMiddleDivider from '../components/indexPage/animatedMiddleDivider
 import AnimatedLowerDivider from '../components/indexPage/animatedLowerDivider'
 import CTASection from '../components/indexPage/ctaSection/'
 import ServicesSection from '../components/indexPage/servicesSection/'
+import EnviromentSection from '../components/indexPage/environmentSection'
+import ReferencesSection from '../components/indexPage/referencesSection'
 
 
 const IndexPage: FC<PageProps> = () => {
@@ -29,6 +31,10 @@ const IndexPage: FC<PageProps> = () => {
             <ServicesSection />
 
             <AnimatedLowerDivider />
+
+            <EnviromentSection />
+
+            <ReferencesSection />
             
         </Layout>
 

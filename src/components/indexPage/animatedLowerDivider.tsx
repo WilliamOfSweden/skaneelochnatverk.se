@@ -9,7 +9,7 @@ const StyledSVG = styled.svg`
     
     animation: lowerDivider 70s linear infinite;
     transform: scale(3);
-    width: 100vw;
+    width: 100%;
 
     @media (min-width: 600px) {
 
