@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { PageProps } from 'gatsby'
 import Layout from '../components/layout/'
 import Masthead from '../components/indexPage/masthead/'
+import TrustedBySection from '../components/indexPage/trustedBySection/'
 
 
 const IndexPage: FC<PageProps> = () => {
@@ -11,6 +12,8 @@ const IndexPage: FC<PageProps> = () => {
         <Layout>
 
             <Masthead />
+
+            <TrustedBySection />
             
         </Layout>
 

@@ -130,11 +130,10 @@ const MobileNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
 
                             return (
 
-                                <Fragment>
+                                <Fragment key={ link.link }>
 
                                     <ListItem
                                         button
-                                        key={ link.link }
                                         onClick={ closeAndScroll(link.link) }
                                     >
 
