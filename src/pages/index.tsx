@@ -8,7 +8,7 @@ const IndexPage: FC<PageProps> = () => {
     return (
     
         <Layout>
-      
+            
         </Layout>
 
     )
