@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, Fragment } from 'react'
 import { PageProps } from 'gatsby'
 import Layout from '../components/layout/'
 import Masthead from '../components/indexPage/masthead/'
@@ -8,36 +8,42 @@ import AnimatedMiddleDivider from '../components/indexPage/animatedMiddleDivider
 import AnimatedLowerDivider from '../components/indexPage/animatedLowerDivider'
 import CTASection from '../components/indexPage/ctaSection/'
 import ServicesSection from '../components/indexPage/servicesSection/'
-import EnviromentSection from '../components/indexPage/environmentSection'
-import ReferencesSection from '../components/indexPage/referencesSection'
+import EnviromentSection from '../components/indexPage/environmentSection/'
+import ReferencesSection from '../components/indexPage/referencesSection/'
+import SEO from '../components/seo'
 
 
 const IndexPage: FC<PageProps> = () => {
     
     return (
+
+        <Fragment>
+
+            <SEO />
     
-        <Layout>
+            <Layout>
 
-            <Masthead />
+                <Masthead />
 
-            <TrustedBySection />
+                <TrustedBySection />
 
-            <AnimatedUpperDivider />
+                <AnimatedUpperDivider />
 
-            <CTASection />
+                <CTASection />
 
-            <AnimatedMiddleDivider />
+                <AnimatedMiddleDivider />
 
-            <ServicesSection />
+                <ServicesSection />
 
-            <AnimatedLowerDivider />
+                <AnimatedLowerDivider />
 
-            <EnviromentSection />
+                <EnviromentSection />
 
-            <ReferencesSection />
-            
-        </Layout>
-
+                <ReferencesSection />
+                
+            </Layout>
+        
+        </Fragment>
     )
 
 }
