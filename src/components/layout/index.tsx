@@ -14,7 +14,7 @@ interface Props {
 }
 
 
-const MDXh2: FC<Props> = ({ children }) => <Typography variant='h2'>{ children }</Typography>
+const MDXh2: FC<Props> = ({ children }) => <Typography align='center' variant='h2'>{ children }</Typography>
 
 
 const MDXh3: FC<Props> = ({ children }) => <Typography align='center' component='h3' variant='h4'>{ children }</Typography>
