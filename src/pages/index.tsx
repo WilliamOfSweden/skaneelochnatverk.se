@@ -6,6 +6,8 @@ import TrustedBySection from '../components/indexPage/trustedBySection/'
 import AnimatedUpperDivider from '../components/indexPage/animatedUpperDivider'
 import AnimatedMiddleDivider from '../components/indexPage/animatedMiddleDivider'
 import AnimatedLowerDivider from '../components/indexPage/animatedLowerDivider'
+import CTASection from '../components/indexPage/ctaSection/'
+import ServicesSection from '../components/indexPage/servicesSection/'
 
 
 const IndexPage: FC<PageProps> = () => {
@@ -20,7 +22,11 @@ const IndexPage: FC<PageProps> = () => {
 
             <AnimatedUpperDivider />
 
+            <CTASection />
+
             <AnimatedMiddleDivider />
+
+            <ServicesSection />
 
             <AnimatedLowerDivider />
             

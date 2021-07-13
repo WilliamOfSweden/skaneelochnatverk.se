@@ -41,6 +41,12 @@ const theme = responsiveFontSizes(createTheme({
 
             },
 
+            containedSecondary: {
+
+                color: PALETTE.primary,
+
+            },
+
         },
 
         MuiCssBaseline: {
@@ -86,7 +92,7 @@ const theme = responsiveFontSizes(createTheme({
                 color: PALETTE.primary,
                 fontFamily: `poppins`,
                 fontWeight: 700,
-                marginBottom: `1rem`,
+                marginBottom: `1.5rem`,
 
             },
 
@@ -95,7 +101,7 @@ const theme = responsiveFontSizes(createTheme({
                 color: PALETTE.primary,
                 fontFamily: `poppins`,
                 fontWeight: 700,
-                marginBottom: `1rem`,
+                marginBottom: `1.5rem`,
 
             },
 
@@ -104,7 +110,7 @@ const theme = responsiveFontSizes(createTheme({
                 color: PALETTE.primary,
                 fontFamily: `poppins`,
                 fontWeight: 700,
-                marginBottom: `1rem`,
+                marginBottom: `1.5rem`,
 
             },
 
