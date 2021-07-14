@@ -67,17 +67,11 @@ const MobileNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
 
     const closeNav = useStore((state: StateProps) => state.resetActiveMobileNav)
 
-    const asyncClose = () => new Promise((resolve) => {
+    const closeAndScroll = (section: string) => () => {
 
-        resolve(closeNav())
+        closeNav()
 
-    })
-
-    const closeAndScroll = (section: string) => async () => {
-
-        await asyncClose()
-
-        scrollTo( `#${ section }-section` )
+        setTimeout( () => scrollTo( `#${ section }-section` ), 0)
 
     }
 
