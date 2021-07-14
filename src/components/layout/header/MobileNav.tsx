@@ -71,7 +71,7 @@ const MobileNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
 
         closeNav()
 
-        setTimeout( () => scrollTo( `#${ section }-section` ), 0)
+        scrollTo( `#${ section }-section` )
 
     }
 
@@ -100,7 +100,7 @@ const MobileNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
     return (
 
         <SwipeableDrawer
-            anchor={ 'right' }
+            anchor='right'
             open={ active && width < 960 }
             onOpen={ toggle }
             onClose={ toggle }
@@ -117,7 +117,6 @@ const MobileNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
     
                 <CloseIcon />
 
-        
             </IconButton>
             
             <nav className={ classes.nav }>
