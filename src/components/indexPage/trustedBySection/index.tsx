@@ -59,29 +59,35 @@ const TrustedBySection: FC = () => {
                 
             </Typography>
 
-            <Grid className={ classes.gridContainer } container spacing={ 5 }>
+            <Grid className={ classes.gridContainer } container spacing={ 5 } justifyContent='center'>
 
-                <Grid container item justifyContent='center' xs={ 3 } md={ 3 }>
-
-                    <TekonLogo />
-
-                </Grid>
-
-                <Grid container item justifyContent='center' xs={ 3 } md={ 3 }>
+                <Grid container item justifyContent='center' xs={ 2 } md={ 2 }>
 
                     <TekonLogo />
 
                 </Grid>
 
-
-                <Grid container item justifyContent='center' xs={ 3 } md={ 3 }>
+                <Grid container item justifyContent='center' xs={ 2 } md={ 2 }>
 
                     <TekonLogo />
 
                 </Grid>
 
 
-                <Grid container item justifyContent='center' xs={ 3 } md={ 3 }>
+                <Grid container item justifyContent='center' xs={ 2 } md={ 2 }>
+
+                    <TekonLogo />
+
+                </Grid>
+
+
+                <Grid container item justifyContent='center' xs={ 2 } md={ 2 }>
+
+                    <TekonLogo />
+
+                </Grid>
+
+                <Grid container item justifyContent='center' xs={ 2 } md={ 2 }>
 
                     <TekonLogo />
 

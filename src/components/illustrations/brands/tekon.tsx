@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const StyledSVG = styled.svg`
 
     height: 5rem;
-    fill: #ddd;
+    fill: #0000008a;
 
 `
 

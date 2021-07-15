@@ -74,11 +74,29 @@ const theme = responsiveFontSizes(createTheme({
     
                 },
 
+                li: {
+
+                    paddingLeft: `0 !important`,
+
+                },
+
+                q: {
+
+                    quotes: `none`,
+
+                }
+
             },
 
         },
 
         MuiTypography: {
+
+            gutterBottom: {
+
+                marginBottom: `1rem`,
+
+            },
 
             h1: {
 
@@ -128,7 +146,7 @@ const theme = responsiveFontSizes(createTheme({
     },
 
     palette: {
-        
+
         primary: {
 
             main: PALETTE.primary,
