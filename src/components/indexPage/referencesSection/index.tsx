@@ -29,8 +29,8 @@ const useStyles = makeStyles( (theme: Theme) =>
         section: {
 
             background: PALETTE.bgAlt,
-            paddingBottom: theme.spacing(13),
-            paddingTop: theme.spacing(13),
+            paddingBottom: theme.spacing(7),
+            paddingTop: theme.spacing(7),
 
         },
 
@@ -138,7 +138,7 @@ const ReferencesSection: FC = () => {
 
                 <Box
                     position='relative'
-                    pb={ 10 }
+                    pb={ 5 }
                 >
 
                     <AnimatedHeart />
@@ -149,7 +149,7 @@ const ReferencesSection: FC = () => {
                         height='100%'
                         justifyContent='center'
                         left={ 0 }
-                        pb={ 10 }
+                        pb={ 5 }
                         position='absolute'
                         top={ 0 }
                         width='100%'

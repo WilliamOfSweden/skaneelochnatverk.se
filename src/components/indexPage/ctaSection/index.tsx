@@ -1,14 +1,13 @@
 import React, { FC } from 'react'
-import { createStyles, makeStyles } from '@material-ui/core/styles'
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Button from '@material-ui/core/Button'
-import theme from '../../../styles/theme'
 
 
-const useStyles = makeStyles( () =>
+const useStyles = makeStyles( (theme: Theme) =>
 
     createStyles({
 
@@ -19,6 +18,12 @@ const useStyles = makeStyles( () =>
 
         },
 
+        container: {
+
+            paddingBottom: theme.spacing(3),
+            paddingTop: theme.spacing(3),
+
+        }
 
     }),
 
@@ -43,7 +48,7 @@ const CTASection: FC = () => {
 
     return (
 
-        <Container component='section' maxWidth='sm'>
+        <Container className={ classes.container } component='section' maxWidth='sm'>
 
             <Typography align='center' variant='h2'>
 

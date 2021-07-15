@@ -20,8 +20,7 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         iconWrapper: {
 
-            minWidth: `0`,
-            paddingRight: theme.spacing(2),
+            display: `block`,
 
         },
 
@@ -34,7 +33,7 @@ const useStyles = makeStyles( (theme: Theme) =>
         
         section: {
 
-            paddingTop: theme.spacing(13),
+            paddingTop: theme.spacing(7),
 
             [theme.breakpoints.up('lg')]: {
 
@@ -74,7 +73,7 @@ const MDXparagraph: FC<{ children: ReactNode }> = ({ children }) => {
 
 const MDXul: FC<{ children: ReactNode }> = ({ children }) => {
 
-    // const classes = useStyles()
+    const classes = useStyles()
 
     return (
 

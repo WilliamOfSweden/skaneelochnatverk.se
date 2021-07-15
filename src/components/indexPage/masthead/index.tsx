@@ -23,6 +23,7 @@ const useStyles = makeStyles( (theme: Theme) =>
             [theme.breakpoints.up('md')]: {
 
                 marginLeft: 0,
+                width: `initial`,
 
             },
 
@@ -119,33 +120,30 @@ const Masthead: FC = () => {
                         lg={ 6 }
                     >
 
-                        <Typography align='center' className={ classes.mainHeading } variant='h1'>
+                        <Typography className={ classes.mainHeading } variant='h1'>
 
                             { title }
 
                         </Typography>
 
-                        <Typography align='center' component='div' variant='body1'>
+                        <MDXProvider
+                            components={{
+                                p: MDXparagraph,
+                            }}
+                        >
 
-                            <MDXProvider
-                                components={{
-                                    p: MDXparagraph,
-                                }}
-                            >
+                            <MDXRenderer>
+                                
+                                { body }
+                                
+                            </MDXRenderer>
 
-                                <MDXRenderer>
-                                    
-                                    { body }
-                                    
-                                </MDXRenderer>
-
-                            </MDXProvider>
-
-                        </Typography>
+                        </MDXProvider>
 
                         <Button
                             className={ classes.btn }
                             color='primary'
+                            fullWidth
                             size='large'
                             variant='contained'
                         >

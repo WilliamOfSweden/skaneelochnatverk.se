@@ -12,7 +12,7 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         container: {
 
-            paddingBottom: theme.spacing(13),
+            paddingBottom: theme.spacing(7),
             paddingTop: theme.spacing(13),
 
         },

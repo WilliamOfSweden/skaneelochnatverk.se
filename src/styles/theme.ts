@@ -5,6 +5,7 @@ export const PALETTE = {
 
     bg: '#fafafa',
     bgAlt: '#f1f5f9',
+    bgAlt1: '#d8effb',
     primary: '#033270',
     secondary: `#ffca1c`,
     accentColor1: `#00a6ff`, // lightblue
