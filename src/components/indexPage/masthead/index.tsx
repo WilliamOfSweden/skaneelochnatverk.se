@@ -119,11 +119,11 @@ const Masthead: FC = () => {
                         lg={ 6 }
                     >
 
-                        {/* <Typography align='center' className={ classes.mainHeading } component='h1' variant='h1'>
+                        <Typography align='center' className={ classes.mainHeading } component='h1' variant='h1'>
 
                             { title }
 
-                        </Typography> */}
+                        </Typography>
 
                         <Typography align='center' component='div' variant='body1'>
 

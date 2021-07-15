@@ -84,6 +84,7 @@ const theme = responsiveFontSizes(createTheme({
 
                 color: PALETTE.primary,
                 fontFamily: `poppins`,
+                fontSize: `calc(2rem + 4vw) !important`,
                 fontWeight: 900,
                 marginBottom: `1rem`,
 
