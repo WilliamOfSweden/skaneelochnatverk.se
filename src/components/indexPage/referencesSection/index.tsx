@@ -5,7 +5,7 @@ import { PALETTE } from '../../../styles/theme'
 import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 // import { MDXRenderer } from 'gatsby-plugin-mdx'
-// import AnimatedHeart from './animatedHeart'
+import AnimatedHeart from './animatedHeart'
 import { Box, Typography } from '@material-ui/core'
 
 
@@ -59,7 +59,7 @@ const ReferencesSection: FC = () => {
                     position='relative'
                 >
 
-                    {/* <AnimatedHeart /> */}
+                    <AnimatedHeart />
 
                     <Typography className={ classes.title } align='center' variant='h3' component='h2'>
                     
