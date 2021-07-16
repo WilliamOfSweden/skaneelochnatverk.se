@@ -48,7 +48,7 @@ const CTASection: FC = () => {
 
     return (
 
-        <Container className={ classes.container } component='section' maxWidth='sm'>
+        <Container className={ classes.container } component='section' id='cta-section' maxWidth='sm'>
 
             <Typography align='center' variant='h2'>
 

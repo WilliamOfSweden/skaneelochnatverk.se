@@ -27,7 +27,7 @@ const useStyles = makeStyles( (theme: Theme) =>
 
             [theme.breakpoints.up('sm')]: {
 
-                maxWidth: theme.spacing(25),
+                width: `initial`,
 
             },
 
@@ -75,8 +75,9 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         link: {
 
-            paddingLeft: 0,
             color: theme.palette.text.primary,
+            display: `flex`,
+            paddingLeft: 0,
 
         },
 
@@ -153,40 +154,39 @@ const ContactSection = () => {
 
                 <Container>
 
-                    {/* <Container className={ classes.container }> */}
+                    <Grid container className={ classes.container }>
 
-                        <Grid container className={ classes.container }>
+                        <Grid container alignItems='center' item xs={ 12 } sm={ 8 }>
 
-                            <Grid container alignItems='center' item xs={ 12 } sm={ 8 }>
+                            <Box>
 
-                                <Box>
+                                <Typography variant='h2'>
 
-                                    <Typography variant='h2'>
+                                    Lorem ipsum
 
-                                        Lorem ipsum
+                                </Typography>
 
-                                    </Typography>
+                                <Typography component='p'>
 
-                                    <Typography component='p'>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione necessitatibus, voluptas.
 
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione necessitatibus, voluptas.
+                                </Typography>
 
-                                    </Typography>
+                                <Box
+                                    display='flex'
+                                >
 
-                                    <Box
-                                        display='flex'
-                                    >
+                                    <List className={ classes.list }>
 
-                                        <List className={ classes.list }>
+                                        <ListItem>
 
-                                            <ListItem 
+                                            <a
                                                 className={ classes.link }
-                                                component='a'
                                                 href='https://linkedin.com'
                                                 rel='rel=”noreferrer noopener”'
                                                 target='_blank'
                                             >
-                        
+                    
                                                 <ListItemIcon className={ classes.iconWrapper }>
                                                 
                                                     <LinkedInIcon htmlColor={ PALETTE.primary } fontSize='large' />
@@ -198,17 +198,20 @@ const ContactSection = () => {
                                                     LinkedIn
 
                                                 </ListItemText>
-                                        
-                                            </ListItem>
 
-                                            <ListItem
+                                            </a>
+                                    
+                                        </ListItem>
+
+                                        <ListItem>
+
+                                            <a
                                                 className={ classes.link }
-                                                component='a'
                                                 href='https://facebook.com'
                                                 rel='rel=”noreferrer noopener”'
-                                                target='_blank'    
+                                                target='_blank'
                                             >
-                        
+                    
                                                 <ListItemIcon className={ classes.iconWrapper }>
                                             
                                                     <FacebookIcon htmlColor={ PALETTE.primary } fontSize='large' />
@@ -220,15 +223,18 @@ const ContactSection = () => {
                                                     Facebook
 
                                                 </ListItemText>
-                                        
-                                            </ListItem>
 
-                                            <ListItem
+                                            </a>
+                                    
+                                        </ListItem>
+
+                                        <ListItem>
+
+                                            <a
                                                 className={ classes.link }
-                                                component='a'
                                                 href='https://instagram.com'
                                                 rel='rel=”noreferrer noopener”'
-                                                target='_blank'     
+                                                target='_blank'                                              
                                             >
 
                                                 <ListItemIcon className={ classes.iconWrapper }>
@@ -242,44 +248,44 @@ const ContactSection = () => {
                                                     Instagram
 
                                                 </ListItemText>
-                                        
-                                            </ListItem>
 
-                                        </List>
+                                            </a>
+                                    
+                                        </ListItem>
 
-                                        <Box className={ classes.mobileOnly } flex={ 1 } py={ 2 } >
+                                    </List>
 
-                                            <PaperLamp />
+                                    <Box className={ classes.mobileOnly } flex={ 1 } py={ 2 } >
 
-                                        </Box>
+                                        <PaperLamp />
 
                                     </Box>
 
-                                    <Button
-                                        className={ classes.btn }
-                                        color='primary'
-                                        fullWidth
-                                        size='large'
-                                        variant='contained'   
-                                    >
-                                        
-                                        Kontakt
-                                        
-                                    </Button>
-
                                 </Box>
 
-                            </Grid>
+                                <Button
+                                    className={ classes.btn }
+                                    color='primary'
+                                    fullWidth
+                                    size='large'
+                                    variant='contained'   
+                                >
+                                    
+                                    Skriv till oss
+                                    
+                                </Button>
 
-                            <Grid className={ classes.illustrationWrapper } item xs={ 12 } sm={ 4 }>
-
-                                <PaperLamp />
-
-                            </Grid>
+                            </Box>
 
                         </Grid>
 
-                    {/* </Container> */}
+                        <Grid className={ classes.illustrationWrapper } item xs={ 12 } sm={ 4 }>
+
+                            <PaperLamp />
+
+                        </Grid>
+
+                    </Grid>
 
                 </Container>
 

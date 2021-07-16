@@ -8,11 +8,15 @@ module.exports = {
         siteUrl: `https://skaneelochnatverk.se`,
         navLinks:[
             {
+                name: 'Eljour',
+                link: 'cta',
+            },
+            {
                 name: 'Tjänster',
                 link: 'services',
             },
             {
-                name: 'Certifikat & Referenser',
+                name: 'Referenser',
                 link: 'references',
             },
             {
@@ -20,9 +24,10 @@ module.exports = {
                 link: 'about',
             },
             {
-                name: 'Kontakt',
-                link: 'contact',
-            },
+                name: `Ring oss`,
+                link: '+46709559697',
+                button: true,
+            }
         ],
     },
     plugins: [

@@ -132,7 +132,7 @@ const ReferencesSection: FC = () => {
 
     return (
 
-        <section className={ classes.section }>
+        <section className={ classes.section } id='references-section'>
 
             <Container>
 

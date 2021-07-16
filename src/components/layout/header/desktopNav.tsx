@@ -11,6 +11,7 @@ const useStyles = makeStyles( (theme: Theme) =>
         deskTopOnly: {
 
             display: 'none',
+            paddingTop: `0.2rem`,
 
             [theme.breakpoints.up('md')]: {
 
@@ -38,6 +39,8 @@ interface LinkProps {
 
     link: string
 
+    button?: boolean
+
 }
 
 
@@ -52,6 +55,26 @@ const DesktopNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
             {
             
                 navLinks.map((link: LinkProps) => {
+
+                    if (link.button) {
+
+                        return (    
+                    
+                            <Button
+                                className={ classes.navLinks }
+                                color='primary'
+                                key={ link.link }
+                                // onClick={ () => scrollTo( `#${ link.link }-section` ) }
+                                variant='outlined'
+                            >
+    
+                                { link.name }
+                                
+                            </Button>
+    
+                        )
+
+                    }
                 
                     return (    
                     
