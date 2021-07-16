@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 const StyledSVG = styled.svg`
 
-    height: 5rem;
-    fill: #0000008a;
+    width: calc(2.5rem + 2.5vw);
+    fill: #00000033;
 
 `
 

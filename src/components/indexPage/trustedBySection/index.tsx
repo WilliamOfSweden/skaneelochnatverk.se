@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
+import Box from '@material-ui/core/Box'
 import TekonLogo from '../../illustrations/brands/tekon'
 
 
@@ -11,22 +11,10 @@ const useStyles = makeStyles( (theme: Theme) =>
 
     createStyles({
 
-        bodyText: {
-
-            fontWeight: 600,
-
-        },
-
         container: {
 
             paddingBottom: theme.spacing(10),
             paddingTop: theme.spacing(6),
-
-        },
-
-        gridContainer: {
-
-            marginTop: theme.spacing(3),
 
         },
 
@@ -51,49 +39,31 @@ const TrustedBySection: FC = () => {
     
     return (
     
-        <Container className={ classes.container } maxWidth='sm'>
+        <Container className={ classes.container } maxWidth='md'>
 
-            <Typography align='center' className={ classes.bodyText } color='textSecondary' component='p' variant='h6'>
+            <Typography align='center' color='textSecondary' component='p' variant='h6'>
                 
                 { title }
                 
             </Typography>
 
-            <Grid className={ classes.gridContainer } container spacing={ 5 } justifyContent='center'>
+            <Box
+                display='flex'
+                justifyContent='space-between'
+                marginTop={ 4 }
+            >
 
-                <Grid container item justifyContent='center' xs={ 2 } md={ 2 }>
+                <TekonLogo />
 
-                    <TekonLogo />
+                <TekonLogo />
 
-                </Grid>
+                <TekonLogo />
 
-                <Grid container item justifyContent='center' xs={ 2 } md={ 2 }>
+                <TekonLogo />
 
-                    <TekonLogo />
+                <TekonLogo />
 
-                </Grid>
-
-
-                <Grid container item justifyContent='center' xs={ 2 } md={ 2 }>
-
-                    <TekonLogo />
-
-                </Grid>
-
-
-                <Grid container item justifyContent='center' xs={ 2 } md={ 2 }>
-
-                    <TekonLogo />
-
-                </Grid>
-
-                <Grid container item justifyContent='center' xs={ 2 } md={ 2 }>
-
-                    <TekonLogo />
-
-                </Grid>
-
-            </Grid>
+            </Box>
             
         </Container>
     
