@@ -27,7 +27,8 @@
 
 - <a href="https://www.gatsbyjs.org/">Gatsby JS</a>
 - <a href="https://www.typescriptlang.org/">TypeScript</a>
-- <a href="https://mdxjs.com/">MDX</a>
-- <a href="https://styled-components.com/">Styled Components</a>
-- <a href="https://material-ui.com/">Material UI</a>
-- <a href="https://www.netlify.com/">Netlify</a>
+- <a href="https://graphcms.com/">GraphCMS</a> & <a href="https://mdxjs.com/">MDX</a> for content management.
+- <a href="https://github.com/pmndrs/zustand">Zustand</a> for state management.
+- <a href="https://material-ui.com/">Material UI</a> & <a href="https://styled-components.com/">Styled Components</a> for styling.
+- <a href="https://react-spring.io/">React Spring</a> for micro animations.
+- <a href="https://www.netlify.com/">Netlify</a> for hosting.
