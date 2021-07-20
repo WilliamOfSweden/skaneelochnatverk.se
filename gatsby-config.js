@@ -1,3 +1,10 @@
+require('dotenv').config({
+
+    path: `.env.${process.env.NODE_ENV}`,
+
+})
+
+
 module.exports = {
     siteMetadata: {
         ogDescription: `Vi utför el- och nätverksarbete i södra Skåne.`,
@@ -39,6 +46,13 @@ module.exports = {
                 stylesProvider: {
                     injectFirst: true,
                 },
+            },
+        },
+        {
+            resolve: 'gatsby-source-graphcms',
+            options: {
+                endpoint: process.env.GCMS_ENDPOINT,
+                buildMarkdownNodes: true,
             },
         },
         {

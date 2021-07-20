@@ -1,9 +1,8 @@
 import React, { FC, ReactNode, Fragment } from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
-import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import Box from '@material-ui/core/Box'
-import FormatQuote from '@material-ui/icons/FormatQuote'
+import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import { PALETTE } from '../styles/theme'
 
 
@@ -23,7 +22,6 @@ const StyledSlideWrapper = styled.div`
     .slick-next:before,
     .slick-prev:before { 
         
-        font-family: slick;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     
@@ -32,16 +30,6 @@ const StyledSlideWrapper = styled.div`
     .slick-loading .slick-list {
         
         background: url(ajax-loader.gif) center center no-repeat #fff;
-    
-    }
-    
-    @font-face {
-        
-        font-family: slick;
-        font-weight: 400;
-        font-style: normal;
-        src: url(fonts/slick.eot);
-        src: url(fonts/slick.eot?#iefix) format('embedded-opentype'), url(fonts/slick.woff) format('woff'), url(fonts/slick.ttf) format('truetype'),url(fonts/slick.svg#slick) format('svg');
     
     }
     

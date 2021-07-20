@@ -32,14 +32,18 @@ const useStyles = makeStyles( (theme: Theme) =>
 
 const CTASection: FC = () => {
 
-    const { mdx: { body, frontmatter: { buttonText, title } } } = useStaticQuery(graphql`
+    const { graphCmsPageSection: { heading, body: { markdownNode: { childMdx: { body } } }, buttonText } } = useStaticQuery(graphql`
         query ctaSectionQuery {
-            mdx(fileAbsolutePath: {regex: "/indexPage\/ctaSection\/index/"}) {
-                frontmatter {
-                    buttonText
-                    title
+            graphCmsPageSection(title: {eq: "Index Page - CTA-section"}) {
+                heading
+                body  {
+                    markdownNode {
+                        childMdx {
+                            body
+                        }
+                    }
                 }
-                body
+                buttonText
             }
         }
     `)
@@ -52,7 +56,7 @@ const CTASection: FC = () => {
 
             <Typography align='center' variant='h2'>
 
-                { title }
+                { heading }
 
             </Typography>
 

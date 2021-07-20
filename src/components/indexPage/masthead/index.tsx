@@ -44,16 +44,6 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         },
 
-        mainHeading: {
-
-            [theme.breakpoints.up('md')]: {
-
-                textAlign: `left`,
-
-            },
-
-        },
-
         paragraph: {
 
             [theme.breakpoints.up('md')]: {
@@ -88,14 +78,18 @@ const MDXparagraph: FC<{children: ReactNode}> = ({ children }) => {
 
 const Masthead: FC = () => {
 
-    const { mdx: { body, frontmatter: { buttonText, title } } } = useStaticQuery(graphql`
+    const { graphCmsPageSection: { heading, body: { markdownNode:  { childMdx: { body } } }, buttonText } } = useStaticQuery(graphql`
         query mastheadQuery {
-            mdx(fileAbsolutePath: {regex: "/indexPage\/masthead\/index/"}) {
-                frontmatter {
-                    buttonText
-                    title
+            graphCmsPageSection(title: {eq: "Index Page - Masthead"}) {
+                heading
+                body  {
+                    markdownNode {
+                        childMdx {
+                            body
+                        }
+                    }
                 }
-                body
+                buttonText
             }
         }
     `)
@@ -120,9 +114,9 @@ const Masthead: FC = () => {
                         lg={ 6 }
                     >
 
-                        <Typography className={ classes.mainHeading } variant='h1'>
+                        <Typography variant='h1'>
 
-                            { title }
+                            { heading }
 
                         </Typography>
 
