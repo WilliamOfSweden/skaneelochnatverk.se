@@ -25,7 +25,6 @@ const useStyles = makeStyles( (theme: Theme) =>
 
             fontWeight: 300,
             padding: theme.spacing(1.5, 2),
-            letterSpacing: `1px`,
 
         },
 
