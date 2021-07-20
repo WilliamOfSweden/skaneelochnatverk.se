@@ -21,13 +21,13 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         desktopOnly: {
 
-            display: `none`,
+            // display: `none`,
 
-            [theme.breakpoints.up('md')]: {
+            // [theme.breakpoints.up('md')]: {
 
-                display: `flex`,
+            //     display: `flex`,
 
-            },
+            // },
 
         },
 
@@ -247,7 +247,7 @@ const ReferencesSection: FC = () => {
 
                 </Grid>
 
-                <Box className={ classes.mobileOnly }>
+                {/* <Box className={ classes.mobileOnly }>
 
                     <StyledCarousel>
 
@@ -295,7 +295,7 @@ const ReferencesSection: FC = () => {
 
                     <SwipeIcon />
 
-                </Box>
+                </Box> */}
 
             </Container>
 
