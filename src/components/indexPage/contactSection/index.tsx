@@ -193,8 +193,8 @@ const ContactSection = () => {
 
                                             <a
                                                 className={ classes.link }
-                                                href='https://linkedin.com'
-                                                rel='rel=”noreferrer noopener”'
+                                                href='https://www.linkedin.com/in/kamil-ziyad-abid-19886a36'
+                                                rel='noreferrer noopener'
                                                 target='_blank'
                                             >
                     
@@ -218,8 +218,8 @@ const ContactSection = () => {
 
                                             <a
                                                 className={ classes.link }
-                                                href='https://facebook.com'
-                                                rel='rel=”noreferrer noopener”'
+                                                href='https://www.facebook.com/skaneelochnatverk'
+                                                rel='noreferrer noopener'
                                                 target='_blank'
                                             >
                     
@@ -243,8 +243,8 @@ const ContactSection = () => {
 
                                             <a
                                                 className={ classes.link }
-                                                href='https://instagram.com'
-                                                rel='rel=”noreferrer noopener”'
+                                                href='https://www.instagram.com/skaneelochnatverk'
+                                                rel='noreferrer noopener'
                                                 target='_blank'                                              
                                             >
 
