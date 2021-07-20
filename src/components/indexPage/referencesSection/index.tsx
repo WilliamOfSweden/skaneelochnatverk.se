@@ -57,8 +57,15 @@ const useStyles = makeStyles( (theme: Theme) =>
 
             fill: PALETTE.accentColor1,
             fontSize: 50,
+            display: `none`,
             opacity: 0.6,
             transform:` rotate(180deg)`,
+
+            [theme.breakpoints.up('md')]: {
+
+                display: `block`,
+
+            },
 
         },
 
@@ -289,7 +296,7 @@ const ReferencesSection: FC = () => {
                     <SwipeIcon />
 
                 </Box>
-                
+
             </Container>
 
         </section>

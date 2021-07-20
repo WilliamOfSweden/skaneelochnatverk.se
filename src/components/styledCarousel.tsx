@@ -1,6 +1,10 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, Fragment } from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
+import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
+import Box from '@material-ui/core/Box'
+import FormatQuote from '@material-ui/icons/FormatQuote'
+import { PALETTE } from '../styles/theme'
 
 
 const StyledSlideWrapper = styled.div`
@@ -359,9 +363,19 @@ const StyledSlideWrapper = styled.div`
         
         display: none;
     
-    }/*# sourceMappingURL=slick.min.css.map */
+    }
 
 `
+
+const StyledQuoteIcon = styled(FormatQuoteIcon)`
+
+    fill: ${ PALETTE.accentColor1 };
+    font-size: 3.33rem;
+    opacity: 0.6;
+    transform: rotate(180deg);
+
+`
+
 
 interface Props {
 
@@ -373,17 +387,27 @@ interface Props {
 const StyledCarousel: FC<Props> = ({ children }) => {
     
     return (
+
+        <Fragment>
+
+            <Box display='flex' justifyContent='flex-end'>
+                                        
+                <StyledQuoteIcon />
+                
+            </Box>
     
-        <StyledSlideWrapper>
+            <StyledSlideWrapper>
 
-            <Slider>
+                <Slider>
 
-                { children }
+                    { children }
 
-            </Slider>
-            
-        </StyledSlideWrapper>
-    
+                </Slider>
+                
+            </StyledSlideWrapper>
+
+        </Fragment>
+
     )
 
 }
