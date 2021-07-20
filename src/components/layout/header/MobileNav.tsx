@@ -161,8 +161,6 @@ const MobileNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
                                         onClick={ closeAndScroll(link.link) }
                                     >
 
-                                        { console.log(link.link) }
-
                                         <ListItemText className={ classes.listItemText } primary={ link.name } />
 
                                     </ListItem>
