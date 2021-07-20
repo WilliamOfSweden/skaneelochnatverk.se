@@ -133,8 +133,9 @@ const ContactSection = () => {
     
         <Box
             component='section'
-            position='relative'
+            id='contact-section'
             minHeight='100px'
+            position='relative'
         >
 
             <Box

@@ -27,13 +27,13 @@ module.exports = {
                 link: 'references',
             },
             {
-                name: 'Om oss',
-                link: 'about',
+                name: 'Kontakt',
+                link: 'contact',
             },
             {
                 name: `Ring oss`,
-                link: '+46709559697',
-                button: true,
+                link: '+460701488148',
+                teleLink: true,
             }
         ],
     },

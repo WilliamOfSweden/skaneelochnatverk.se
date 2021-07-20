@@ -25,6 +25,7 @@ const useStyles = makeStyles( (theme: Theme) =>
 
             fontWeight: 300,
             padding: theme.spacing(1.5, 2),
+            letterSpacing: `1px`,
 
         },
 
@@ -39,7 +40,7 @@ interface LinkProps {
 
     link: string
 
-    button?: boolean
+    teleLink?: boolean
 
 }
 
@@ -53,19 +54,21 @@ const DesktopNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
         <nav className={ classes.deskTopOnly }>
 
             {
-            
+
                 navLinks.map((link: LinkProps) => {
 
-                    if (link.button) {
+                    if (link.teleLink) {
 
                         return (    
                     
                             <Button
+                                aria-label='Link to telephone number.'
                                 className={ classes.navLinks }
                                 color='primary'
+                                component='a'
+                                href={ `tel:${ link.link }'` }
                                 key={ link.link }
-                                // onClick={ () => scrollTo( `#${ link.link }-section` ) }
-                                variant='outlined'
+                                variant='contained'
                             >
     
                                 { link.name }

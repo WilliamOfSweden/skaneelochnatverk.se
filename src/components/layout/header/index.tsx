@@ -42,7 +42,7 @@ const Header: FC = () => {
                     navLinks {
                         name
                         link
-                        button
+                        teleLink
                     }
                 }
             }

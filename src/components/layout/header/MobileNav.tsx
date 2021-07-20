@@ -7,6 +7,7 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
 import List from '@material-ui/core/List'
+import Button from '@material-ui/core/Button'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
@@ -49,10 +50,12 @@ const useStyles = makeStyles(() =>
 
 
 interface LinkProps {
-    
+
     name: string
 
     link: string
+
+    teleLink?: boolean
 
 }
 
@@ -67,9 +70,9 @@ const MobileNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
 
     const closeNav = useStore((state: StateProps) => state.resetActiveMobileNav)
 
-    const closeAndScroll = (section: string) => () => {
+    const closeAndScroll = (section: string) => async () => {
 
-        closeNav()
+        await closeNav()
 
         scrollTo( `#${ section }-section` )
 
@@ -125,7 +128,29 @@ const MobileNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
 
                     {
                     
-                        navLinks.map( (link: LinkProps) => {
+                        navLinks.map( (link: LinkProps, i) => {
+
+                            if (link.teleLink) {
+
+                                return (
+
+                                    <Button
+                                        aria-label='Link to telephone number.'
+                                        color='primary'
+                                        component='a'
+                                        fullWidth
+                                        href={ `tel:${ link.link }'` }
+                                        key={ link.link }
+                                        variant='contained'
+                                    >
+            
+                                        { link.name }
+                                        
+                                    </Button>
+
+                                )
+
+                            }
 
                             return (
 
@@ -136,11 +161,13 @@ const MobileNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
                                         onClick={ closeAndScroll(link.link) }
                                     >
 
+                                        { console.log(link.link) }
+
                                         <ListItemText className={ classes.listItemText } primary={ link.name } />
 
                                     </ListItem>
                                     
-                                    <Divider />
+                                    <Divider style={ { display: `${ i !== (navLinks.length - 2) ? 'inherit' : 'none' }` } }  />
 
                                 </Fragment>
                             )
