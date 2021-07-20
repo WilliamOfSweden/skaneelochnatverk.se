@@ -18,15 +18,6 @@ const StyledSlideWrapper = styled.div`
     
     }
     
-    .slick-dots li button:before,
-    .slick-next:before,
-    .slick-prev:before { 
-        
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    
-    }
-    
     .slick-loading .slick-list {
         
         background: url(ajax-loader.gif) center center no-repeat #fff;
@@ -36,7 +27,6 @@ const StyledSlideWrapper = styled.div`
     .slick-next,
     .slick-prev {
         
-        font-size: 0;
         line-height: 0;
         top: 50%;
         width: 20px;
@@ -81,8 +71,7 @@ const StyledSlideWrapper = styled.div`
     
     .slick-next:before,
     .slick-prev:before {
-        
-        font-size: 20px;
+
         line-height: 1;
         opacity: .75;
         color: #fff;
@@ -163,8 +152,7 @@ const StyledSlideWrapper = styled.div`
     }
     
     .slick-dots li button {
-        
-        font-size: 0;
+
         line-height: 0;
         display: block;
         width: 20px;
@@ -194,7 +182,6 @@ const StyledSlideWrapper = styled.div`
     
     .slick-dots li button:before { 
         
-        font-size: 6px;
         line-height: 20px;
         position: absolute;
         top: 0;
