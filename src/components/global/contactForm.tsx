@@ -132,7 +132,7 @@ const ContactForm: FC<Props> = ({ hidden }) => {
                 className={ classes.textArea }
                 color='primary'
                 id='outlined-textarea'
-                label='Message'
+                label='Meddelande'
                 name='message'
                 multiline
                 required
