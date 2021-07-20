@@ -1,6 +1,7 @@
 import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { PALETTE } from '../../../styles/theme'
+import useStore from '../../../stores/contactModalStore'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -115,6 +116,16 @@ const useStyles = makeStyles( (theme: Theme) =>
 
 
 const ContactSection = () => {
+
+    interface StateProps {
+
+        activeContactModal: boolean
+
+        openContactModal: () => void
+
+    }
+
+    const openContactModal = useStore((state: StateProps) => state.openContactModal)
 
     const classes = useStyles()
     
@@ -267,6 +278,7 @@ const ContactSection = () => {
                                     className={ classes.btn }
                                     color='primary'
                                     fullWidth
+                                    onClick={ openContactModal }
                                     size='large'
                                     variant='contained'   
                                 >

@@ -148,6 +148,12 @@ const theme = responsiveFontSizes(createTheme({
 
     palette: {
 
+        background: {
+
+            default: PALETTE.bg,
+
+        },
+
         primary: {
 
             main: PALETTE.primary,

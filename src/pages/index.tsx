@@ -13,6 +13,8 @@ import ReferencesSection from '../components/indexPage/referencesSection/'
 import SEO from '../components/seo'
 import USPSection from '../components/indexPage/uspSection/'
 import ContactSection from '../components/indexPage/contactSection/'
+import ModalComponent from '../components/global/animatedModal/'
+import ContactForm from '../components/global/contactForm'
 
 
 const IndexPage: FC<PageProps> = () => {
@@ -46,6 +48,12 @@ const IndexPage: FC<PageProps> = () => {
                 <USPSection />
 
                 <ContactSection />
+
+                <ModalComponent>
+
+                    <ContactForm />
+
+                </ModalComponent>
                 
             </Layout>
         

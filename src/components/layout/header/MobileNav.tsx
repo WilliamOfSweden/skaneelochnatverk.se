@@ -1,6 +1,6 @@
 import React, { FC, Fragment, useEffect } from 'react'
 import { makeStyles, createStyles } from '@material-ui/core/styles'
-import useStore from '../../../store'
+import useStore from '../../../stores/mobileNavStore'
 import useWindowSize from '../../../hooks/useWindowSize'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'

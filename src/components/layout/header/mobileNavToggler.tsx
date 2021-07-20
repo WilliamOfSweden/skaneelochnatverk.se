@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
-import useStore from '../../../store'
+import useStore from '../../../stores/mobileNavStore'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 

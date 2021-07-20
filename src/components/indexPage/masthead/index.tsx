@@ -2,6 +2,7 @@ import React, { FC, ReactNode } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useStaticQuery, graphql } from 'gatsby'
 import { PALETTE } from '../../../styles/theme'
+import useStore from '../../../stores/contactModalStore'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
@@ -94,6 +95,17 @@ const Masthead: FC = () => {
         }
     `)
 
+    
+    interface StateProps {
+
+        activeContactModal: boolean
+
+        openContactModal: () => void
+
+    }
+
+    const openContactModal = useStore((state: StateProps) => state.openContactModal)
+
     const classes = useStyles()
 
     return (
@@ -138,6 +150,7 @@ const Masthead: FC = () => {
                             className={ classes.btn }
                             color='primary'
                             fullWidth
+                            onClick={ openContactModal }
                             size='large'
                             variant='contained'
                         >
