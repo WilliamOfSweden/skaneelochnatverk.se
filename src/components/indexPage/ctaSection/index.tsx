@@ -13,13 +13,15 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         btn: {
 
-            display: `block`,
-            margin: `0 auto`,
+            display: `inline-flex`,
 
         },
 
         container: {
 
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: `column`,
             paddingBottom: theme.spacing(3),
             paddingTop: theme.spacing(3),
 
@@ -69,7 +71,8 @@ const CTASection: FC = () => {
             <Button 
                 className={ classes.btn }
                 color='secondary'
-                // onClick={ () => scrollTo( `#contact-section` ) }
+                component='a'
+                href='tel:+460701488148'
                 size='large'
                 variant='contained'
             >
