@@ -11,26 +11,33 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import { MDXProvider } from '@mdx-js/react'
+import StyledCarousel from '../../styledCarousel'
+import SwipeIcon from '../../illustrations/icons/swipeIcon'
 
 
 const useStyles = makeStyles( (theme: Theme) =>
 
     createStyles({
 
-        quoteIcon: {
+        desktopOnly: {
 
-            fill: PALETTE.accentColor1,
-            fontSize: 50,
-            opacity: 0.6,
-            transform:` rotate(180deg)`,
+            display: `none`,
+
+            [theme.breakpoints.up('md')]: {
+
+                display: `flex`,
+
+            },
 
         },
 
-        section: {
+        mobileOnly: {
 
-            background: PALETTE.bgAlt,
-            paddingBottom: theme.spacing(7),
-            paddingTop: theme.spacing(7),
+            [theme.breakpoints.up('md')]: {
+
+                display: `none`,
+
+            },
 
         },
 
@@ -44,7 +51,30 @@ const useStyles = makeStyles( (theme: Theme) =>
 
             fontSize: `1.5rem`,
 
-        }
+        },
+
+        quoteIcon: {
+
+            fill: PALETTE.accentColor1,
+            fontSize: 50,
+            opacity: 0.6,
+            transform:` rotate(180deg)`,
+
+        },
+
+        section: {
+
+            background: PALETTE.bgAlt,
+            paddingBottom: theme.spacing(2),
+            paddingTop: theme.spacing(7),
+
+            [theme.breakpoints.up('md')]: {
+
+                paddingBottom: theme.spacing(7),
+
+            },
+
+        },
 
     }),
 
@@ -165,7 +195,7 @@ const ReferencesSection: FC = () => {
 
                 </Box>
 
-                <Grid container spacing={ 5 }>
+                <Grid className={ classes.desktopOnly } container spacing={ 5 }>
 
                     {
 
@@ -209,6 +239,56 @@ const ReferencesSection: FC = () => {
 
 
                 </Grid>
+
+                <Box className={ classes.mobileOnly }>
+
+                    <StyledCarousel>
+
+                        {
+
+                            edges.map((edge: EdgeProps) => {
+
+                                const { node: { frontmatter: { key, quotee }, body } } = edge
+
+                                return (
+
+                                    <Box key={ key.toString() }>
+
+                                        <Box display='flex' justifyContent='flex-end' mb={ 3 }>
+                                            
+                                            <FormatQuoteIcon className={ classes.quoteIcon } />
+                                            
+                                        </Box>
+
+                                        <MDXProvider
+                                            components={{
+                                                p: MDXq,
+                                            }}
+                                        >
+
+                                            <MDXRenderer>
+
+                                                { body }
+
+                                            </MDXRenderer>
+
+                                        </MDXProvider>
+
+                                        <Typography align='center' className={ classes.quotee }>{ quotee }</Typography>
+
+                                    </Box>
+
+                                )
+
+                            })
+
+                        }
+                        
+                    </StyledCarousel>
+
+                    <SwipeIcon />
+
+                </Box>
                 
             </Container>
 
