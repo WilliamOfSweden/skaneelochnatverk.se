@@ -11,8 +11,8 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import { MDXProvider } from '@mdx-js/react'
-import StyledCarousel from '../../styledCarousel'
-import SwipeIcon from '../../illustrations/icons/swipeIcon'
+// import StyledCarousel from '../../styledCarousel'
+// import SwipeIcon from '../../illustrations/icons/swipeIcon'
 
 
 const useStyles = makeStyles( (theme: Theme) =>
