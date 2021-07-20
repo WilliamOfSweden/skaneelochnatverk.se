@@ -54,6 +54,8 @@ const IndexPage: FC<PageProps> = () => {
                     <ContactForm />
 
                 </ModalComponent>
+
+                <ContactForm hidden />
                 
             </Layout>
         
