@@ -11,13 +11,34 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import { MDXProvider } from '@mdx-js/react'
-import StyledCarousel from '../../styledCarousel'
 import SwipeIcon from '../../illustrations/icons/swipeIcon'
 
 
 const useStyles = makeStyles( (theme: Theme) =>
 
     createStyles({
+        
+        container: {
+
+            overflowX: `scroll`,
+            width: `100vw`,
+            '-ms-overflow-style': `none`,  /* IE and Edge */
+            scrollbarWidth: `none`,  /* Firefox */
+
+            '&::-webkit-scrollbar': {
+                
+                display: `none`,
+              
+            },
+
+            [theme.breakpoints.up('md')]: {
+
+                overflowX: `visible`,
+                width: `100%`,
+
+            },
+
+        },
 
         desktopOnly: {
 
@@ -31,11 +52,39 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         },
 
+        gridItem: {
+
+            flex: 1,
+            width: `100vw`,
+
+            [theme.breakpoints.up('md')]: {
+
+                width: `100%`,
+
+            },
+
+
+        },
+
         mobileOnly: {
 
             [theme.breakpoints.up('md')]: {
 
                 display: `none`,
+
+            },
+
+        },
+
+        outerGrid: {
+
+            display: `flex`,
+            flexDirection: `row`,
+            width: `400vw`,
+
+            [theme.breakpoints.up('md')]: {
+
+                width: `100%`,
 
             },
 
@@ -171,38 +220,38 @@ const ReferencesSection: FC = () => {
 
         <section className={ classes.section } id='references-section'>
 
-            <Container>
+            <Box
+                position='relative'
+                pb={ 5 }
+            >
+
+                <AnimatedHeart />
 
                 <Box
-                    position='relative'
+                    alignItems='center'
+                    display='flex'
+                    height='100%'
+                    justifyContent='center'
+                    left={ 0 }
                     pb={ 5 }
+                    position='absolute'
+                    top={ 0 }
+                    width='100%'
                 >
 
-                    <AnimatedHeart />
+                    <Typography align='center' variant='h3' component='h2'>
+                    
+                        { title }
 
-                    <Box
-                        alignItems='center'
-                        display='flex'
-                        height='100%'
-                        justifyContent='center'
-                        left={ 0 }
-                        pb={ 5 }
-                        position='absolute'
-                        top={ 0 }
-                        width='100%'
-                    >
-
-                        <Typography align='center' variant='h3' component='h2'>
-                        
-                            { title }
-
-                        </Typography>
-
-                    </Box>
+                    </Typography>
 
                 </Box>
 
-                <Grid className={ classes.desktopOnly } container spacing={ 5 }>
+            </Box>
+
+            <Container className={ classes.container }>
+
+                <Grid className={ classes.outerGrid } container spacing={ 5 }>
 
                     {
 
@@ -212,7 +261,7 @@ const ReferencesSection: FC = () => {
 
                             return (
 
-                                <Grid item key={ key.toString() } xs={ 12 } md={ 6 }>
+                                <Grid className={ classes.gridItem } item key={ key.toString() } xs={ 12 } md={ 6 }>
 
                                     <Box display='flex' justifyContent='flex-end' mb={ 3 }>
                                         
@@ -244,60 +293,15 @@ const ReferencesSection: FC = () => {
 
                     }
 
-
                 </Grid>
 
-                <Box className={ classes.mobileOnly }>
-
-                    <StyledCarousel>
-
-                        {
-
-                            edges.map((edge: EdgeProps) => {
-
-                                const { node: { frontmatter: { key, quotee }, body } } = edge
-
-                                return (
-
-                                    <Box key={ key.toString() }>
-
-                                        <Box display='flex' justifyContent='flex-end' mb={ 3 }>
-                                            
-                                            <FormatQuoteIcon className={ classes.quoteIcon } />
-                                            
-                                        </Box>
-
-                                        <MDXProvider
-                                            components={{
-                                                p: MDXq,
-                                            }}
-                                        >
-
-                                            <MDXRenderer>
-
-                                                { body }
-
-                                            </MDXRenderer>
-
-                                        </MDXProvider>
-
-                                        <Typography align='center' className={ classes.quotee }>{ quotee }</Typography>
-
-                                    </Box>
-
-                                )
-
-                            })
-
-                        }
-                        
-                    </StyledCarousel>
-
-                    <SwipeIcon />
-
-                </Box>
-
             </Container>
+
+            <Box className={ classes.mobileOnly }>
+
+                <SwipeIcon/>
+
+            </Box>
 
         </section>
     
