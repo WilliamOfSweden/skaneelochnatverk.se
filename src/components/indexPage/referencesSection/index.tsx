@@ -11,8 +11,8 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import { MDXProvider } from '@mdx-js/react'
-// import StyledCarousel from '../../styledCarousel'
-// import SwipeIcon from '../../illustrations/icons/swipeIcon'
+import StyledCarousel from '../../styledCarousel'
+import SwipeIcon from '../../illustrations/icons/swipeIcon'
 
 
 const useStyles = makeStyles( (theme: Theme) =>
@@ -21,13 +21,13 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         desktopOnly: {
 
-            // display: `none`,
+            display: `none`,
 
-            // [theme.breakpoints.up('md')]: {
+            [theme.breakpoints.up('md')]: {
 
-            //     display: `flex`,
+                display: `flex`,
 
-            // },
+            },
 
         },
 
@@ -247,7 +247,7 @@ const ReferencesSection: FC = () => {
 
                 </Grid>
 
-                {/* <Box className={ classes.mobileOnly }>
+                <Box className={ classes.mobileOnly }>
 
                     <StyledCarousel>
 
@@ -295,7 +295,7 @@ const ReferencesSection: FC = () => {
 
                     <SwipeIcon />
 
-                </Box> */}
+                </Box>
 
             </Container>
 
