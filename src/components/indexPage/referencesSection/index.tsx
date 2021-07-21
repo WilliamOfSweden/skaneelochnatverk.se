@@ -180,9 +180,6 @@ const ReferencesSection: FC = () => {
                     loop={ true }
                     slidesPerView={ Math.min( Math.ceil( width / 500 ), 4 ) }
                     spaceBetween={ 50 }
-                    data-sal='slide-up'
-                    data-sal-delay='0'
-                    data-sal-easing='ease'
                 >
 
                     {
