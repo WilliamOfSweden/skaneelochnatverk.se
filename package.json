@@ -45,6 +45,7 @@
         "@types/styled-components": "^5.1.11",
         "@types/swiper": "^5.4.3",
         "babel-plugin-styled-components": "^1.13.2",
+        "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
         "prettier": "2.3.2"
     },
     "repository": {
