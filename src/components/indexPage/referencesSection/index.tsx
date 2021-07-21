@@ -3,7 +3,6 @@ import React, { FC, ReactNode } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { PALETTE } from '../../../styles/theme'
 import { useStaticQuery, graphql } from 'gatsby'
-import useWindowSize from '../../../hooks/useWindowSize'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import AnimatedHeart from './animatedHeart'
@@ -12,12 +11,25 @@ import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-// import SwipeIcon from '../../illustrations/icons/swipeIcon'
+import MobileCarousel from './mobileCarousel'
+
 
 
 const useStyles = makeStyles( (theme: Theme) =>
 
     createStyles({
+
+        desktopOnly: {
+
+            display: `none`,
+
+            [theme.breakpoints.up('sm')]: {
+
+                display: `flex`,
+
+            },
+
+        },
 
         quote: {
 
@@ -118,8 +130,6 @@ const ReferencesSection: FC = () => {
         }
     `)
 
-    const [ width ] = useWindowSize()
-
     const classes = useStyles()
 
     interface EdgeProps {
@@ -175,51 +185,51 @@ const ReferencesSection: FC = () => {
 
                 </Box>
 
-                <Grid spacing={ 5 }>
+                <Grid className={ classes.desktopOnly } container spacing={ 5 }>
 
-                    {
+                {
 
-                        edges.map((edge: EdgeProps) => {
+                    edges.map((edge: EdgeProps) => {
 
-                            const { node: { frontmatter: { key, quotee }, body } } = edge
+                        const { node: { frontmatter: { key, quotee }, body } } = edge
 
-                            return (
+                        return (
 
-                                <Grid item xs={ 12 } sm={ 6 } key={ key.toString() }>
+                            <Grid item xs={ 6 } key={ key.toString() }>
 
-                                    <Box display='flex' justifyContent='flex-end' mb={ 1 }>
-                                        
-                                        <FormatQuoteIcon className={ classes.quoteIcon } />
-                                        
-                                    </Box>
+                                <Box display='flex' justifyContent='flex-end' mb={ 1 }>
+                                    
+                                    <FormatQuoteIcon className={ classes.quoteIcon } />
+                                    
+                                </Box>
 
-                                    <MDXProvider
-                                        components={{
-                                            p: MDXq,
-                                        }}
-                                    >
+                                <MDXProvider
+                                    components={{
+                                        p: MDXq,
+                                    }}
+                                >
 
-                                        <MDXRenderer>
+                                    <MDXRenderer>
 
-                                            { body }
+                                        { body }
 
-                                        </MDXRenderer>
+                                    </MDXRenderer>
 
-                                    </MDXProvider>
+                                </MDXProvider>
 
-                                    <Typography align='center' className={ classes.quotee }>{ quotee }</Typography>
+                                <Typography align='center' className={ classes.quotee }>{ quotee }</Typography>
 
-                                </Grid>
+                            </Grid>
 
-                            )
+                        )
 
-                        })
+                    })
 
-                    }
+                }
 
                 </Grid>
 
-                {/* <SwipeIcon /> */}
+                <MobileCarousel edges={ edges } />
 
             </Container>
 

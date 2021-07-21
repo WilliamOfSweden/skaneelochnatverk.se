@@ -6,11 +6,9 @@ import { PALETTE } from '../../../styles/theme'
 const StyledSVG = styled.svg`
 
     display: block;
-    height: 4rem;
-    margin: 2rem auto 1rem;
-
     fill: ${ PALETTE.accentColor1 };
-
+    height: 4rem;
+    margin: 1rem auto;
 
 `
 
