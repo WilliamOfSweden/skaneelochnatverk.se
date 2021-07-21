@@ -9,7 +9,7 @@ import AnimatedLowerDivider from '../components/indexPage/animatedLowerDivider'
 import CTASection from '../components/indexPage/ctaSection/'
 import ServicesSection from '../components/indexPage/servicesSection/'
 import EnviromentSection from '../components/indexPage/environmentSection/'
-// import ReferencesSection from '../components/indexPage/referencesSection/'
+import ReferencesSection from '../components/indexPage/referencesSection/'
 import SEO from '../components/seo'
 import USPSection from '../components/indexPage/uspSection/'
 import ContactSection from '../components/indexPage/contactSection/'
@@ -43,7 +43,7 @@ const IndexPage: FC<PageProps> = () => {
 
                 <EnviromentSection />
 
-                {/* <ReferencesSection /> */}
+                <ReferencesSection />
 
                 <USPSection />
 
