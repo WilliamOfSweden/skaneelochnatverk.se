@@ -1,238 +1,238 @@
 
-import React, { FC, ReactNode } from 'react'
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import { PALETTE } from '../../../styles/theme'
-import { useStaticQuery, graphql } from 'gatsby'
-import useWindowSize from '../../../hooks/useWindowSize'
-import Container from '@material-ui/core/Container'
-import Box from '@material-ui/core/Box'
-import AnimatedHeart from './animatedHeart'
-import Typography from '@material-ui/core/Typography'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/swiper-bundle.min.css'
-import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import SwipeIcon from '../../illustrations/icons/swipeIcon'
+// import React, { FC, ReactNode } from 'react'
+// import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
+// import { PALETTE } from '../../../styles/theme'
+// import { useStaticQuery, graphql } from 'gatsby'
+// import useWindowSize from '../../../hooks/useWindowSize'
+// import Container from '@material-ui/core/Container'
+// import Box from '@material-ui/core/Box'
+// import AnimatedHeart from './animatedHeart'
+// import Typography from '@material-ui/core/Typography'
+// import { Swiper, SwiperSlide } from 'swiper/react'
+// import 'swiper/swiper-bundle.min.css'
+// import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
+// import { MDXProvider } from '@mdx-js/react'
+// import { MDXRenderer } from 'gatsby-plugin-mdx'
+// import SwipeIcon from '../../illustrations/icons/swipeIcon'
 
 
-const useStyles = makeStyles( (theme: Theme) =>
+// const useStyles = makeStyles( (theme: Theme) =>
 
-    createStyles({
+//     createStyles({
 
-        quote: {
+//         quote: {
 
-            fontSize: `1.2rem`,
+//             fontSize: `1.2rem`,
 
-        },
+//         },
 
-        quotee: {
+//         quotee: {
 
-            fontSize: `1.5rem`,
+//             fontSize: `1.5rem`,
 
-        },
+//         },
 
-        quoteIcon: {
+//         quoteIcon: {
 
-            fill: PALETTE.accentColor1,
-            fontSize: 50,
-            opacity: 0.6,
-            transform:` rotate(180deg)`,
+//             fill: PALETTE.accentColor1,
+//             fontSize: 50,
+//             opacity: 0.6,
+//             transform:` rotate(180deg)`,
 
-        },
+//         },
 
-        section: {
+//         section: {
 
-            background: PALETTE.bgAlt,
-            paddingBottom: theme.spacing(2),
-            paddingTop: theme.spacing(7),
+//             background: PALETTE.bgAlt,
+//             paddingBottom: theme.spacing(2),
+//             paddingTop: theme.spacing(7),
 
-            [theme.breakpoints.up('md')]: {
+//             [theme.breakpoints.up('md')]: {
 
-                paddingBottom: theme.spacing(7),
+//                 paddingBottom: theme.spacing(7),
 
-            },
+//             },
 
-        },
+//         },
 
-    }),
+//     }),
 
-)
-
-
-interface MDXqProps {
-
-    children: ReactNode       
-
-}
+// )
 
 
-const MDXq: FC<MDXqProps> = ({ children }) => {
+// interface MDXqProps {
 
-    const classes = useStyles()
+//     children: ReactNode       
 
-    return (
+// }
+
+
+// const MDXq: FC<MDXqProps> = ({ children }) => {
+
+//     const classes = useStyles()
+
+//     return (
     
-        <Typography
-            align='center'
-            className={ classes.quote }
-            gutterBottom
-            component='p'
-        >
+//         <Typography
+//             align='center'
+//             className={ classes.quote }
+//             gutterBottom
+//             component='p'
+//         >
             
-            <q>
+//             <q>
                 
-                { children }
+//                 { children }
                 
-            </q>
+//             </q>
             
-        </Typography>
+//         </Typography>
         
-    )
+//     )
 
-}
+// }
 
 
-const ReferencesSection: FC = () => {
+// const ReferencesSection: FC = () => {
 
-    const { allMdx: { edges }, mdx: { frontmatter: { title } } } = useStaticQuery(graphql`
-        query referencesSectionQuery {
-            allMdx(
-                sort: {fields: frontmatter___key}
-                filter: {fileAbsolutePath: {regex: "/indexPage\/referencesSection\/references/"}}
-                ) {
-                edges {
-                    node {
-                        frontmatter {
-                            key
-                            quotee
-                        }
-                        body
-                    }
-                }
-            }
-            mdx(fileAbsolutePath: {regex: "/indexPage\/referencesSection\/index/"}) {
-                frontmatter {
-                    title
-                }
-            }
-        }
-    `)
+//     const { allMdx: { edges }, mdx: { frontmatter: { title } } } = useStaticQuery(graphql`
+//         query referencesSectionQuery {
+//             allMdx(
+//                 sort: {fields: frontmatter___key}
+//                 filter: {fileAbsolutePath: {regex: "/indexPage\/referencesSection\/references/"}}
+//                 ) {
+//                 edges {
+//                     node {
+//                         frontmatter {
+//                             key
+//                             quotee
+//                         }
+//                         body
+//                     }
+//                 }
+//             }
+//             mdx(fileAbsolutePath: {regex: "/indexPage\/referencesSection\/index/"}) {
+//                 frontmatter {
+//                     title
+//                 }
+//             }
+//         }
+//     `)
 
-    const [ width ] = useWindowSize()
+//     const [ width ] = useWindowSize()
 
-    const classes = useStyles()
+//     const classes = useStyles()
 
-    interface EdgeProps {
+//     interface EdgeProps {
 
-        node: {
+//         node: {
 
-            frontmatter: {
+//             frontmatter: {
 
-                key: number
+//                 key: number
 
-                quotee: string
+//                 quotee: string
 
-            }
+//             }
 
-            body: string
+//             body: string
 
-        }
+//         }
 
-    }
+//     }
 
-    return (
+//     return (
 
-        <section className={ classes.section } id='references-section'>
+//         <section className={ classes.section } id='references-section'>
 
-            <Container>
+//             <Container>
 
-                <Box
-                    position='relative'
-                    pb={ 5 }
-                >
+//                 <Box
+//                     position='relative'
+//                     pb={ 5 }
+//                 >
 
-                    <AnimatedHeart />
+//                     <AnimatedHeart />
 
-                    <Box
-                        alignItems='center'
-                        display='flex'
-                        height='100%'
-                        justifyContent='center'
-                        left={ 0 }
-                        pb={ 5 }
-                        position='absolute'
-                        top={ 0 }
-                        width='100%'
-                    >
+//                     <Box
+//                         alignItems='center'
+//                         display='flex'
+//                         height='100%'
+//                         justifyContent='center'
+//                         left={ 0 }
+//                         pb={ 5 }
+//                         position='absolute'
+//                         top={ 0 }
+//                         width='100%'
+//                     >
 
-                        <Typography align='center' variant='h3' component='h2'>
+//                         <Typography align='center' variant='h3' component='h2'>
                         
-                            { title }
+//                             { title }
 
-                        </Typography>
+//                         </Typography>
 
-                    </Box>
+//                     </Box>
 
-                </Box>
+//                 </Box>
 
-                <Swiper
-                    loop={ true }
-                    slidesPerView={ Math.min( Math.ceil( width / 500 ), 4 ) }
-                    spaceBetween={ 50 }
-                >
+//                 <Swiper
+//                     loop={ true }
+//                     slidesPerView={ Math.min( Math.ceil( width / 500 ), 4 ) }
+//                     spaceBetween={ 50 }
+//                 >
 
-                    {
+//                     {
 
-                        edges.map((edge: EdgeProps) => {
+//                         edges.map((edge: EdgeProps) => {
 
-                            const { node: { frontmatter: { key, quotee }, body } } = edge
+//                             const { node: { frontmatter: { key, quotee }, body } } = edge
 
-                            return (
+//                             return (
 
-                                <SwiperSlide key={ key.toString() }>
+//                                 <SwiperSlide key={ key.toString() }>
 
-                                    <Box display='flex' justifyContent='flex-end' mb={ 1 }>
+//                                     <Box display='flex' justifyContent='flex-end' mb={ 1 }>
                                         
-                                        <FormatQuoteIcon className={ classes.quoteIcon } />
+//                                         <FormatQuoteIcon className={ classes.quoteIcon } />
                                         
-                                    </Box>
+//                                     </Box>
 
-                                    <MDXProvider
-                                        components={{
-                                            p: MDXq,
-                                        }}
-                                    >
+//                                     <MDXProvider
+//                                         components={{
+//                                             p: MDXq,
+//                                         }}
+//                                     >
 
-                                        <MDXRenderer>
+//                                         <MDXRenderer>
 
-                                            { body }
+//                                             { body }
 
-                                        </MDXRenderer>
+//                                         </MDXRenderer>
 
-                                    </MDXProvider>
+//                                     </MDXProvider>
 
-                                    <Typography align='center' className={ classes.quotee }>{ quotee }</Typography>
+//                                     <Typography align='center' className={ classes.quotee }>{ quotee }</Typography>
 
-                                </SwiperSlide>
+//                                 </SwiperSlide>
 
-                            )
+//                             )
 
-                        })
+//                         })
 
-                    }
+//                     }
 
-                </Swiper>
+//                 </Swiper>
 
-                <SwipeIcon />
+//                 <SwipeIcon />
 
-            </Container>
+//             </Container>
 
-        </section>
+//         </section>
     
-    )
+//     )
 
-}
+// }
 
 
-export default ReferencesSection
+// export default ReferencesSection
