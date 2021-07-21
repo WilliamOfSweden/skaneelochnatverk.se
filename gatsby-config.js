@@ -38,12 +38,6 @@ module.exports = {
         ],
     },
     plugins: [
-        {
-            resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-            options: {
-                devMode: true,
-            },
-        },
         `gatsby-plugin-smoothscroll`,
         `gatsby-plugin-styled-components`,
         {
@@ -80,6 +74,7 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-react-helmet`,
+        {
     ],
 }
   

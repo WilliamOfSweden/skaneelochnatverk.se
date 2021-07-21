@@ -8,11 +8,11 @@ import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import AnimatedHeart from './animatedHeart'
 import Typography from '@material-ui/core/Typography'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import SwipeIcon from '../../illustrations/icons/swipeIcon'
+// import SwipeIcon from '../../illustrations/icons/swipeIcon'
 
 
 const useStyles = makeStyles( (theme: Theme) =>
@@ -175,11 +175,7 @@ const ReferencesSection: FC = () => {
 
                 </Box>
 
-                <Swiper
-                    loop={ true }
-                    slidesPerView={ Math.min( Math.ceil( width / 500 ), 4 ) }
-                    spaceBetween={ 50 }
-                >
+                <Grid spacing={ 5 }>
 
                     {
 
@@ -189,7 +185,7 @@ const ReferencesSection: FC = () => {
 
                             return (
 
-                                <SwiperSlide key={ key.toString() }>
+                                <Grid item xs={ 12 } sm={ 6 } key={ key.toString() }>
 
                                     <Box display='flex' justifyContent='flex-end' mb={ 1 }>
                                         
@@ -213,7 +209,7 @@ const ReferencesSection: FC = () => {
 
                                     <Typography align='center' className={ classes.quotee }>{ quotee }</Typography>
 
-                                </SwiperSlide>
+                                </Grid>
 
                             )
 
@@ -221,9 +217,9 @@ const ReferencesSection: FC = () => {
 
                     }
 
-                </Swiper>
+                </Grid>
 
-                <SwipeIcon />
+                {/* <SwipeIcon /> */}
 
             </Container>
 
