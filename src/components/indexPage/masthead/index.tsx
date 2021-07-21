@@ -21,7 +21,7 @@ const useStyles = makeStyles( (theme: Theme) =>
             marginLeft: `auto`,
             marginRight: `auto`,
 
-            [theme.breakpoints.up('md')]: {
+            [theme.breakpoints.up('sm')]: {
 
                 marginLeft: 0,
                 width: `initial`,
@@ -122,7 +122,7 @@ const Masthead: FC = () => {
                         alignContent={ 'center' }
                         justifyContent='center'
                         xs={ 12 }
-                        md={ 7 }
+                        sm={ 7 }
                         lg={ 6 }
                     >
 
@@ -161,7 +161,7 @@ const Masthead: FC = () => {
 
                     </Grid>
 
-                    <Grid item xs={ 12 } md={ 5 } lg={ 6 }>
+                    <Grid item xs={ 12 } sm={ 5 } lg={ 6 }>
 
                         <StaticImage
                             src='../../../images/light-bulb.png'
