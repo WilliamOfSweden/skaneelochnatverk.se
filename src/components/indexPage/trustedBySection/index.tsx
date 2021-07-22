@@ -4,11 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-import TekonLogo from '../../illustrations/brands/tekon'
-import SvenskEljourLogo from '../../illustrations/brands/svenskEljour'
-import WLogo from '../../illustrations/brands/w'
-import BILogo from '../../illustrations/brands/biLogo'
-import XLogo from '../../illustrations/brands/xLogo'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 
 const useStyles = makeStyles( (theme: Theme) =>
@@ -29,11 +25,16 @@ const useStyles = makeStyles( (theme: Theme) =>
 
 const TrustedBySection: FC = () => {
 
-    const { mdx: { frontmatter: { title } } } = useStaticQuery(graphql`
+    const { graphCmsPageSection: { heading, body: { markdownNode: { childMdx: { body } } } } } = useStaticQuery(graphql`
         query trustedBySectionQuery {
-            mdx(fileAbsolutePath: {regex: "/indexPage\/trustedBySection\/index/"}) {
-                frontmatter {
-                    title
+            graphCmsPageSection(title: {eq: "Index Page - Trusted-by-section"}) {
+                heading
+                body  {
+                    markdownNode {
+                        childMdx {
+                            body
+                        }
+                    }
                 }
             }
         }
@@ -47,7 +48,7 @@ const TrustedBySection: FC = () => {
 
             <Typography align='center' color='textSecondary' component='p' variant='h6'>
                 
-                { title }
+                { heading }
                 
             </Typography>
 
@@ -57,15 +58,11 @@ const TrustedBySection: FC = () => {
                 marginTop={ 4 }
             >
 
-                <TekonLogo />
+                <MDXRenderer>
 
-                <SvenskEljourLogo />
+                    { body }
 
-                <WLogo />
-
-                <BILogo />
-
-                <XLogo />
+                </MDXRenderer>
 
             </Box>
             

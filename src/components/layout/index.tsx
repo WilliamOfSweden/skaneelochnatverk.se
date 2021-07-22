@@ -1,9 +1,9 @@
 import React, { FC, ReactNode } from 'react'
-import Typography from '@material-ui/core/Typography'
 import { ThemeProvider } from '@material-ui/styles'
 import theme from '../../styles/theme'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { MDXProvider } from '@mdx-js/react'
+import MDXProviderComponentsObject from './mdxProviderComponents/'
 import Header from './header'
 import Footer from './footer'
 
@@ -13,15 +13,6 @@ interface Props {
     children: ReactNode       
 
 }
-
-
-const MDXh2: FC<Props> = ({ children }) => <Typography align='center' variant='h2'>{ children }</Typography>
-
-
-const MDXh3: FC<Props> = ({ children }) => <Typography align='center' component='h3' variant='h4'>{ children }</Typography>
-
-
-const MDXparagraph: FC<Props> = ({ children }) => <Typography align='center' component='p' paragraph variant='body1'>{ children }</Typography>
 
 
 const Layout: FC<Props> = ({ children }) => {
@@ -34,13 +25,7 @@ const Layout: FC<Props> = ({ children }) => {
 
             <Header />
         
-            <MDXProvider
-                components={{
-                    h2: MDXh2,
-                    h3: MDXh3,
-                    p: MDXparagraph,
-                }}
-            >
+            <MDXProvider components={ MDXProviderComponentsObject }>>
 
                 <main>
 
