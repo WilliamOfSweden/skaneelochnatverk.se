@@ -8,11 +8,11 @@ require('dotenv').config({
 module.exports = {
     siteMetadata: {
         ogDescription: `Vi utför el- och nätverksarbete i södra Skåne.`,
-        ogImageUrl: `https://skaneelochnatverk.se/banner.png`,
+        ogImageUrl: `https://skaneelochnatverk.netlify.app/banner.png`,
         ogType: 'website',
         siteDescription: `Company Websites | Skåne El & Nätverk`,
         siteTitle: `Skåne El & Nätverk`,
-        siteUrl: `https://skaneelochnatverk.se`,
+        siteUrl: `https://skaneelochnatverk.netlify.app`,
         navLinks:[
             {
                 name: 'Eljour',

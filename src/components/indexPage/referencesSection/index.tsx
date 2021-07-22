@@ -11,19 +11,100 @@ import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+// import Flex from './css'
+// import MobileGrid from './mobileGrid'
+
+import styled from 'styled-components'
+import SwipeIcon from '../../illustrations/icons/swipeIcon'
+
+
+const StyledBox = styled(Box)`
+
+    
+
+    /* background: red; */
+    /* overflowX: scroll; */
+    
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
+
+`
 
 
 const useStyles = makeStyles( (theme: Theme) =>
 
     createStyles({
 
-        desktopOnly: {
+        box: {
 
-            display: `none`,
+            overflowX: `auto`,
+            overflowY: `hidden`,            
+
+            '&::-webkit-scrollbar': {
+
+                height: `6px`,
+
+            },
+        
+            '&::-webkit-scrollbar-track': {
+
+                background: `${ PALETTE.accentColor1 }22`,
+                borderRadius: `10px`,
+                
+            },
+        
+            '&::-webkit-scrollbar-thumb': {
+
+                background: `${ PALETTE.accentColor1 }44`,
+                borderRadius: `10px`,
+                '-webkit-box-shadow': `inset 0 0 6px ${ PALETTE.accentColor1 }`, 
+            
+            },
+
+
+        },
+
+        grid: {
+
+            overflowX: `hidden`,
+            paddingBottom: theme.spacing(6),
+
+
+            [theme.breakpoints.up('xs')]: {
+
+                width: `400vw`,
+
+            },
 
             [theme.breakpoints.up('sm')]: {
 
-                display: `block`,
+                width: `200vw`,
+
+            },
+            
+            [theme.breakpoints.up('lg')]: {
+
+                width: `100%`,
+
+            },
+        },
+
+        mobileOnly: {
+
+            [theme.breakpoints.up('lg')]: {
+
+                display: `none`,
 
             },
 
@@ -53,12 +134,12 @@ const useStyles = makeStyles( (theme: Theme) =>
         section: {
 
             background: PALETTE.bgAlt,
-            paddingBottom: theme.spacing(7),
+            paddingBottom: theme.spacing(3),
             paddingTop: theme.spacing(7),
 
             [theme.breakpoints.up('md')]: {
 
-                paddingBottom: theme.spacing(14),
+                // paddingBottom: theme.spacing(14),
 
             },
 
@@ -183,49 +264,61 @@ const ReferencesSection: FC = () => {
 
                 </Box>
 
-                <Grid container spacing={ 5 }>
+                <Box
+                    className={ classes.box }
+                >
 
-                    {
+                    <Grid className={ classes.grid } container spacing={ 5 }>
 
-                        edges.map((edge: EdgeProps, i: number) => {
+                        {
 
-                            const { node: { frontmatter: { key, quotee }, body } } = edge
+                            edges.map((edge: EdgeProps) => {
 
-                            return (
+                                const { node: { frontmatter: { key, quotee }, body } } = edge
 
-                                <Grid className={ i > 1 ? classes.desktopOnly : '' } item xs={ 12 } sm={ 6 } key={ key.toString() }>
+                                return (
 
-                                    <Box display='flex' justifyContent='flex-end' mb={ 1 }>
-                                        
-                                        <FormatQuoteIcon className={ classes.quoteIcon } />
-                                        
-                                    </Box>
+                                    <Grid item xs={ 3 } lg={ 6 } key={ key.toString() }>
 
-                                    <MDXProvider
-                                        components={{
-                                            p: MDXq,
-                                        }}
-                                    >
+                                        <Box display='flex' justifyContent='flex-end' mb={ 1 }>
+                                            
+                                            <FormatQuoteIcon className={ classes.quoteIcon } />
+                                            
+                                        </Box>
 
-                                        <MDXRenderer>
+                                        <MDXProvider
+                                            components={{
+                                                p: MDXq,
+                                            }}
+                                        >
 
-                                            { body }
+                                            <MDXRenderer>
 
-                                        </MDXRenderer>
+                                                { body }
 
-                                    </MDXProvider>
+                                            </MDXRenderer>
 
-                                    <Typography align='center' className={ classes.quotee }>{ quotee }</Typography>
+                                        </MDXProvider>
 
-                                </Grid>
+                                        <Typography align='center' className={ classes.quotee }>{ quotee }</Typography>
 
-                            )
+                                    </Grid>
 
-                        })
+                                )
 
-                    }
+                            })
 
-                </Grid>
+                        }
+
+                    </Grid>
+
+                </Box>
+
+                <Box className={ classes.mobileOnly  } display='flex' justifyContent='center'>
+
+                    <SwipeIcon />
+
+                </Box>
 
             </Container>
 

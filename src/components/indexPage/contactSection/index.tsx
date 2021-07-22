@@ -23,11 +23,13 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         btn: {
 
-            display: `block`,
+            display: `inline-block`,
+            marginRight: `1rem`,
             marginTop: theme.spacing(2),
 
             [theme.breakpoints.up('sm')]: {
 
+                minWidth: `300px`,
                 width: `initial`,
 
             },
@@ -285,6 +287,19 @@ const ContactSection = () => {
                                 >
                                     
                                     Skriv till oss
+                                    
+                                </Button>
+
+                                <Button
+                                    className={ classes.btn }
+                                    color='primary'
+                                    fullWidth
+                                    onClick={ openContactModal }
+                                    size='large'
+                                    variant='contained'   
+                                >
+                                    
+                                    Ring oss
                                     
                                 </Button>
 
