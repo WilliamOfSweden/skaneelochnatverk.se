@@ -29,16 +29,6 @@ const useStyles = makeStyles( (theme: Theme) =>
             },
 
         },
-
-        h1: {
-
-            [theme.breakpoints.down('sm')]: {
-
-                fontSize: `3rem`
-
-            },
-
-        },
         
         heroSection: {
 
@@ -130,13 +120,13 @@ const Masthead: FC = () => {
                         item
                         container
                         alignContent={ 'center' }
-                        justifyContent='center'
+                        justifyContent='flex-start'
                         xs={ 12 }
                         sm={ 7 }
                         lg={ 6 }
                     >
 
-                        <Typography className={ classes.h1 } variant='h1'>
+                        <Typography variant='h1'>
 
                             { heading }
 
