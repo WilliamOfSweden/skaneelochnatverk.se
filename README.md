@@ -1,6 +1,6 @@
 <p align='center'>
     <a href='https://skaneelochnatverk.netlify.app'>
-        <img alt='Skåne El & Nätverk | Logo' src='https://skaneelochnatverk.netlify.app/logo.svg' width='60' />
+        <img alt='Skåne El & Nätverk | Logo' src='https://skaneelochnatverk.netlify.app/logo.svg' width='180' />
     </a>
 </p>
 
