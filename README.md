@@ -1,6 +1,5 @@
-<div style='display: flex; justify-content: center;'>
+<div align='center'>
     <img alt='Skåne El & Nätverk | Logo' src='https://skaneelochnatverk.netlify.app/logo.svg' width='180' />
-
 </div>
 
 # Skåne El & Nätverk •  Company Website
