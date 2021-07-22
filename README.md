@@ -1,14 +1,4 @@
-<style>
-
-    table, tr, td {
-    
-        border: none !important;
-
-    }
-
-</style>
-
-<div style='display: flex; justify-content: center'>
+<div style='display: flex; justify-content: center;'>
     <img alt='Skåne El & Nätverk | Logo' src='https://skaneelochnatverk.netlify.app/logo.svg' width='180' />
 
 </div>
@@ -33,30 +23,30 @@
 
 <table class='table'>
     <tr>
-        <td>
+        <td style='border: none;'>
             <img alt='Skåne El & Nätverk | Logo' src='https://www.gatsbyjs.com/Gatsby-Monogram.svg' height='30' />
         </td>
-        <td>
+        <td style='border: none;'>
             <a href='https://gatsbyjs.org/' rel='noreferrer noopener' target='_blank'>
                 Gatsby JS
             </a>
         </td>
     </tr>
     <tr>
-        <td>
+        <td style='border: none;'>
             <img alt='Skåne El & Nätverk | Logo' src='https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg' height='30' />
         </td>
-        <td>
+        <td style='border: none;'>
             <a href='https://typescriptlang.org/' rel='noreferrer noopener' target='_blank'>
                 TypeScript
             </a>
         </td>
     </tr>
     <tr>
-        <td>
+        <td style='border: none;'>
             <img alt='Skåne El & Nätverk | Logo' src='https://images.ctfassets.net/vkdbses00qqt/6OI58U5QHeYMuSgeisWGI4/107e83f92bac5f2f2fd2e7976a25ee76/Icon_Black.svg' height='30' />
         </td>
-        <td>
+        <td style='border: none;'>
             <a href='https://graphcms.com/'  rel='noreferrer noopener' target='_blank'>
                 GraphCMS
             </a>
@@ -64,20 +54,20 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td style='border: none;'>
             <img alt='Skåne El & Nätverk | Logo' src='https://seeklogo.com/images/M/mdx-logo-60628A5188-seeklogo.com.png' height='30' />
         </td>
-        <td>
+        <td style='border: none;'>
             <a href='https://mdxjs.com/' rel='noreferrer noopener' target='_blank'>
                 MDX
             </a> for content management.
         </td>
     </tr>
     <tr>
-        <td>
+        <td style='border: none;'>
             <img alt='Skåne El & Nätverk | Logo' src='https://repository-images.githubusercontent.com/180328715/fca49300-e7f1-11ea-9f51-cfd949b31560' height='30' />
         </td>
-        <td>
+        <td style='border: none;'>
             <a href='https://github.com/pmndrs/zustand' rel='noreferrer noopener' target='_blank'>
                 Zustand
             </a>
@@ -85,10 +75,10 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td style='border: none;'>
             <img alt='Skåne El & Nätverk | Logo' src='https://iconape.com/wp-content/files/ej/371250/svg/371250.svg' height='30' />
         </td>
-        <td>
+        <td style='border: none;'>
             <a href='https://material-ui.com/' rel='noreferrer noopener' target='_blank'>
                 Material UI
             </a>
@@ -96,10 +86,10 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td style='border: none;'>
             <img alt='Skåne El & Nätverk | Logo' src='https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png' height='30' />
         </td>
-        <td>
+        <td style='border: none;'>
             <a href='https://styled-components.com/' rel='noreferrer noopener' target='_blank'>
                 Styled Components
             </a>
@@ -107,10 +97,10 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td style='border: none;'>
             <img alt='Skåne El & Nätverk | Logo' src='https://seeklogo.com/images/R/react-spring-logo-757E1EF5B5-seeklogo.com.png' height='30' />
         </td>
-        <td>
+        <td style='border: none;'>
             <a href='https://react-spring.io/' rel='noreferrer noopener' target='_blank'>
                 React Spring
             </a>
@@ -118,10 +108,10 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td style='border: none;'>
             <img alt='Skåne El & Nätverk | Logo' src='https://www.netlify.com/img/press/logos/logomark.png' height='30' />
         </td>
-        <td>
+        <td style='border: none;'>
             <a href='https://netlify.com/' rel='noreferrer noopener' target='_blank'>
                 Netlify
             </a>
