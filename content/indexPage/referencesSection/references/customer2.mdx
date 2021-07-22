@@ -1,6 +1,24 @@
 ---
+embeddedImagesLocal: referenceTwo.jpg
 key: 1
-quotee: Bengt Bengtsson
+quotee: My Strandh
 ---
 
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi eligendi voluptatibus optio ducimus possimus, similique ratione saepe unde cupiditate quasi.
+import imageTwo from'../../../../src/images/referenceTwo.jpg';
+import Typography from '@material-ui/core/Typography'
+
+
+<q style={{ textAlign: `center`, display: `block` }}>Skåne El &amp; Nätverk gjorde helt ny draging av el och jordade om eluttagen. De fixade även alla vitvaror på egna säkringar och spotlights i taket. Supernöjd, tack!</q>
+
+
+<div style={{ display: `flex`, justifyContent: `center`, alignItems: `center`, marginTop: `1rem` }}>
+
+<div style={{ borderRadius: `50%`, overflow: `hidden`, width: `50px`, height: `50px`, marginRight: `1rem` }} >
+    
+    <img src={ imageTwo } width='50px' />
+
+</div>
+
+<Typography align='center' style={{ fontSize: `1.33rem` }}>My Strandh</Typography>
+
+</div>

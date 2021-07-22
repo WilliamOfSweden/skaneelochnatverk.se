@@ -1,6 +1,24 @@
 ---
+embeddedImagesLocal: referenceOne.jpg
 key: 0
-quotee: Anders Andersson
+quotee: Bengt Larsson
 ---
 
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi eligendi voluptatibus optio ducimus possimus, similique ratione saepe unde cupiditate quasi.
+import imageOne from'../../../../src/images/referenceOne.jpg';
+import Typography from '@material-ui/core/Typography'
+
+
+<q style={{ textAlign: `center`, display: `block` }}>Skåne El &amp; Nätverk installerade laddbox för vår nyinköpta elbil. Allting sköttes perfekt och priset var rimligt.</q>
+
+
+<div style={{ display: `flex`, justifyContent: `center`, alignItems: `center`, marginTop: `1rem` }}>
+
+<div style={{ borderRadius: `50%`, overflow: `hidden`, width: `50px`, height: `50px`, marginRight: `1rem` }} >
+    
+    <img src={ imageOne } width='50px' />
+
+</div>
+
+<Typography align='center' style={{ fontSize: `1.33rem` }}>Bengt Larsson</Typography>
+
+</div>

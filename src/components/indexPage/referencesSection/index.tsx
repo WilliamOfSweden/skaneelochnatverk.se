@@ -11,35 +11,7 @@ import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-// import Flex from './css'
-// import MobileGrid from './mobileGrid'
-
-import styled from 'styled-components'
 import SwipeIcon from '../../illustrations/icons/swipeIcon'
-
-
-const StyledBox = styled(Box)`
-
-    
-
-    /* background: red; */
-    /* overflowX: scroll; */
-    
-    &::-webkit-scrollbar {
-        width: 12px;
-    }
-
-    &::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-        border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-    }
-
-`
 
 
 const useStyles = makeStyles( (theme: Theme) =>
@@ -137,12 +109,6 @@ const useStyles = makeStyles( (theme: Theme) =>
             paddingBottom: theme.spacing(3),
             paddingTop: theme.spacing(7),
 
-            [theme.breakpoints.up('md')]: {
-
-                // paddingBottom: theme.spacing(14),
-
-            },
-
         },
 
     }),
@@ -194,6 +160,7 @@ const ReferencesSection: FC = () => {
                 edges {
                     node {
                         frontmatter {
+                            embeddedImagesLocal
                             key
                             quotee
                         }
@@ -216,6 +183,8 @@ const ReferencesSection: FC = () => {
         node: {
 
             frontmatter: {
+
+                embeddedImagesLocal: string
 
                 key: number
 
@@ -286,11 +255,11 @@ const ReferencesSection: FC = () => {
                                             
                                         </Box>
 
-                                        <MDXProvider
+                                        {/* <MDXProvider
                                             components={{
                                                 p: MDXq,
                                             }}
-                                        >
+                                        > */}
 
                                             <MDXRenderer>
 
@@ -298,9 +267,9 @@ const ReferencesSection: FC = () => {
 
                                             </MDXRenderer>
 
-                                        </MDXProvider>
+                                        {/* </MDXProvider> */}
 
-                                        <Typography align='center' className={ classes.quotee }>{ quotee }</Typography>
+                                        {/* <Typography align='center' className={ classes.quotee }>{ quotee }</Typography> */}
 
                                     </Grid>
 
