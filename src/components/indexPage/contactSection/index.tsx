@@ -180,7 +180,7 @@ const ContactSection = () => {
 
                                 <Typography component='p'>
 
-                                    Vi är alltid tillgängliga för att hjälpa dig med elrelaterade angelägenheter. Kontakta oss om du vill veta mer eller följ oss på sociala medier för att få tips och nyheter.
+                                    Vi är alltid tillgängliga för att hjälpa dig med allt som är elrelaterat. Kontakta oss om du vill veta mer eller följ oss på sociala medier för att få tips och nyheter.
 
                                 </Typography>
 

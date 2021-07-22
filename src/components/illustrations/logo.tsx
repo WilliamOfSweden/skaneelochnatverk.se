@@ -7,7 +7,7 @@ const StyledSVG = styled.svg`
 
     cursor: pointer;
     display: block;
-    width: 6.707rem;
+    height: 2.5rem;
 
     .a4d99d24-bf4c-46e9-9d65-583315c35bc6 {
     
