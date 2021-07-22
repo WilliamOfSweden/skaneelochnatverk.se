@@ -100,7 +100,6 @@ const Masthead: FC = () => {
             }
         }
     `)
-
     
     interface StateProps {
 

@@ -5,6 +5,10 @@ import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import TekonLogo from '../../illustrations/brands/tekon'
+import SvenskEljourLogo from '../../illustrations/brands/svenskEljour'
+import WLogo from '../../illustrations/brands/w'
+import BILogo from '../../illustrations/brands/biLogo'
+import XLogo from '../../illustrations/brands/xLogo'
 
 
 const useStyles = makeStyles( (theme: Theme) =>
@@ -55,13 +59,13 @@ const TrustedBySection: FC = () => {
 
                 <TekonLogo />
 
-                <TekonLogo />
+                <SvenskEljourLogo />
 
-                <TekonLogo />
+                <WLogo />
 
-                <TekonLogo />
+                <BILogo />
 
-                <TekonLogo />
+                <XLogo />
 
             </Box>
             
