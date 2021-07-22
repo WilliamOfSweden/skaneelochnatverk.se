@@ -29,6 +29,12 @@ const useStyles = makeStyles( (theme: Theme) =>
             },
 
         },
+
+        h1: {
+
+            fontSize: `calc(2vw + 2.5rem)`,
+
+        },
         
         heroSection: {
 
@@ -126,7 +132,7 @@ const Masthead: FC = () => {
                         lg={ 6 }
                     >
 
-                        <Typography variant='h1'>
+                        <Typography className={ classes.h1 } variant='h1'>
 
                             { heading }
 
