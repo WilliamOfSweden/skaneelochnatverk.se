@@ -113,13 +113,17 @@ const MDXli: FC<{ children: ReactNode }> = ({ children }) => {
 
 const USPSection: FC = () => {
 
-    const { mdx: { body, frontmatter: {  title } } } = useStaticQuery(graphql`
-        query USPSectionQuery {
-            mdx(fileAbsolutePath: {regex: "/indexPage\/uspSection\/index/"}) {
-                frontmatter {
-                    title
+    const { graphCmsPageSection: { heading, body: { markdownNode: { childMdx: { body } } } } } = useStaticQuery(graphql`
+        query uspSectionQuery {
+            graphCmsPageSection(title: {eq: "Index Page - USP-section"}) {
+                heading
+                body  {
+                    markdownNode {
+                        childMdx {
+                            body
+                        }
+                    }
                 }
-                body
             }
         }
     `)
@@ -142,7 +146,7 @@ const USPSection: FC = () => {
 
                     <Typography className={ classes.mainHeading } variant='h3'>
 
-                        { title }
+                        { heading }
 
                     </Typography>
 
