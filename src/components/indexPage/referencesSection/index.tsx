@@ -1,52 +1,21 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { PALETTE } from '../../../styles/theme'
 import { useStaticQuery, graphql } from 'gatsby'
-import { GatsbyImage, Layout  } from 'gatsby-plugin-image'
-import { SourceProps } from 'gatsby-plugin-image/dist/src/components/picture'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import AnimatedHeart from './animatedHeart'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
-// import { MDXProvider } from '@mdx-js/react'
-// import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SwipeIcon from '../../illustrations/icons/swipeIcon'
+import { IGatsbyImageDataParent } from 'gatsby-plugin-image/dist/src/components/hooks'
 
 
 const useStyles = makeStyles( (theme: Theme) =>
 
     createStyles({
-
-        box: {
-
-            overflowX: `auto`,
-            overflowY: `hidden`,            
-
-            '&::-webkit-scrollbar': {
-
-                height: `6px`,
-
-            },
-        
-            '&::-webkit-scrollbar-track': {
-
-                background: `${ PALETTE.accentColor1 }22`,
-                borderRadius: `10px`,
-                
-            },
-        
-            '&::-webkit-scrollbar-thumb': {
-
-                background: `${ PALETTE.accentColor1 }44`,
-                borderRadius: `10px`,
-                '-webkit-box-shadow': `inset 0 0 6px ${ PALETTE.accentColor1 }`, 
-            
-            },
-
-
-        },
 
         grid: {
 
@@ -73,6 +42,34 @@ const useStyles = makeStyles( (theme: Theme) =>
             },
         },
 
+        gridWrapper: {
+
+            overflowX: `auto`,
+            overflowY: `hidden`,            
+
+            '&::-webkit-scrollbar': {
+
+                height: `6px`,
+
+            },
+        
+            '&::-webkit-scrollbar-track': {
+
+                background: `${ PALETTE.accentColor1 }22`,
+                borderRadius: `10px`,
+                
+            },
+        
+            '&::-webkit-scrollbar-thumb': {
+
+                background: `${ PALETTE.accentColor1 }44`,
+                borderRadius: `10px`,
+                '-webkit-box-shadow': `inset 0 0 6px ${ PALETTE.accentColor1 }`, 
+            
+            },
+
+        },
+
         mobileOnly: {
 
             [theme.breakpoints.up('lg')]: {
@@ -85,7 +82,7 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         quotee: {
 
-            fontSize: `1.5rem`,
+            fontSize: `1.3rem`,
 
         },
 
@@ -115,7 +112,7 @@ const ReferencesSection: FC = () => {
 
     const { allGraphCmsReferencePost: { edges } } = useStaticQuery(graphql`
         query referencesSectionQuery {
-            allGraphCmsReferencePost {
+            allGraphCmsReferencePost(limit: 4) {
                 edges {
                     node {
                         name
@@ -140,28 +137,9 @@ const ReferencesSection: FC = () => {
 
             quote: string
 
-            image: {
-
-                gatsbyImageData: {
-
-                    images: {
-
-                        sources?: SourceProps[]
-
-                    }
-
-                    layout: Layout
-
-                    width: number
-
-                    height: number
-
-                }
-
-            }
+            image: IGatsbyImageDataParent
 
             imageAlt: string
-            
 
         }
 
@@ -169,7 +147,7 @@ const ReferencesSection: FC = () => {
 
     return (
 
-        <section className={ classes.section } id='references-section'>
+        <Box bgcolor={ PALETTE.bgAlt } id='references-section' py={ 3 }>
 
             <Container>
 
@@ -203,7 +181,7 @@ const ReferencesSection: FC = () => {
                 </Box>
 
                 <Box
-                    className={ classes.box }
+                    className={ classes.gridWrapper }
                 >
 
                     <Grid className={ classes.grid } container spacing={ 5 }>
@@ -257,7 +235,7 @@ const ReferencesSection: FC = () => {
 
                                             </Box>
 
-                                            <Typography align='center' style={{ fontSize: `1.33rem` }}>{ name }</Typography>
+                                            <Typography align='center' className={ classes.quotee }>{ name }</Typography>
 
                                         </Box>
 
@@ -281,7 +259,7 @@ const ReferencesSection: FC = () => {
 
             </Container>
 
-        </section>
+        </Box>
     
     )
 
