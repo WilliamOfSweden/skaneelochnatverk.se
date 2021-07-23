@@ -70,6 +70,12 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         },
 
+        imageWrapper: {
+
+            overflow: `hidden`,
+
+        },
+
         mobileOnly: {
 
             [theme.breakpoints.up('lg')]: {
@@ -221,9 +227,9 @@ const ReferencesSection: FC = () => {
                                         >
 
                                             <Box
+                                                className={ classes.imageWrapper }
                                                 borderRadius='50%'
                                                 height='50px'
-                                                overflow='hidden'
                                                 mr={ 2 }
                                                 width='50px'
                                             >
