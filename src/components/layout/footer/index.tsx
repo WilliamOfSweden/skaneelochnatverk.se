@@ -181,7 +181,7 @@ const Footer: FC = () => {
 
                         <Typography align='center' className={ classes.copyWrite }>
 
-                            © Skåne El &amp; Nätverk AB { year }.
+                            © Skåne El &amp; Nätverk AB { year }
 
                             <br />
 
