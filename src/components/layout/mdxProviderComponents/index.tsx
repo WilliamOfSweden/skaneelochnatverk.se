@@ -1,7 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 import Typography from '@material-ui/core/Typography'
 import TekonLogo from '../../illustrations/brands/tekon'
-import SvenskEljourLogo from '../../illustrations/brands/svenskEljour'
 import WLogo from '../../illustrations/brands/w'
 import BILogo from '../../illustrations/brands/biLogo'
 import XLogo from '../../illustrations/brands/xLogo'
@@ -36,8 +35,6 @@ const MDXProviderComponentsObject = {
     p: MDXparagraph,
 
     TekonLogo,
-
-    SvenskEljourLogo,
 
     WLogo,
 
