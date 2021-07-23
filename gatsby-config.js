@@ -38,6 +38,7 @@ module.exports = {
         ],
     },
     plugins: [
+        `gatsby-plugin-preact`,
         `gatsby-plugin-smoothscroll`,
         `gatsby-plugin-styled-components`,
         {
