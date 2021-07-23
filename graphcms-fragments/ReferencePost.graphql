@@ -5,15 +5,8 @@ fragment ReferencePost on ReferencePost {
   updatedAt
   publishedAt
   name
-  imageUrl
-  quote {
-    ... on RichText {
-      raw
-      html
-      markdown
-      text
-    }
-  }
+  quote
+  imageAlt
   createdBy {
     ... on User {
       remoteTypeName: __typename
@@ -32,6 +25,14 @@ fragment ReferencePost on ReferencePost {
     ... on User {
       remoteTypeName: __typename
       remoteId: id
+      stage
+    }
+  }
+  image {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
       stage
     }
   }

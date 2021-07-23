@@ -32,5 +32,12 @@ fragment Asset on Asset {
       stage
     }
   }
+  imageReferencePost {
+    ... on ReferencePost {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   url
 }

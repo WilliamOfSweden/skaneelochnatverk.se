@@ -2,14 +2,16 @@ import React, { FC, ReactNode } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { PALETTE } from '../../../styles/theme'
 import { useStaticQuery, graphql } from 'gatsby'
+import { GatsbyImage, Layout  } from 'gatsby-plugin-image'
+import { SourceProps } from 'gatsby-plugin-image/dist/src/components/picture'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import AnimatedHeart from './animatedHeart'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+// import { MDXProvider } from '@mdx-js/react'
+// import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SwipeIcon from '../../illustrations/icons/swipeIcon'
 
 
@@ -109,36 +111,6 @@ const useStyles = makeStyles( (theme: Theme) =>
 )
 
 
-interface MDXqProps {
-
-    children: ReactNode       
-
-}
-
-
-const MDXq: FC<MDXqProps> = ({ children }) => {
-
-    return (
-    
-        <Typography
-            align='center'
-            gutterBottom
-            component='p'
-        >
-            
-            <q>
-                
-                { children }
-                
-            </q>
-            
-        </Typography>
-        
-    )
-
-}
-
-
 const ReferencesSection: FC = () => {
 
     const { allGraphCmsReferencePost: { edges } } = useStaticQuery(graphql`
@@ -147,14 +119,11 @@ const ReferencesSection: FC = () => {
                 edges {
                     node {
                         name
-                        quote {
-                            markdownNode {
-                                childMdx {
-                                    body
-                                }
-                            }
+                        quote
+                        image {
+                            gatsbyImageData(width: 50, height: 50, placeholder: NONE)
                         }
-                        imageUrl
+                        imageAlt
                     }
                 }
             }
@@ -169,21 +138,31 @@ const ReferencesSection: FC = () => {
 
             name: string
 
-            quote: {
-                
-                markdownNode: {
-                    
-                    childMdx: {
-                    
-                        body: any
-                    
+            quote: string
+
+            image: {
+
+                gatsbyImageData: {
+
+                    images: {
+
+                        sources?: SourceProps[]
+
                     }
-                
+
+                    layout: Layout
+
+                    width: number
+
+                    height: number
+
                 }
-            
+
             }
+
+            imageAlt: string
             
-            imageUrl: string
+
         }
 
     }
@@ -233,11 +212,11 @@ const ReferencesSection: FC = () => {
 
                             edges.map((edge: EdgeProps) => {
 
-                                const { node: { name, quote: { markdownNode: { childMdx: { body } } }, imageUrl } } = edge
+                                const { node: { name, quote, image: { gatsbyImageData }, imageAlt } } = edge
 
                                 return (
 
-                                    <Grid item xs={ 3 } lg={ 6 } key={ imageUrl }>
+                                    <Grid item xs={ 3 } lg={ 6 } key={ name }>
 
                                         <Box display='flex' justifyContent='flex-end' mb={ 1 }>
                                             
@@ -245,33 +224,42 @@ const ReferencesSection: FC = () => {
                                             
                                         </Box>
 
-                                        <MDXProvider
-                                            components={{
-                                                p: MDXq,
-                                            }}
+                                        <Typography
+                                            align='center'
+                                            gutterBottom
+                                            component='p'
+                                            display='block'
+                                        >
+                                                
+                                            { quote }
+
+                                        </Typography>
+
+                                        <Box 
+                                            alignItems='center'
+                                            display='flex'
+                                            justifyContent='center'
+                                            mt={ 2 }
                                         >
 
-                                            <MDXRenderer>
+                                            <Box
+                                                borderRadius='50%'
+                                                height='50px'
+                                                overflow='hidden'
+                                                mr={ 2 }
+                                                width='50px'
+                                            >
 
-                                                { body }
+                                                <GatsbyImage
+                                                    alt={ imageAlt }
+                                                    image={ gatsbyImageData }
+                                                />
 
-                                            </MDXRenderer>
-
-                                        </MDXProvider>
-
-                                        <div style={{ display: `flex`, justifyContent: `center`, alignItems: `center`, marginTop: `1rem` }}>
-
-                                            <div style={{ borderRadius: `50%`, overflow: `hidden`, width: `50px`, height: `50px`, marginRight: `1rem` }} >
-                                                
-                                                <img src={ imageUrl } width='50px' height='50px' />
-
-                                            </div>
+                                            </Box>
 
                                             <Typography align='center' style={{ fontSize: `1.33rem` }}>{ name }</Typography>
 
-                                        </div>
-
-                                        {/* <Typography align='center' className={ classes.quotee }>{ quotee }</Typography> */}
+                                        </Box>
 
                                     </Grid>
 
