@@ -1,4 +1,3 @@
-
 import React, { FC, ReactNode } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { PALETTE } from '../../../styles/theme'
@@ -82,12 +81,6 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         },
 
-        quote: {
-
-            fontSize: `1.2rem`,
-
-        },
-
         quotee: {
 
             fontSize: `1.5rem`,
@@ -125,13 +118,10 @@ interface MDXqProps {
 
 const MDXq: FC<MDXqProps> = ({ children }) => {
 
-    const classes = useStyles()
-
     return (
     
         <Typography
             align='center'
-            className={ classes.quote }
             gutterBottom
             component='p'
         >
@@ -151,26 +141,21 @@ const MDXq: FC<MDXqProps> = ({ children }) => {
 
 const ReferencesSection: FC = () => {
 
-    const { allMdx: { edges }, mdx: { frontmatter: { title } } } = useStaticQuery(graphql`
+    const { allGraphCmsReferencePost: { edges } } = useStaticQuery(graphql`
         query referencesSectionQuery {
-            allMdx(
-                sort: {fields: frontmatter___key}
-                filter: {fileAbsolutePath: {regex: "/indexPage\/referencesSection\/references/"}}
-                ) {
+            allGraphCmsReferencePost {
                 edges {
                     node {
-                        frontmatter {
-                            embeddedImagesLocal
-                            key
-                            quotee
+                        name
+                        quote {
+                            markdownNode {
+                                childMdx {
+                                    body
+                                }
+                            }
                         }
-                        body
+                        imageUrl
                     }
-                }
-            }
-            mdx(fileAbsolutePath: {regex: "/indexPage\/referencesSection\/index/"}) {
-                frontmatter {
-                    title
                 }
             }
         }
@@ -182,18 +167,23 @@ const ReferencesSection: FC = () => {
 
         node: {
 
-            frontmatter: {
+            name: string
 
-                embeddedImagesLocal: string
-
-                key: number
-
-                quotee: string
-
+            quote: {
+                
+                markdownNode: {
+                    
+                    childMdx: {
+                    
+                        body: any
+                    
+                    }
+                
+                }
+            
             }
-
-            body: string
-
+            
+            imageUrl: string
         }
 
     }
@@ -225,7 +215,7 @@ const ReferencesSection: FC = () => {
 
                         <Typography align='center' variant='h3' component='h2'>
                         
-                            { title }
+                            Våra kunders vitsord
 
                         </Typography>
 
@@ -243,11 +233,11 @@ const ReferencesSection: FC = () => {
 
                             edges.map((edge: EdgeProps) => {
 
-                                const { node: { frontmatter: { key, quotee }, body } } = edge
+                                const { node: { name, quote: { markdownNode: { childMdx: { body } } }, imageUrl } } = edge
 
                                 return (
 
-                                    <Grid item xs={ 3 } lg={ 6 } key={ key.toString() }>
+                                    <Grid item xs={ 3 } lg={ 6 } key={ imageUrl }>
 
                                         <Box display='flex' justifyContent='flex-end' mb={ 1 }>
                                             
@@ -255,11 +245,11 @@ const ReferencesSection: FC = () => {
                                             
                                         </Box>
 
-                                        {/* <MDXProvider
+                                        <MDXProvider
                                             components={{
                                                 p: MDXq,
                                             }}
-                                        > */}
+                                        >
 
                                             <MDXRenderer>
 
@@ -267,7 +257,19 @@ const ReferencesSection: FC = () => {
 
                                             </MDXRenderer>
 
-                                        {/* </MDXProvider> */}
+                                        </MDXProvider>
+
+                                        <div style={{ display: `flex`, justifyContent: `center`, alignItems: `center`, marginTop: `1rem` }}>
+
+                                            <div style={{ borderRadius: `50%`, overflow: `hidden`, width: `50px`, height: `50px`, marginRight: `1rem` }} >
+                                                
+                                                <img src={ imageUrl } width='50px' height='50px' />
+
+                                            </div>
+
+                                            <Typography align='center' style={{ fontSize: `1.33rem` }}>{ name }</Typography>
+
+                                        </div>
 
                                         {/* <Typography align='center' className={ classes.quotee }>{ quotee }</Typography> */}
 
