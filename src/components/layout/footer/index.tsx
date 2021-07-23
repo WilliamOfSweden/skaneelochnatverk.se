@@ -106,77 +106,6 @@ const Footer: FC = () => {
             pb={ 6 }
         >
 
-            {/* <Container>
-
-                <Divider className={ classes.divider } />
-
-                <Grid className={ classes.grid } container spacing={ 3 }>
-
-                    <Grid item xs={ 12 } md={ 4 } >
-
-                        <a
-                            aria-label='Link for calling the company.'
-                            className={ classes.telLink }
-                            href='tel:+460701488148'
-                            rel='noreferrer noopener'     
-                        >
-
-                            <PhoneIcon className={ classes.icon } color='inherit' />
-
-                            <Typography>0701-48 81 48</Typography>
-
-                        </a>
-
-                        <Box className={ classes.mailLink } display='flex' mt={ 3 } onClick={ openContactModal }>
-
-                            <MailIcon className={ classes.icon }  color='inherit' />
-
-                            <Typography>info@skaneelochnatverk.se</Typography>
-
-                        </Box>
-
-                    </Grid>
-
-                    <Grid item xs={ 12 } md={ 4 }>
-
-                        <Divider className={ classes.divider } />
-
-                        <Typography align='center' className={ classes.copyWrite }>
-
-                            © Skåne El &amp; Nätverk AB { year }.
-                            
-                            <br />
-
-                            Alla rättigheter förbehållna.
-
-                        </Typography>
-
-                    </Grid>
-
-                    <Grid item xs={ 12 } md={ 4 }>
-
-                        <Divider className={ classes.divider } />
-
-                        <a
-                            aria-label='Link to developers website.'
-                            href='https://daghouz.com'
-                            rel='noreferrer noopener' 
-                        >
-
-                            <Typography className={ classes.developerLink } color='secondary' align='right'>
-
-                                Website developed by <strong>William Daghouz</strong>.
-
-                            </Typography>
-
-                        </a>  
-
-                    </Grid>
-
-                </Grid>
-
-            </Container> */}
-
             <Container>
 
                 <Grid className={ classes.grid } container spacing={ 4 }>
@@ -279,7 +208,7 @@ const Footer: FC = () => {
 
                             <Typography className={ classes.developerLink } align='center'>
 
-                                Website developed by <strong>William Daghouz</strong>.
+                                Website developed by <strong style={{ textDecoration: `underline` }}>William Daghouz</strong>.
 
                             </Typography>
 

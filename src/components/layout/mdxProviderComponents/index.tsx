@@ -5,6 +5,10 @@ import SvenskEljourLogo from '../../illustrations/brands/svenskEljour'
 import WLogo from '../../illustrations/brands/w'
 import BILogo from '../../illustrations/brands/biLogo'
 import XLogo from '../../illustrations/brands/xLogo'
+import NetworkIcon from '../../illustrations/icons/networkIcon'
+import OnCallIcon from '../../illustrations/icons/onCallIcon'
+import ContractIcon from '../../illustrations/icons/contractIcon'
+import InstallationIcon from '../../illustrations/icons/installationIcon'
 
 
 interface Props {
@@ -21,7 +25,6 @@ const MDXh3: FC<Props> = ({ children }) => <Typography align='center' component=
 
 
 const MDXparagraph: FC<Props> = ({ children }) => <Typography align='center' component='p' paragraph variant='body1'>{ children }</Typography>
-
 
 
 const MDXProviderComponentsObject = {
@@ -41,6 +44,14 @@ const MDXProviderComponentsObject = {
     BILogo,
 
     XLogo,
+
+    NetworkIcon,
+
+    OnCallIcon,
+
+    ContractIcon,
+
+    InstallationIcon,
 
 }
 
