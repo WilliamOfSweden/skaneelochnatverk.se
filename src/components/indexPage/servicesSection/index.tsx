@@ -32,10 +32,17 @@ const useStyles = makeStyles( (theme: Theme) =>
 )
 
 
-const li: FC<{ children: ReactNode }> = ({ children }) => <Grid item xs={ 12 } sm={ 6 } >{ children }</Grid>
+interface MDXComponentProps {
+
+    children: ReactNode
+
+}
 
 
-const ul: FC<{ children: ReactNode }> = ({ children }) => <Grid container spacing={ 10 }>{ children }</Grid>
+const li: FC<MDXComponentProps> = ({ children }) => <Grid item xs={ 12 } sm={ 6 } >{ children }</Grid>
+
+
+const ul: FC<MDXComponentProps> = ({ children }) => <Grid container spacing={ 10 }>{ children }</Grid>
 
 
 const ServicesSection: FC = () => {
