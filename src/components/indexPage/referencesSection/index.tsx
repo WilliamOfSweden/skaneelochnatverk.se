@@ -70,6 +70,17 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         },
 
+        img: {
+
+            borderRadius: '25px',
+            overflow: 'hidden',
+            height: '50px',
+            marginRight: theme.spacing(2),
+            position: 'relative',
+            width: '50px',
+
+        },
+
         mobileOnly: {
 
             [theme.breakpoints.up('lg')]: {
@@ -220,21 +231,11 @@ const ReferencesSection: FC = () => {
                                             mt={ 2 }
                                         >
 
-                                            <Box
-                                                borderRadius='25px'
-                                                overflow='hidden'
-                                                height='50px'
-                                                mr={ 2 }
-                                                position='relative'
-                                                width='50px'
-                                            >
-
-                                                <GatsbyImage
-                                                    alt={ imageAlt }
-                                                    image={ gatsbyImageData }
-                                                />
-
-                                            </Box>
+                                            <GatsbyImage
+                                                alt={ imageAlt }
+                                                className={ classes.img }
+                                                image={ gatsbyImageData }
+                                            />
 
                                             <Typography align='center' className={ classes.quotee }>{ name }</Typography>
 
