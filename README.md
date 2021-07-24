@@ -13,7 +13,6 @@
     />
 </a>
 
-
 <a href='https://skaneelochnatverk.netlify.app' target='_blank' rel='noreferrer noopener'>www.skaneelochnatverk.netlify.app</a>
 
 ***
@@ -69,7 +68,7 @@
         <td>
             <a href='https://mdxjs.com/' rel='noreferrer noopener' target='_blank'>
                 MDX
-            </a> for content management.
+            </a> for customization of content rendering.
         </td>
     </tr>
     <tr>
@@ -91,7 +90,7 @@
             <a href='https://material-ui.com/' rel='noreferrer noopener' target='_blank'>
                 Material UI
             </a>
-            as component library.
+            for UI components.
         </td>
     </tr>
     <tr>
