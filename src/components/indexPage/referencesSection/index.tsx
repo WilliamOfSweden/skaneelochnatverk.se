@@ -70,16 +70,6 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         },
 
-        imageWrapper: {
-
-            overflow: `hidden !important`,
-            borderRadius: '50%',
-            height:'50px',
-            marginRight: theme.spacing(2),
-            width: '50px',
-
-        },
-
         mobileOnly: {
 
             [theme.breakpoints.up('lg')]: {
@@ -128,7 +118,7 @@ const ReferencesSection: FC = () => {
                         name
                         quote
                         image {
-                            gatsbyImageData(width: 50, height: 50, placeholder: NONE)
+                            gatsbyImageData(width: 50, height: 50)
                         }
                         imageAlt
                     }
@@ -230,14 +220,21 @@ const ReferencesSection: FC = () => {
                                             mt={ 2 }
                                         >
 
-                                            <div className={ classes.imageWrapper }>
+                                            <Box
+                                                borderRadius='25px'
+                                                overflow='hidden'
+                                                height='50px'
+                                                mr={ 2 }
+                                                position='relative'
+                                                width='50px'
+                                            >
 
                                                 <GatsbyImage
                                                     alt={ imageAlt }
                                                     image={ gatsbyImageData }
                                                 />
 
-                                            </div>
+                                            </Box>
 
                                             <Typography align='center' className={ classes.quotee }>{ name }</Typography>
 
