@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import ScrollAnimation from './scrollAnimation'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
 import Slide from '@material-ui/core/Slide'
@@ -12,25 +11,6 @@ import Box from '@material-ui/core/Box'
 import DesktopNav from './desktopNav'
 import MobileNavToggler from './mobileNavToggler'
 import MobileNav from './MobileNav'
-
-
-const useStyles = makeStyles( (theme: Theme) =>
-
-    createStyles({
-        
-        container: {
-
-            [theme.breakpoints.up('md')]: {
-
-                paddingRight: theme.spacing(1),
-                
-            },
-
-        },
-
-    }),
-
-)
 
 
 const Header: FC = () => {
@@ -49,8 +29,6 @@ const Header: FC = () => {
         }
     `)
 
-    const classes = useStyles()
-
     return (
 
         <ScrollAnimation>
@@ -59,7 +37,7 @@ const Header: FC = () => {
 
                 <AppBar>
 
-                    <Container className={ classes.container }>
+                    <Container>
 
                         <Toolbar disableGutters>
 
