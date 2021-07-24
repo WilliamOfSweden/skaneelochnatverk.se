@@ -23,11 +23,21 @@
 <table class='table'>
     <tr>
         <td align='center'>
-            <img alt='GatsbyJS| Logo' src='https://www.gatsbyjs.com/Gatsby-Monogram.svg' height='30' />
+            <img alt='GatsbyJS | Logo' src='https://www.gatsbyjs.com/Gatsby-Monogram.svg' height='30' />
         </td>
         <td>
             <a href='https://gatsbyjs.org/' rel='noreferrer noopener' target='_blank'>
                 Gatsby JS
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            <img alt='Preact | Logo' src='https://cdn.worldvectorlogo.com/logos/preact.svg' height='30' />
+        </td>
+        <td>
+            <a href='https://gatsbyjs.org/' rel='noreferrer noopener' target='_blank'>
+                Preact
             </a>
         </td>
     </tr>
@@ -81,7 +91,7 @@
             <a href='https://material-ui.com/' rel='noreferrer noopener' target='_blank'>
                 Material UI
             </a>
-            for styling.
+            as component library.
         </td>
     </tr>
     <tr>
