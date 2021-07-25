@@ -25,7 +25,7 @@ const Layout: FC<Props> = ({ children }) => {
 
             <Header />
         
-            <MDXProvider components={ MDXProviderComponentsObject }>>
+            <MDXProvider components={ MDXProviderComponentsObject }>
 
                 <main>
 
