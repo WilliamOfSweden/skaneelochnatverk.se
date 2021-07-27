@@ -33,7 +33,7 @@ const Header: FC = () => {
 
         <ScrollAnimation>
 
-            <Slide appear={ false } direction='down' in={ !useScrollTrigger( { threshold: 0 }) }>
+            <Slide appear={ false } direction='down' in={ !useScrollTrigger({ threshold: 0 }) }>
 
                 <AppBar>
 
