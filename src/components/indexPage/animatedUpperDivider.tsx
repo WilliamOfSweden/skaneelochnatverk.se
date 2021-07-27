@@ -30,7 +30,7 @@ const AnimatedUpperDivider: FC = () => {
 
     return (
 
-        <StyledSVG fill='none' viewBox='0 0 1441 130'>
+        <StyledSVG  id='cta-section' fill='none' viewBox='0 0 1441 130'>
 
             <defs>
                 

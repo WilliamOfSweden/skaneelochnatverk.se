@@ -32,7 +32,7 @@ const useStyles = makeStyles( (theme: Theme) =>
 
         h1: {
 
-            fontSize: `calc(2vw + 2.5rem)`,
+            fontSize: `calc(1.5rem + 3vw) !important`,
 
         },
         
