@@ -22,29 +22,29 @@ const useStyles = makeStyles( (theme: Theme) =>
             overflowX: `hidden`,
             paddingBottom: theme.spacing(6),
 
+            [theme.breakpoints.up('xs')]: {
 
-            // [theme.breakpoints.up('xs')]: {
+                width: `400vw`,
 
-            //     width: `400vw`,
+            },
 
-            // },
+            [theme.breakpoints.up('sm')]: {
 
-            // [theme.breakpoints.up('sm')]: {
+                width: `200vw`,
 
-            //     width: `200vw`,
-
-            // },
+            },
             
-            // [theme.breakpoints.up('lg')]: {
+            [theme.breakpoints.up('lg')]: {
 
-            //     width: `100%`,
+                width: `100%`,
 
-            // },
+            },
+
         },
 
         gridWrapper: {
 
-            overflowX: `hidden`,
+            overflowX: `auto`,
             overflowY: `hidden`,            
 
             '&::-webkit-scrollbar': {
@@ -205,7 +205,7 @@ const ReferencesSection: FC = () => {
 
                                 return (
 
-                                    <Grid item xs={ 12 } lg={ 6 } key={ name }>
+                                    <Grid item xs={ 3 } lg={ 6 } key={ name }>
 
                                         <Box display='flex' justifyContent='flex-end' mb={ 1 }>
                                             
