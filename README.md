@@ -1,21 +1,21 @@
 <div align='center'>
-    <img alt='Skåne El & Nätverk | Logo' src='https://skaneelochnatverk.netlify.app/logo.svg' width='180' />
+    <img alt='Skåne El & Nätverk | Logo' src='https://skaneelochnatverk.se/logo.svg' width='180' />
 </div>
 
-# Skåne El & Nätverk •  Company Website
+# Skåne El & Nätverk • Company Website
 
-<a href='https://skaneelochnatverk.netlify.app' target='_blank' rel='noreferrer noopener'>
+<a href='https://skaneelochnatverk.se' target='_blank' rel='noreferrer noopener'>
     <img
-        src='https://skaneelochnatverk.netlify.app/banner.png'
+        src='https://skaneelochnatverk.se/banner.png'
         width='100%'
         alt='Website | Skåne El & Nätverk AB'
         title='Skåne El & Nätverk AB'
     />
 </a>
 
-<a href='https://skaneelochnatverk.netlify.app' target='_blank' rel='noreferrer noopener'>www.skaneelochnatverk.netlify.app</a>
+<a href='https://skaneelochnatverk.se' target='_blank' rel='noreferrer noopener'>www.skaneelochnatverk.se</a>
 
-***
+---
 
 ## Tech Stack
 
