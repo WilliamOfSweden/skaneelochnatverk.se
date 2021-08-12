@@ -16,53 +16,42 @@ import ContactSection from '../components/indexPage/contactSection/'
 import ModalComponent from '../components/global/animatedModal/'
 import ContactForm from '../components/global/contactForm'
 
-
 const IndexPage: FC<PageProps> = () => {
-    
-    return (
+  return (
+    <Fragment>
+      <SEO />
 
-        <Fragment>
+      <Layout>
+        <Masthead />
 
-            <SEO />
-    
-            <Layout>
+        <TrustedBySection />
 
-                <Masthead />
+        <AnimatedUpperDivider />
 
-                <TrustedBySection />
+        <CTASection />
 
-                <AnimatedUpperDivider />
+        <AnimatedMiddleDivider />
 
-                <CTASection />
+        <ServicesSection />
 
-                <AnimatedMiddleDivider />
+        <AnimatedLowerDivider />
 
-                <ServicesSection />
+        <EnviromentSection />
 
-                <AnimatedLowerDivider />
+        <ReferencesSection />
 
-                <EnviromentSection />
+        <USPSection />
 
-                <ReferencesSection />
+        <ContactSection />
 
-                <USPSection />
+        <ModalComponent>
+          <ContactForm />
+        </ModalComponent>
 
-                <ContactSection />
-
-                <ModalComponent>
-
-                    <ContactForm />
-
-                </ModalComponent>
-
-                <ContactForm hidden />
-                
-            </Layout>
-        
-        </Fragment>
-    )
-
+        <ContactForm hidden />
+      </Layout>
+    </Fragment>
+  )
 }
-
 
 export default IndexPage

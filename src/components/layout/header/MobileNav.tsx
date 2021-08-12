@@ -12,177 +12,128 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
 
-
 const useStyles = makeStyles(() =>
+  createStyles({
+    iconButton: {
+      position: `absolute`,
+      right: `calc(2rem - 12px)`,
+      top: `1rem`,
+    },
 
-    createStyles({
+    list: {
+      width: 250,
+    },
 
-        iconButton: {
+    listItemText: {
+      paddingBottom: `0.5rem`,
+      paddingTop: `0.5rem`,
+    },
 
-            position: `absolute`,
-            right: `calc(2rem - 12px)`,
-            top: `1rem`,
-
-        },
-
-        list: {
-
-            width: 250,
-        
-        },
-
-        listItemText: {
-
-            paddingBottom: `0.5rem`,
-            paddingTop: `0.5rem`,
-
-        },
-
-        nav: {
-
-            padding: `4rem 2rem`
-
-        },
-    
-    }),
-
+    nav: {
+      padding: `4rem 2rem`,
+    },
+  })
 )
 
-
 interface LinkProps {
+  name: string
 
-    name: string
+  link: string
 
-    link: string
-
-    teleLink?: boolean
-
+  teleLink?: boolean
 }
 
+const MobileNav: FC<{ navLinks: LinkProps[] }> = ({ navLinks }) => {
+  const classes = useStyles()
 
-const MobileNav: FC<{navLinks: LinkProps[]}> = ({ navLinks }) => {
+  const active = useStore((state: StateProps) => state.activeMobileNav)
 
-    const classes = useStyles()
+  const toggle = useStore((state: StateProps) => state.toggleActiveMobileNav)
 
-    const active = useStore((state: StateProps) => state.activeMobileNav)
+  const closeNav = useStore((state: StateProps) => state.resetActiveMobileNav)
 
-    const toggle = useStore((state: StateProps) => state.toggleActiveMobileNav)
+  const closeAndScroll = (section: string) => async () => {
+    await closeNav()
 
-    const closeNav = useStore((state: StateProps) => state.resetActiveMobileNav)
+    scrollTo(`#${section}-section`)
+  }
 
-    const closeAndScroll = (section: string) => async () => {
+  const [width] = useWindowSize()
 
-        await closeNav()
-
-        scrollTo( `#${ section }-section` )
-
+  useEffect(() => {
+    if (width > 960) {
+      closeNav()
     }
+  })
 
-    const [ width ] = useWindowSize()
+  interface StateProps {
+    activeMobileNav: boolean
 
-    useEffect(() => {
+    toggleActiveMobileNav: () => void
 
-        if (width > 960 ) {
-            
-            closeNav()
+    resetActiveMobileNav: () => void
+  }
 
-        }
-    
-    })
+  return (
+    <SwipeableDrawer
+      anchor='right'
+      open={active && width < 960}
+      onOpen={toggle}
+      onClose={toggle}
+      style={{ position: `relative` }}
+    >
+      <IconButton
+        aria-label='open drawer'
+        edge='start'
+        className={classes.iconButton}
+        color='primary'
+        onClick={closeNav}
+      >
+        <CloseIcon />
+      </IconButton>
 
-    interface StateProps {
+      <nav className={classes.nav}>
+        <List className={classes.list}>
+          {navLinks.map((link: LinkProps, i) => {
+            if (link.teleLink) {
+              return (
+                <Button
+                  aria-label='Link to telephone number.'
+                  color='primary'
+                  component='a'
+                  fullWidth
+                  href={`tel:${link.link}'`}
+                  key={link.link}
+                  variant='contained'
+                >
+                  {link.name}
+                </Button>
+              )
+            }
 
-        activeMobileNav: boolean
-    
-        toggleActiveMobileNav: () => void
-    
-        resetActiveMobileNav: () => void
-    
-    }
+            return (
+              <Fragment key={link.link}>
+                <ListItem button onClick={closeAndScroll(link.link)}>
+                  <ListItemText
+                    className={classes.listItemText}
+                    primary={link.name}
+                  />
+                </ListItem>
 
-    return (
-
-        <SwipeableDrawer
-            anchor='right'
-            open={ active && width < 960 }
-            onOpen={ toggle }
-            onClose={ toggle }
-            style={{ position: `relative` }}
-        >
-
-            <IconButton
-                aria-label='open drawer'
-                edge='start'
-                className={ classes.iconButton }
-                color='primary'
-                onClick={ closeNav }
-            >
-    
-                <CloseIcon />
-
-            </IconButton>
-            
-            <nav className={ classes.nav }>
-
-                <List className={ classes.list }>
-
-                    {
-                    
-                        navLinks.map( (link: LinkProps, i) => {
-
-                            if (link.teleLink) {
-
-                                return (
-
-                                    <Button
-                                        aria-label='Link to telephone number.'
-                                        color='primary'
-                                        component='a'
-                                        fullWidth
-                                        href={ `tel:${ link.link }'` }
-                                        key={ link.link }
-                                        variant='contained'
-                                    >
-            
-                                        { link.name }
-                                        
-                                    </Button>
-
-                                )
-
-                            }
-
-                            return (
-
-                                <Fragment key={ link.link }>
-
-                                    <ListItem
-                                        button
-                                        onClick={ closeAndScroll(link.link) }
-                                    >
-
-                                        <ListItemText className={ classes.listItemText } primary={ link.name } />
-
-                                    </ListItem>
-                                    
-                                    <Divider style={ { display: `${ i !== (navLinks.length - 2) ? 'inherit' : 'none' }` } }  />
-
-                                </Fragment>
-                            )
-
-                        })
-
-                    }
-
-                </List>
-
-            </nav>
-
-        </SwipeableDrawer>
-
-    )
-
+                <Divider
+                  style={{
+                    display: `${
+                      i !== navLinks.length - 2 ? 'inherit' : 'none'
+                    }`,
+                  }}
+                />
+              </Fragment>
+            )
+          })}
+        </List>
+      </nav>
+    </SwipeableDrawer>
+  )
 }
-
 
 export default MobileNav

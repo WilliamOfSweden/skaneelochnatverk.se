@@ -13,185 +13,127 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { StaticImage } from 'gatsby-plugin-image'
 import CheckMarkIcon from '../../illustrations/icons/checkMarkIcon'
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    iconWrapper: {
+      display: `block`,
+    },
 
-const useStyles = makeStyles( (theme: Theme) =>
+    paragraph: {
+      fontWeight: 700,
+      marginBottom: theme.spacing(2),
+    },
 
-    createStyles({
+    section: {
+      paddingTop: theme.spacing(7),
 
-        iconWrapper: {
+      [theme.breakpoints.up('lg')]: {
+        paddingTop: theme.spacing(7),
+      },
+    },
 
-            display: `block`,
-
-        },
-
-        paragraph: {
-
-            fontWeight: 700,
-            marginBottom: theme.spacing(2),
-
-        },
-        
-        section: {
-
-            paddingTop: theme.spacing(7),
-
-            [theme.breakpoints.up('lg')]: {
-
-                paddingTop: theme.spacing(7),
-
-            },
-
-        },
-
-        mainHeading: {
-
-            marginBottom: `1rem`,
-
-        },
-
-    }),
-
+    mainHeading: {
+      marginBottom: `1rem`,
+    },
+  })
 )
 
-
 const MDXparagraph: FC<{ children: ReactNode }> = ({ children }) => {
+  const classes = useStyles()
 
-    const classes = useStyles()
-
-    return (
-    
-        <Typography align='left' className={ classes.paragraph } component='p' variant='body1'>
-            
-            { children }
-            
-        </Typography>
-    
-    )
-
+  return (
+    <Typography
+      align='left'
+      className={classes.paragraph}
+      component='p'
+      variant='body1'
+    >
+      {children}
+    </Typography>
+  )
 }
-
 
 const MDXul: FC<{ children: ReactNode }> = ({ children }) => {
+  const classes = useStyles()
 
-    const classes = useStyles()
-
-    return (
-
-        <List>{ children }</List>
-
-    )
-
+  return <List>{children}</List>
 }
-
 
 const MDXli: FC<{ children: ReactNode }> = ({ children }) => {
+  const classes = useStyles()
 
-    const classes = useStyles()
+  return (
+    <ListItem>
+      <ListItemIcon className={classes.iconWrapper}>
+        <CheckMarkIcon />
+      </ListItemIcon>
 
-    return (
-
-        <ListItem>
-            
-            <ListItemIcon className={ classes.iconWrapper }>
-            
-                <CheckMarkIcon />
-            
-            </ListItemIcon>
-            
-            <ListItemText>
-
-                { children }
-
-            </ListItemText>
-        
-        </ListItem>
-
-    )
-
+      <ListItemText>{children}</ListItemText>
+    </ListItem>
+  )
 }
-
 
 const USPSection: FC = () => {
-
-    const { graphCmsPageSection: { heading, body: { markdownNode: { childMdx: { body } } } } } = useStaticQuery(graphql`
-        query uspSectionQuery {
-            graphCmsPageSection(title: {eq: "Index Page - USP-section"}) {
-                heading
-                body  {
-                    markdownNode {
-                        childMdx {
-                            body
-                        }
-                    }
-                }
+  const {
+    graphCmsPageSection: {
+      heading,
+      body: {
+        markdownNode: {
+          childMdx: { body },
+        },
+      },
+    },
+  } = useStaticQuery(graphql`
+    query uspSectionQuery {
+      graphCmsPageSection(title: { eq: "Index Page - USP-section" }) {
+        heading
+        body {
+          markdownNode {
+            childMdx {
+              body
             }
+          }
         }
-    `)
+      }
+    }
+  `)
 
-    const classes = useStyles()
+  const classes = useStyles()
 
-    return (
+  return (
+    <Container className={classes.section} component='section' id='usp-section'>
+      <Grid container>
+        <Grid item container alignContent={'center'} xs={12} md={6}>
+          <Typography className={classes.mainHeading} variant='h3'>
+            {heading}
+          </Typography>
 
-        <Container className={ classes.section } component='section' id='usp-section'>
+          <Typography align='center' component='div' variant='body1'>
+            <MDXProvider
+              components={{
+                li: MDXli,
+                p: MDXparagraph,
+                ul: MDXul,
+              }}
+            >
+              <MDXRenderer>{body}</MDXRenderer>
+            </MDXProvider>
+          </Typography>
+        </Grid>
 
-            <Grid  container>
-
-                <Grid
-                    item
-                    container
-                    alignContent={ 'center' }
-                    xs={ 12 }
-                    md={ 6 }
-                >
-
-                    <Typography className={ classes.mainHeading } variant='h3'>
-
-                        { heading }
-
-                    </Typography>
-
-                    <Typography align='center' component='div' variant='body1'>
-
-                        <MDXProvider
-                            components={{
-                                li: MDXli,
-                                p: MDXparagraph,
-                                ul: MDXul,
-                            }}
-                        >
-
-                            <MDXRenderer>
-                                
-                                { body }
-                                
-                            </MDXRenderer>
-
-                        </MDXProvider>
-
-                    </Typography>
-
-                </Grid>
-
-                <Grid item xs={ 12 } md={ 6 }>
-
-                    <StaticImage
-                        src='../../../images/light-bulbs.png'
-                        alt='Light bulb standing on the floor, turned on and connected to a wall socket.'
-                        loading='eager'
-                        formats={ ['auto', 'webp', 'avif'] }
-                        placeholder='none'
-                        layout='fullWidth'
-                    />
-
-                </Grid>
-
-            </Grid>
-
-        </Container>
-
-    )
-
+        <Grid item xs={12} md={6}>
+          <StaticImage
+            src='../../../images/light-bulbs.png'
+            alt='Light bulb standing on the floor, turned on and connected to a wall socket.'
+            loading='eager'
+            formats={['auto', 'webp', 'avif']}
+            placeholder='none'
+            layout='fullWidth'
+          />
+        </Grid>
+      </Grid>
+    </Container>
+  )
 }
-
 
 export default USPSection

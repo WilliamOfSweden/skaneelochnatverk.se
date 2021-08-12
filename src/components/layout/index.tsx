@@ -7,41 +7,24 @@ import MDXProviderComponentsObject from './mdxProviderComponents/'
 import Header from './header'
 import Footer from './footer'
 
-
 interface Props {
-
-    children: ReactNode       
-
+  children: ReactNode
 }
-
 
 const Layout: FC<Props> = ({ children }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
 
-    return (
+      <Header />
 
-        <ThemeProvider theme={ theme }>
+      <MDXProvider components={MDXProviderComponentsObject}>
+        <main>{children}</main>
+      </MDXProvider>
 
-            <CssBaseline />
-
-            <Header />
-        
-            <MDXProvider components={ MDXProviderComponentsObject }>
-
-                <main>
-
-                    { children }
-
-                </main>
-
-            </MDXProvider>
-
-            <Footer />
-
-        </ThemeProvider>
-    
-    )
-
+      <Footer />
+    </ThemeProvider>
+  )
 }
-
 
 export default Layout

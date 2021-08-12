@@ -12,58 +12,50 @@ import DesktopNav from './desktopNav'
 import MobileNavToggler from './mobileNavToggler'
 import MobileNav from './MobileNav'
 
-
 const Header: FC = () => {
-
-    const { site: { siteMetadata: { navLinks } } } = useStaticQuery(graphql`
-        query SiteMetaData {
-            site {
-                siteMetadata {
-                    navLinks {
-                        name
-                        link
-                        teleLink
-                    }
-                }
-            }
+  const {
+    site: {
+      siteMetadata: { navLinks },
+    },
+  } = useStaticQuery(graphql`
+    query SiteMetaData {
+      site {
+        siteMetadata {
+          navLinks {
+            name
+            link
+            teleLink
+          }
         }
-    `)
+      }
+    }
+  `)
 
-    return (
+  return (
+    <ScrollAnimation>
+      <Slide
+        appear={false}
+        direction='down'
+        in={!useScrollTrigger({ threshold: 0 })}
+      >
+        <AppBar>
+          <Container>
+            <Toolbar disableGutters>
+              <Logo />
 
-        <ScrollAnimation>
+              <Box flexGrow={1} display='flex' alignItems='center' px={5} />
 
-            <Slide appear={ false } direction='down' in={ !useScrollTrigger({ threshold: 0 }) }>
+              <DesktopNav navLinks={navLinks} />
 
-                <AppBar>
+              <MobileNavToggler />
 
-                    <Container>
-
-                        <Toolbar disableGutters>
-
-                            <Logo />
-
-                            <Box flexGrow={ 1 } display='flex' alignItems='center' px={ 5 } />
-
-                            <DesktopNav navLinks={ navLinks } />
-
-                            <MobileNavToggler />
-
-                            <MobileNav navLinks={ navLinks } />
-
-                        </Toolbar>
-
-                    </Container>
-
-                </AppBar>
-
-            </Slide>
-
-        </ScrollAnimation>
-
-    )
-
+              <MobileNav navLinks={navLinks} />
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </Slide>
+    </ScrollAnimation>
+  )
 }
-
 
 export default Header

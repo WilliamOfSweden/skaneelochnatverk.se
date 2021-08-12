@@ -2,75 +2,61 @@ import React, { FC } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-
 interface Props {
+  description?: string
 
-    description?: string
-
-    title?: string
-
+  title?: string
 }
 
-
-const SEO: FC<Props> = ({
-
-    description,
-    title,
-
-
-}) => {
-
-    const data = useStaticQuery(graphql`
-        query HeaderQuery {
-            site {
-                siteMetadata {
-                    ogDescription
-                    ogImageUrl
-                    ogType
-                    siteDescription
-                    siteTitle
-                    siteUrl
-                }
-            }
+const SEO: FC<Props> = ({ description, title }) => {
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          ogDescription
+          ogImageUrl
+          ogType
+          siteDescription
+          siteTitle
+          siteUrl
         }
-    `)
+      }
+    }
+  `)
 
-    const {
-        ogDescription,
-        ogImageUrl,
-        ogType,
-        siteDescription,
-        siteTitle,
-        siteUrl
-    } = data.site.siteMetadata
-  
-    return (
-    
-        <Helmet>
-            
-            <html lang='sv-SE' />
+  const {
+    ogDescription,
+    ogImageUrl,
+    ogType,
+    siteDescription,
+    siteTitle,
+    siteUrl,
+  } = data.site.siteMetadata
 
-            <meta charSet='UTF-8' />
+  return (
+    <Helmet>
+      <html lang='sv-SE' />
 
-            <meta name='description' content={ description ? description : siteDescription } />
+      <meta charSet='UTF-8' />
 
-            <title>{ title ? title : siteTitle }</title>
+      <meta
+        name='description'
+        content={description ? description : siteDescription}
+      />
 
-            <meta property='og:url' content={ siteUrl } />
-            
-            <meta property='og:type' content={ ogType } />
-            
-            <meta property='og:title' content={ siteTitle } />
-            
-            <meta property='og:description' content={ ogDescription } />
-            
-            <meta property='og:image' content={ ogImageUrl } />
+      <title>{title ? title : siteTitle}</title>
 
-        </Helmet>
+      <meta property='og:url' content={siteUrl} />
 
-    )
+      <meta property='og:type' content={ogType} />
 
+      <meta property='og:title' content={siteTitle} />
+
+      <meta property='og:description' content={ogDescription} />
+
+      <meta property='og:image' content={ogImageUrl} />
+    </Helmet>
+  )
 }
-
 
 export default SEO

@@ -1,30 +1,24 @@
 import create from 'zustand'
 
-
 interface Props {
+  activeContactModal: boolean
 
-    activeContactModal: boolean
+  openContactModal: () => void
 
-    openContactModal: () => void
-    
-    toggleContactModal: () => void
+  toggleContactModal: () => void
 
-    closeContactModal: () => void
-
+  closeContactModal: () => void
 }
 
-
 const useStore = create<Props>(set => ({
+  activeContactModal: false,
 
-    activeContactModal: false,
+  openContactModal: () => set({ activeContactModal: true }),
 
-    openContactModal: () => set({ activeContactModal: true }),
-    
-    toggleContactModal: () => set(state => ({ activeContactModal: !state.activeContactModal })),
-    
-    closeContactModal: () => set({ activeContactModal: false }),
+  toggleContactModal: () =>
+    set(state => ({ activeContactModal: !state.activeContactModal })),
 
+  closeContactModal: () => set({ activeContactModal: false }),
 }))
-
 
 export default useStore

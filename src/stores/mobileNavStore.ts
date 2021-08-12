@@ -1,26 +1,20 @@
 import create from 'zustand'
 
-
 interface Props {
+  activeMobileNav: boolean
 
-    activeMobileNav: boolean
-    
-    toggleActiveMobileNav: () => void
+  toggleActiveMobileNav: () => void
 
-    resetActiveMobileNav: () => void
-
+  resetActiveMobileNav: () => void
 }
 
-
 const useStore = create<Props>(set => ({
+  activeMobileNav: false,
 
-    activeMobileNav: false,
-    
-    toggleActiveMobileNav: () => set(state => ({ activeMobileNav: !state.activeMobileNav })),
-    
-    resetActiveMobileNav: () => set({ activeMobileNav: false }),
+  toggleActiveMobileNav: () =>
+    set(state => ({ activeMobileNav: !state.activeMobileNav })),
 
+  resetActiveMobileNav: () => set({ activeMobileNav: false }),
 }))
-
 
 export default useStore

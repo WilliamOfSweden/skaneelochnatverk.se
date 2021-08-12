@@ -1,33 +1,22 @@
 import React, { FC } from 'react'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
 
-
 interface Props {
-
-    children: React.ReactElement
-
+  children: React.ReactElement
 }
-
 
 const ScrollAnimation: FC<Props> = ({ children }) => {
-    
-    const trigger = useScrollTrigger({
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
 
-        disableHysteresis: true,
-        
-        threshold: 0,
+    threshold: 0,
+  })
 
-    })
+  return React.cloneElement(children, {
+    color: trigger ? 'default' : 'primary',
 
-    return React.cloneElement(children, {
-
-        color: trigger ? 'default' : 'primary',
-
-        elevation: !trigger ? 0 : 2,
-    
-    })
-
+    elevation: !trigger ? 0 : 2,
+  })
 }
-
 
 export default ScrollAnimation

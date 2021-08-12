@@ -11,183 +11,146 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Button from '@material-ui/core/Button'
 import { StaticImage } from 'gatsby-plugin-image'
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    btn: {
+      marginLeft: `auto`,
+      marginRight: `auto`,
 
-const useStyles = makeStyles( (theme: Theme) =>
+      [theme.breakpoints.up('sm')]: {
+        marginLeft: 0,
+        width: `initial`,
+      },
+    },
 
-    createStyles({
+    h1: {
+      fontSize: `calc(1.5rem + 3vw) !important`,
+    },
 
-        btn: {
+    heroSection: {
+      background: PALETTE.bgAlt,
+      paddingBottom: theme.spacing(5),
+      paddingTop: theme.spacing(13),
 
-            marginLeft: `auto`,
-            marginRight: `auto`,
+      [theme.breakpoints.up('lg')]: {
+        paddingBottom: theme.spacing(7),
+        paddingTop: theme.spacing(7),
+      },
+    },
 
-            [theme.breakpoints.up('sm')]: {
-
-                marginLeft: 0,
-                width: `initial`,
-
-            },
-
-        },
-
-        h1: {
-
-            fontSize: `calc(1.5rem + 3vw) !important`,
-
-        },
-        
-        heroSection: {
-
-            background: PALETTE.bgAlt,
-            paddingBottom: theme.spacing(5),
-            paddingTop: theme.spacing(13),
-
-            [theme.breakpoints.up('lg')]: {
-
-                paddingBottom: theme.spacing(7),
-                paddingTop: theme.spacing(7),
-
-            },
-
-        },
-
-        paragraph: {
-
-            [theme.breakpoints.up('md')]: {
-
-                textAlign: `left !important`,
-
-            },
-
-        },
-
-    }),
-
+    paragraph: {
+      [theme.breakpoints.up('md')]: {
+        textAlign: `left !important`,
+      },
+    },
+  })
 )
 
+const MDXparagraph: FC<{ children: ReactNode }> = ({ children }) => {
+  const classes = useStyles()
 
-const MDXparagraph: FC<{children: ReactNode}> = ({ children }) => {
-
-    const classes = useStyles()
-
-    return (
-    
-        <Typography className={ classes.paragraph } component='p' paragraph variant='body1'>
-            
-            { children }
-            
-        </Typography>
-    
-    )
-
+  return (
+    <Typography
+      className={classes.paragraph}
+      component='p'
+      paragraph
+      variant='body1'
+    >
+      {children}
+    </Typography>
+  )
 }
-
 
 const Masthead: FC = () => {
-
-    const { graphCmsPageSection: { heading, body: { markdownNode:  { childMdx: { body } } }, buttonText } } = useStaticQuery(graphql`
-        query mastheadQuery {
-            graphCmsPageSection(title: {eq: "Index Page - Masthead"}) {
-                heading
-                body  {
-                    markdownNode {
-                        childMdx {
-                            body
-                        }
-                    }
-                }
-                buttonText
+  const {
+    graphCmsPageSection: {
+      heading,
+      body: {
+        markdownNode: {
+          childMdx: { body },
+        },
+      },
+      buttonText,
+    },
+  } = useStaticQuery(graphql`
+    query mastheadQuery {
+      graphCmsPageSection(title: { eq: "Index Page - Masthead" }) {
+        heading
+        body {
+          markdownNode {
+            childMdx {
+              body
             }
+          }
         }
-    `)
-    
-    interface StateProps {
-
-        activeContactModal: boolean
-
-        openContactModal: () => void
-
+        buttonText
+      }
     }
+  `)
 
-    const openContactModal = useStore((state: StateProps) => state.openContactModal)
+  interface StateProps {
+    activeContactModal: boolean
 
-    const classes = useStyles()
+    openContactModal: () => void
+  }
 
-    return (
+  const openContactModal = useStore(
+    (state: StateProps) => state.openContactModal
+  )
 
-        <section className={ classes.heroSection } id='masthead'>
+  const classes = useStyles()
 
-            <Container>
+  return (
+    <section className={classes.heroSection} id='masthead'>
+      <Container>
+        <Grid container>
+          <Grid
+            item
+            container
+            alignContent={'center'}
+            justifyContent='flex-start'
+            xs={12}
+            sm={7}
+            lg={6}
+          >
+            <Typography className={classes.h1} variant='h1'>
+              {heading}
+            </Typography>
 
-                <Grid container>
+            <MDXProvider
+              components={{
+                p: MDXparagraph,
+              }}
+            >
+              <MDXRenderer>{body}</MDXRenderer>
+            </MDXProvider>
 
-                    <Grid
-                        item
-                        container
-                        alignContent={ 'center' }
-                        justifyContent='flex-start'
-                        xs={ 12 }
-                        sm={ 7 }
-                        lg={ 6 }
-                    >
+            <Button
+              className={classes.btn}
+              color='primary'
+              fullWidth
+              onClick={openContactModal}
+              size='large'
+              variant='contained'
+            >
+              {buttonText}
+            </Button>
+          </Grid>
 
-                        <Typography className={ classes.h1 } variant='h1'>
-
-                            { heading }
-
-                        </Typography>
-
-                        <MDXProvider
-                            components={{
-                                p: MDXparagraph,
-                            }}
-                        >
-
-                            <MDXRenderer>
-                                
-                                { body }
-                                
-                            </MDXRenderer>
-
-                        </MDXProvider>
-
-                        <Button
-                            className={ classes.btn }
-                            color='primary'
-                            fullWidth
-                            onClick={ openContactModal }
-                            size='large'
-                            variant='contained'
-                        >
-
-                            { buttonText }
-                            
-                        </Button>
-
-                    </Grid>
-
-                    <Grid item xs={ 12 } sm={ 5 } lg={ 6 }>
-
-                        <StaticImage
-                            src='../../../images/light-bulb.png'
-                            alt='Light bulb standing on the floor, turned on and connected to a wall socket.'
-                            loading='eager'
-                            formats={ ['auto', 'webp', 'avif'] }
-                            placeholder='none'
-                            layout='fullWidth'
-                        />
-
-                    </Grid>
-
-                </Grid>
-
-            </Container>
-
-        </section>
-
-    )
-
+          <Grid item xs={12} sm={5} lg={6}>
+            <StaticImage
+              src='../../../images/light-bulb.png'
+              alt='Light bulb standing on the floor, turned on and connected to a wall socket.'
+              loading='eager'
+              formats={['auto', 'webp', 'avif']}
+              placeholder='none'
+              layout='fullWidth'
+            />
+          </Grid>
+        </Grid>
+      </Container>
+    </section>
+  )
 }
-
 
 export default Masthead
