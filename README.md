@@ -66,20 +66,9 @@
             <img alt='MDX | Logo' src='https://seeklogo.com/images/M/mdx-logo-60628A5188-seeklogo.com.png' height='30' />
         </td>
         <td>
-            <a href='https://mdxjs.com/' rel='noreferrer noopener' target='_blank'>
-                MDX
-            </a> for customization of content rendering.
-        </td>
-    </tr>
-    <tr>
-        <td align='center'>
-            <img alt='Zustand | Logo' src='https://repository-images.githubusercontent.com/180328715/fca49300-e7f1-11ea-9f51-cfd949b31560' height='30' />
-        </td>
-        <td>
-            <a href='https://github.com/pmndrs/zustand' rel='noreferrer noopener' target='_blank'>
-                Zustand
-            </a>
-            for state management.
+            <a href='https://markdownguide.org/' rel='noreferrer noopener' target='_blank'>
+                Markdown
+            </a> content management.
         </td>
     </tr>
     <tr>
@@ -91,28 +80,6 @@
                 Material UI
             </a>
             for UI components.
-        </td>
-    </tr>
-    <tr>
-        <td align='center'>
-            <img alt='Styled Components | Logo' src='https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png' height='30' />
-        </td>
-        <td>
-            <a href='https://styled-components.com/' rel='noreferrer noopener' target='_blank'>
-                Styled Components
-            </a>
-            for styling.
-        </td>
-    </tr>
-    <tr>
-        <td align='center'>
-            <img alt='react-spring | Logo' src='https://seeklogo.com/images/R/react-spring-logo-757E1EF5B5-seeklogo.com.png' height='30' />
-        </td>
-        <td>
-            <a href='https://react-spring.io/' rel='noreferrer noopener' target='_blank'>
-                React Spring
-            </a>
-            for micro animations.
         </td>
     </tr>
     <tr>
