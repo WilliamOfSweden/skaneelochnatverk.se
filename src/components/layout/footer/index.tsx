@@ -108,8 +108,8 @@ const Footer: FC = () => {
 
               <Typography>
                 Skåne El &amp; Nätverk AB <br />
-                Knutsborg 22A <br />
-                245 45 Staffanstorp
+                Traversvägen 1 <br />
+                245 34 Staffanstorp
               </Typography>
             </Box>
 
