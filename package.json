@@ -1,59 +1,59 @@
 {
-    "author": "William Daghouz",
-    "name": "skaneelochnatverk.se",
-    "private": true,
-    "description": "Company Website",
-    "version": "0.1.0",
-    "license": "UNLICENSED",
-    "scripts": {
-        "build": "gatsby build",
-        "develop": "gatsby develop",
-        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-        "start": "npm run develop",
-        "serve": "gatsby serve",
-        "clean": "gatsby clean",
-        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-    },
-    "dependencies": {
-        "@fontsource/poppins": "^4.5.0",
-        "@fontsource/roboto": "^4.5.0",
-        "@material-ui/core": "^4.12.3",
-        "@material-ui/icons": "^4.11.2",
-        "@mdx-js/mdx": "^1.6.22",
-        "@mdx-js/react": "^1.6.22",
-        "@react-spring/web": "^9.2.4",
-        "gatsby": "^3.12.1",
-        "gatsby-plugin-image": "^1.12.0",
-        "gatsby-plugin-material-ui": "^3.0.1",
-        "gatsby-plugin-mdx": "^2.12.0",
-        "gatsby-plugin-preact": "^5.12.0",
-        "gatsby-plugin-react-helmet": "^4.12.0",
-        "gatsby-plugin-sharp": "^3.12.0",
-        "gatsby-plugin-smoothscroll": "^1.2.0",
-        "gatsby-plugin-styled-components": "^4.12.0",
-        "gatsby-source-filesystem": "^3.12.0",
-        "gatsby-source-graphcms": "^2.6.0",
-        "gatsby-transformer-sharp": "^3.12.0",
-        "preact": "^10.5.14",
-        "preact-render-to-string": "^5.1.19",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-helmet": "^6.1.0",
-        "styled-components": "^5.3.1",
-        "zustand": "^3.5.10"
-    },
-    "devDependencies": {
-        "@types/mdx-js__react": "^1.5.4",
-        "@types/react-helmet": "^6.1.2",
-        "@types/styled-components": "^5.1.13",
-        "babel-plugin-styled-components": "^1.13.2",
-        "prettier": "2.3.2"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/WilliamOfSweden/skaneelochnatverk.se"
-    },
-    "bugs": {
-        "url": "https://github.com/WilliamOfSweden/skaneelochnatverk.se/issues"
-    }
+  "author": "William Daghouz",
+  "name": "skaneelochnatverk.se",
+  "private": true,
+  "description": "Company Website",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^4.5.0",
+    "@fontsource/roboto": "^4.5.0",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@react-spring/web": "^9.2.4",
+    "gatsby": "^3.13.0",
+    "gatsby-plugin-image": "^1.13.0",
+    "gatsby-plugin-material-ui": "^3.0.1",
+    "gatsby-plugin-mdx": "^2.13.0",
+    "gatsby-plugin-preact": "^5.13.0",
+    "gatsby-plugin-react-helmet": "^4.13.0",
+    "gatsby-plugin-sharp": "^3.13.0",
+    "gatsby-plugin-smoothscroll": "^1.2.0",
+    "gatsby-plugin-styled-components": "^4.13.0",
+    "gatsby-source-filesystem": "^3.13.0",
+    "gatsby-source-graphcms": "^2.6.0",
+    "gatsby-transformer-sharp": "^3.13.0",
+    "preact": "^10.5.14",
+    "preact-render-to-string": "^5.1.19",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.1",
+    "zustand": "^3.5.10"
+  },
+  "devDependencies": {
+    "@types/mdx-js__react": "^1.5.4",
+    "@types/react-helmet": "^6.1.2",
+    "@types/styled-components": "^5.1.14",
+    "babel-plugin-styled-components": "^1.13.2",
+    "prettier": "2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WilliamOfSweden/skaneelochnatverk.se"
+  },
+  "bugs": {
+    "url": "https://github.com/WilliamOfSweden/skaneelochnatverk.se/issues"
+  }
 }
