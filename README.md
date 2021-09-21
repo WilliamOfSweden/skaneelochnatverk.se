@@ -1,7 +1,3 @@
-<div align='center'>
-    <img alt='Skåne El & Nätverk | Logo' src='https://skaneelochnatverk.se/logo.svg' width='180' />
-</div>
-
 # Skåne El & Nätverk • Company Website
 
 <a href='https://skaneelochnatverk.se' target='_blank' rel='noreferrer noopener'>
@@ -15,7 +11,7 @@
 
 <a href='https://skaneelochnatverk.se' target='_blank' rel='noreferrer noopener'>www.skaneelochnatverk.se</a>
 
----
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2b111f75-1f6c-4444-9262-6a99234761a6/deploy-status)](https://app.netlify.com/sites/skaneelochnatverk/deploys)
 
 ## Tech Stack
 
