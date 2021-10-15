@@ -1,5 +1,6 @@
-import React, { FC, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import Typography from '@material-ui/core/Typography'
+
 import TekonLogo from '../../illustrations/brands/tekon'
 import WLogo from '../../illustrations/brands/w'
 import BILogo from '../../illustrations/brands/biLogo'
@@ -13,19 +14,19 @@ interface Props {
   children: ReactNode
 }
 
-const MDXh2: FC<Props> = ({ children }) => (
+const MDXh2 = ({ children }: Props) => (
   <Typography align='center' variant='h2'>
     {children}
   </Typography>
 )
 
-const MDXh3: FC<Props> = ({ children }) => (
+const MDXh3 = ({ children }: Props) => (
   <Typography align='center' component='h3' variant='h4'>
     {children}
   </Typography>
 )
 
-const MDXparagraph: FC<Props> = ({ children }) => (
+const MDXparagraph = ({ children }: Props) => (
   <Typography align='center' component='p' paragraph variant='body1'>
     {children}
   </Typography>
@@ -33,25 +34,15 @@ const MDXparagraph: FC<Props> = ({ children }) => (
 
 const MDXProviderComponentsObject = {
   h2: MDXh2,
-
   h3: MDXh3,
-
   p: MDXparagraph,
-
   TekonLogo,
-
   WLogo,
-
   BILogo,
-
   XLogo,
-
   NetworkIcon,
-
   OnCallIcon,
-
   ContractIcon,
-
   InstallationIcon,
 }
 

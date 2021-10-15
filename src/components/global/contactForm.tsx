@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import styled from 'styled-components'
 import TextField from '@material-ui/core/TextField'
@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme: Theme) =>
       display: `flex`,
       marginBottom: theme.spacing(2),
     },
-
     textArea: {
       display: `flex`,
       marginBottom: theme.spacing(6),
@@ -21,20 +20,13 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface FormProps {
   enctype: string
-
   hidden?: boolean
 }
 
 const StyledForm = styled.form<FormProps>`
   width: 100%;
   -webkit-appearance: none;
-
-  ${({ hidden }) =>
-    hidden &&
-    `
-            visibility: hidden;
-        `}
-
+  ${({ hidden }) => hidden && `visibility: hidden;`}
   &:focus {
     outline: none;
   }
@@ -44,7 +36,7 @@ interface Props {
   hidden?: boolean
 }
 
-const ContactForm: FC<Props> = ({ hidden }) => {
+const ContactForm = ({ hidden }: Props) => {
   const classes = useStyles()
 
   return (
@@ -58,13 +50,11 @@ const ContactForm: FC<Props> = ({ hidden }) => {
       hidden={hidden}
     >
       <input type='hidden' name='form-name' value='contact-form' />
-
       <p hidden>
         <label>
           <input name='bot-field' />
         </label>
       </p>
-
       <TextField
         autoComplete='name'
         className={classes.textField}
@@ -74,7 +64,6 @@ const ContactForm: FC<Props> = ({ hidden }) => {
         required
         type='text'
       />
-
       <TextField
         autoComplete='email'
         className={classes.textField}
@@ -84,7 +73,6 @@ const ContactForm: FC<Props> = ({ hidden }) => {
         required
         type='email'
       />
-
       <TextField
         autoComplete='organization'
         className={classes.textField}
@@ -93,7 +81,6 @@ const ContactForm: FC<Props> = ({ hidden }) => {
         name='organization'
         type='organization'
       />
-
       <TextField
         className={classes.textArea}
         color='primary'
@@ -104,7 +91,6 @@ const ContactForm: FC<Props> = ({ hidden }) => {
         required
         rows={6}
       />
-
       <Button
         color='primary'
         fullWidth

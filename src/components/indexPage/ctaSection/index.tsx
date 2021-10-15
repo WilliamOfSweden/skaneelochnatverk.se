@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme: Theme) =>
     btn: {
       display: `inline-flex`,
     },
-
     container: {
       alignItems: 'center',
       display: 'flex',
@@ -22,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const CTASection: FC = () => {
+const CTASection = () => {
   const {
     graphCmsPageSection: {
       heading,
@@ -56,9 +55,7 @@ const CTASection: FC = () => {
       <Typography align='center' variant='h2'>
         {heading}
       </Typography>
-
       <MDXRenderer>{body}</MDXRenderer>
-
       <Button
         className={classes.btn}
         color='secondary'

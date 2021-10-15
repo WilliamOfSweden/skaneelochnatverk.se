@@ -1,31 +1,29 @@
-import React, { FC, JSXElementConstructor, ReactElement } from 'react'
+import React, { JSXElementConstructor, ReactElement } from 'react'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
-import useStore from '../../../stores/contactModalStore'
 import Modal from '@material-ui/core/Modal'
 import Backdrop from '@material-ui/core/Backdrop'
 import Container from '@material-ui/core/Container'
-import Fade from './fadeAnimation'
 import Box from '@material-ui/core/Box'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
+
+import useStore from '../../../stores/contactModalStore'
+import Fade from './fadeAnimation'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     box: {
       backgroundColor: theme.palette.background.default,
     },
-
     container: {
       '&:focus': {
         outline: `none`,
       },
     },
-
     iconButton: {
       display: `flex`,
       marginRight: '-16px',
     },
-
     modal: {
       display: 'flex',
       alignItems: 'center',
@@ -38,12 +36,11 @@ interface Props {
   children: ReactElement<any, string | JSXElementConstructor<any>> | undefined
 }
 
-const ModalComponent: FC<Props> = ({ children }) => {
+const ModalComponent = ({ children }: Props) => {
   const classes = useStyles()
 
   interface StateProps {
     activeContactModal: boolean
-
     closeContactModal: () => void
   }
 
@@ -87,7 +84,6 @@ const ModalComponent: FC<Props> = ({ children }) => {
                 <CloseIcon />
               </IconButton>
             </Box>
-
             {children}
           </Box>
         </Fade>

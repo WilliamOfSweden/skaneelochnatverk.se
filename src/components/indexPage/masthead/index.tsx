@@ -1,8 +1,6 @@
-import React, { FC, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useStaticQuery, graphql } from 'gatsby'
-import { PALETTE } from '../../../styles/theme'
-import useStore from '../../../stores/contactModalStore'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
@@ -11,33 +9,31 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Button from '@material-ui/core/Button'
 import { StaticImage } from 'gatsby-plugin-image'
 
+import { PALETTE } from '../../../styles/theme'
+import useStore from '../../../stores/contactModalStore'
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     btn: {
       marginLeft: `auto`,
       marginRight: `auto`,
-
       [theme.breakpoints.up('sm')]: {
         marginLeft: 0,
         width: `initial`,
       },
     },
-
     h1: {
       fontSize: `calc(1.5rem + 3vw) !important`,
     },
-
     heroSection: {
       background: PALETTE.bgAlt,
       paddingBottom: theme.spacing(5),
       paddingTop: theme.spacing(13),
-
       [theme.breakpoints.up('lg')]: {
         paddingBottom: theme.spacing(7),
         paddingTop: theme.spacing(7),
       },
     },
-
     paragraph: {
       [theme.breakpoints.up('md')]: {
         textAlign: `left !important`,
@@ -46,7 +42,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const MDXparagraph: FC<{ children: ReactNode }> = ({ children }) => {
+interface MDXparagraphProps {
+  children: ReactNode
+}
+
+const MDXparagraph = ({ children }: MDXparagraphProps) => {
   const classes = useStyles()
 
   return (
@@ -61,7 +61,7 @@ const MDXparagraph: FC<{ children: ReactNode }> = ({ children }) => {
   )
 }
 
-const Masthead: FC = () => {
+const Masthead = () => {
   const {
     graphCmsPageSection: {
       heading,
@@ -90,7 +90,6 @@ const Masthead: FC = () => {
 
   interface StateProps {
     activeContactModal: boolean
-
     openContactModal: () => void
   }
 
@@ -116,7 +115,6 @@ const Masthead: FC = () => {
             <Typography className={classes.h1} variant='h1'>
               {heading}
             </Typography>
-
             <MDXProvider
               components={{
                 p: MDXparagraph,
@@ -124,7 +122,6 @@ const Masthead: FC = () => {
             >
               <MDXRenderer>{body}</MDXRenderer>
             </MDXProvider>
-
             <Button
               className={classes.btn}
               color='primary'
@@ -136,7 +133,6 @@ const Masthead: FC = () => {
               {buttonText}
             </Button>
           </Grid>
-
           <Grid item xs={12} sm={5} lg={6}>
             <StaticImage
               src='../../../images/light-bulb.png'

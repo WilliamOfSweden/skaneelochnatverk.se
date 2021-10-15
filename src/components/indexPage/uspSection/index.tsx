@@ -1,16 +1,17 @@
-import React, { FC, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import { useStaticQuery, graphql } from 'gatsby'
+import Typography from '@material-ui/core/Typography'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
+import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { StaticImage } from 'gatsby-plugin-image'
+
 import CheckMarkIcon from '../../illustrations/icons/checkMarkIcon'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -18,27 +19,27 @@ const useStyles = makeStyles((theme: Theme) =>
     iconWrapper: {
       display: `block`,
     },
-
     paragraph: {
       fontWeight: 700,
       marginBottom: theme.spacing(2),
     },
-
     section: {
       paddingTop: theme.spacing(7),
-
       [theme.breakpoints.up('lg')]: {
         paddingTop: theme.spacing(7),
       },
     },
-
     mainHeading: {
       marginBottom: `1rem`,
     },
   })
 )
 
-const MDXparagraph: FC<{ children: ReactNode }> = ({ children }) => {
+interface MDXProps {
+  children: ReactNode
+}
+
+const MDXparagraph = ({ children }: MDXProps) => {
   const classes = useStyles()
 
   return (
@@ -53,13 +54,9 @@ const MDXparagraph: FC<{ children: ReactNode }> = ({ children }) => {
   )
 }
 
-const MDXul: FC<{ children: ReactNode }> = ({ children }) => {
-  const classes = useStyles()
+const MDXul = ({ children }: MDXProps) => <List>{children}</List>
 
-  return <List>{children}</List>
-}
-
-const MDXli: FC<{ children: ReactNode }> = ({ children }) => {
+const MDXli = ({ children }: MDXProps) => {
   const classes = useStyles()
 
   return (
@@ -67,13 +64,12 @@ const MDXli: FC<{ children: ReactNode }> = ({ children }) => {
       <ListItemIcon className={classes.iconWrapper}>
         <CheckMarkIcon />
       </ListItemIcon>
-
       <ListItemText>{children}</ListItemText>
     </ListItem>
   )
 }
 
-const USPSection: FC = () => {
+const USPSection = () => {
   const {
     graphCmsPageSection: {
       heading,
@@ -107,7 +103,6 @@ const USPSection: FC = () => {
           <Typography className={classes.mainHeading} variant='h3'>
             {heading}
           </Typography>
-
           <Typography align='center' component='div' variant='body1'>
             <MDXProvider
               components={{
@@ -120,7 +115,6 @@ const USPSection: FC = () => {
             </MDXProvider>
           </Typography>
         </Grid>
-
         <Grid item xs={12} md={6}>
           <StaticImage
             src='../../../images/light-bulbs.png'

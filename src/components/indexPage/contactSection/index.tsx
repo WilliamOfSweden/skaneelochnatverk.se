@@ -1,7 +1,5 @@
 import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import { PALETTE } from '../../../styles/theme'
-import useStore from '../../../stores/contactModalStore'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -9,25 +7,25 @@ import Typography from '@material-ui/core/Typography'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import Button from '@material-ui/core/Button'
-import PaperLamp from '../../illustrations/paperLamp'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import ListItemText from '@material-ui/core/ListItemText'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import InstagramIcon from '@material-ui/icons/Instagram'
-;('')
+import Button from '@material-ui/core/Button'
+
+import { PALETTE } from '../../../styles/theme'
+import useStore from '../../../stores/contactModalStore'
+import PaperLamp from '../../illustrations/paperLamp'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     btn: {
       display: `inline-block`,
       marginTop: theme.spacing(2),
-
       [theme.breakpoints.up('sm')]: {
         width: `initial`,
       },
     },
-
     container: {
       backgroundColor: PALETTE.bgAlt1,
       borderRadius: `15px`,
@@ -35,44 +33,36 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: theme.spacing(4),
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(2),
-
       [theme.breakpoints.up('sm')]: {
         paddingLeft: theme.spacing(6),
         paddingRight: theme.spacing(6),
         backgroundColor: `#d8effb`,
       },
     },
-
     iconWrapper: {
       alignItems: `center`,
       display: `flex`,
     },
-
     illustrationWrapper: {
       display: `none`,
-
       [theme.breakpoints.up('sm')]: {
         display: `flex`,
         alignItems: `center`,
       },
     },
-
     link: {
       color: theme.palette.text.primary,
       display: `flex`,
       paddingLeft: 0,
     },
-
     list: {
       flex: 1,
     },
-
     mobileOnly: {
       [theme.breakpoints.up('sm')]: {
         display: `none`,
       },
     },
-
     wrapper: {
       [theme.breakpoints.down('sm')]: {
         paddingTop: theme.spacing(5),
@@ -84,7 +74,6 @@ const useStyles = makeStyles((theme: Theme) =>
 const ContactSection = () => {
   interface StateProps {
     activeContactModal: boolean
-
     openContactModal: () => void
   }
 
@@ -111,10 +100,8 @@ const ContactSection = () => {
         flexDirection='column'
       >
         <Box flex={1} />
-
         <Box flex={1} bgcolor='#021c3e' />
       </Box>
-
       <Box
         display='flex'
         alignItems='center'
@@ -129,13 +116,11 @@ const ContactSection = () => {
             <Grid container alignItems='center' item xs={12} sm={8}>
               <Box>
                 <Typography variant='h2'>Kontakta oss</Typography>
-
                 <Typography component='p'>
                   Vi är alltid tillgängliga för att hjälpa dig med allt som är
                   elrelaterat. Kontakta oss om du vill veta mer eller följ oss
                   på sociala medier för att få tips och nyheter.
                 </Typography>
-
                 <Box display='flex'>
                   <List className={classes.list}>
                     <ListItem>
@@ -151,11 +136,9 @@ const ContactSection = () => {
                             fontSize='large'
                           />
                         </ListItemIcon>
-
                         <ListItemText>LinkedIn</ListItemText>
                       </a>
                     </ListItem>
-
                     <ListItem>
                       <a
                         className={classes.link}
@@ -169,11 +152,9 @@ const ContactSection = () => {
                             fontSize='large'
                           />
                         </ListItemIcon>
-
                         <ListItemText>Facebook</ListItemText>
                       </a>
                     </ListItem>
-
                     <ListItem>
                       <a
                         className={classes.link}
@@ -187,17 +168,14 @@ const ContactSection = () => {
                             fontSize='large'
                           />
                         </ListItemIcon>
-
                         <ListItemText>Instagram</ListItemText>
                       </a>
                     </ListItem>
                   </List>
-
                   <Box className={classes.mobileOnly} flex={1} py={2}>
                     <PaperLamp />
                   </Box>
                 </Box>
-
                 <Button
                   className={classes.btn}
                   color='primary'
@@ -210,7 +188,6 @@ const ContactSection = () => {
                 </Button>
               </Box>
             </Grid>
-
             <Grid className={classes.illustrationWrapper} item xs={12} sm={4}>
               <PaperLamp />
             </Grid>

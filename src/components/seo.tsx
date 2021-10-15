@@ -1,14 +1,13 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 interface Props {
   description?: string
-
   title?: string
 }
 
-const SEO: FC<Props> = ({ description, title }) => {
+const SEO = ({ description, title }: Props) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -36,24 +35,16 @@ const SEO: FC<Props> = ({ description, title }) => {
   return (
     <Helmet>
       <html lang='sv-SE' />
-
       <meta charSet='UTF-8' />
-
       <meta
         name='description'
         content={description ? description : siteDescription}
       />
-
       <title>{title ? title : siteTitle}</title>
-
       <meta property='og:url' content={siteUrl} />
-
       <meta property='og:type' content={ogType} />
-
       <meta property='og:title' content={siteTitle} />
-
       <meta property='og:description' content={ogDescription} />
-
       <meta property='og:image' content={ogImageUrl} />
     </Helmet>
   )

@@ -18,81 +18,67 @@ const theme = responsiveFontSizes(
         colorPrimary: {
           background: `${PALETTE.bgAlt} !important`,
         },
-
         colorDefault: {
           background: `${PALETTE.bg} !important`,
         },
       },
-
       MuiButton: {
         sizeLarge: {
           letterSpacing: `2px`,
           padding: `16px 60px`,
         },
-
         containedSecondary: {
           color: PALETTE.primary,
         },
       },
-
       MuiCssBaseline: {
         '@global': {
           body: {
             overflowY: `scroll`,
             overflowX: `hidden`,
           },
-
           '#gatsby-focus-wrapper': {
             overflowX: `hidden`,
           },
-
           a: {
             textDecoration: `none`,
           },
-
           li: {
             paddingLeft: `0 !important`,
           },
-
           q: {
             quotes: `none`,
           },
         },
       },
-
       MuiTypography: {
         gutterBottom: {
           marginBottom: `1rem`,
         },
-
         h1: {
           color: PALETTE.primary,
           fontFamily: `poppins`,
           fontWeight: 900,
           marginBottom: `1rem`,
         },
-
         h2: {
           color: PALETTE.primary,
           fontFamily: `poppins`,
           fontWeight: 700,
           marginBottom: `1.5rem`,
         },
-
         h3: {
           color: PALETTE.primary,
           fontFamily: `poppins`,
           fontWeight: 700,
           marginBottom: `1.5rem`,
         },
-
         h4: {
           color: PALETTE.primary,
           fontFamily: `poppins`,
           fontWeight: 700,
           marginBottom: `1.5rem`,
         },
-
         paragraph: {
           marginBottom: `2rem`,
         },
@@ -103,11 +89,9 @@ const theme = responsiveFontSizes(
       background: {
         default: PALETTE.bg,
       },
-
       primary: {
         main: PALETTE.primary,
       },
-
       secondary: {
         main: PALETTE.secondary,
       },

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import scrollTo from 'gatsby-plugin-smoothscroll'
@@ -8,12 +8,10 @@ const useStyles = makeStyles((theme: Theme) =>
     deskTopOnly: {
       display: 'none',
       paddingTop: `0.2rem`,
-
       [theme.breakpoints.up('md')]: {
         display: 'flex',
       },
     },
-
     navLinks: {
       fontWeight: 300,
       padding: theme.spacing(1.5, 2),
@@ -23,13 +21,15 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface LinkProps {
   name: string
-
   link: string
-
   teleLink?: boolean
 }
 
-const DesktopNav: FC<{ navLinks: LinkProps[] }> = ({ navLinks }) => {
+interface Props {
+  navLinks: LinkProps[]
+}
+
+const DesktopNav = ({ navLinks }: Props) => {
   const classes = useStyles()
 
   return (

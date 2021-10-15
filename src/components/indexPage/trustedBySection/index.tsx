@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const TrustedBySection: FC = () => {
+const TrustedBySection = () => {
   const {
     graphCmsPageSection: {
       heading,
@@ -52,7 +52,6 @@ const TrustedBySection: FC = () => {
       >
         {heading}
       </Typography>
-
       <Box display='flex' justifyContent='space-between' marginTop={4}>
         <MDXRenderer>{body}</MDXRenderer>
       </Box>
