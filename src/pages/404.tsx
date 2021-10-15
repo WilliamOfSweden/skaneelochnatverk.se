@@ -14,7 +14,7 @@ const NotFoundPage = () => {
         }}
       >
         <p style={{ textAlign: `center`, fontSize: `2rem` }}>
-          The page you are looking for could not be found.
+          Sidan du försöker nå hittades inte.
         </p>
       </div>
     </Layout>
