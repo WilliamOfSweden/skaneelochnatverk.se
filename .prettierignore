@@ -1,4 +1,10 @@
+node_modules
+.env
+.env.*
 .cache
+.vscode
 package.json
 package-lock.json
 public
+graphcms-fragments/
+LICENSE
