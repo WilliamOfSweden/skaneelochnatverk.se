@@ -1,4 +1,4 @@
-# Skåne El & Nätverk • Company Website
+# Company Website • Skåne El & Nätverk
 
 [![](./static/banner.png)](https://skaneelochnatverk.se)
 [www.skaneelochnatverk.se](https://skaneelochnatverk.se)
