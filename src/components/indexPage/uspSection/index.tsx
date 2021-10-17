@@ -118,7 +118,7 @@ const USPSection = () => {
         <Grid item xs={12} md={6}>
           <StaticImage
             src='../../../images/light-bulbs.png'
-            alt='Light bulb standing on the floor, turned on and connected to a wall socket.'
+            alt='Three light bulbs standing on the floor, turned on and connected to wall sockets.'
             loading='eager'
             formats={['auto', 'webp', 'avif']}
             placeholder='none'
