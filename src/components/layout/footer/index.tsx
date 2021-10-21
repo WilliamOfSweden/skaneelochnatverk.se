@@ -93,8 +93,8 @@ const Footer = () => {
               <BusinessIcon className={classes.icon} />
               <Typography>
                 Skåne El &amp; Nätverk AB <br />
-                Traversvägen 1 <br />
-                245 34 Staffanstorp
+                Knutsborg 22 A <br />
+                245 45 Staffanstorp
               </Typography>
             </Box>
             <Box display='flex' mb={2}>
