@@ -39,14 +39,14 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.3.1",
-    "zustand": "^3.5.13"
+    "styled-components": "^5.3.3",
+    "zustand": "^3.6.5"
   },
   "devDependencies": {
-    "@types/mdx-js__react": "^1.5.4",
+    "@types/mdx-js__react": "^1.5.5",
     "@types/react-helmet": "^6.1.4",
     "@types/styled-components": "^5.1.15",
-    "babel-plugin-styled-components": "^1.13.2",
+    "babel-plugin-styled-components": "^1.13.3",
     "prettier": "^2.4.1"
   },
   "repository": {
