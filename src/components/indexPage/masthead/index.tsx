@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     h1: {
-      fontSize: `calc(1.5rem + 3vw) !important`,
+      fontSize: `4rem !important`,
     },
     heroSection: {
       background: PALETTE.bgAlt,
@@ -135,12 +135,13 @@ const Masthead = () => {
           </Grid>
           <Grid item xs={12} sm={5} lg={6}>
             <StaticImage
-              src='../../../images/light-bulb.png'
               alt='Light bulb standing on the floor, turned on and connected to a wall socket.'
-              loading='eager'
               formats={['auto', 'webp', 'avif']}
+              layout='constrained'
+              loading='eager'
               placeholder='none'
-              layout='fullWidth'
+              src='../../../images/light-bulb.png'
+              width={616}
             />
           </Grid>
         </Grid>
