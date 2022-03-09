@@ -1,10 +1,6 @@
 import React, { ReactNode } from 'react'
 import Typography from '@material-ui/core/Typography'
 
-import TekonLogo from '../../illustrations/brands/tekon'
-import WLogo from '../../illustrations/brands/w'
-import BILogo from '../../illustrations/brands/biLogo'
-import XLogo from '../../illustrations/brands/xLogo'
 import NetworkIcon from '../../illustrations/icons/networkIcon'
 import OnCallIcon from '../../illustrations/icons/onCallIcon'
 import ContractIcon from '../../illustrations/icons/contractIcon'
@@ -36,10 +32,6 @@ const MDXProviderComponentsObject = {
   h2: MDXh2,
   h3: MDXh3,
   p: MDXparagraph,
-  TekonLogo,
-  WLogo,
-  BILogo,
-  XLogo,
   NetworkIcon,
   OnCallIcon,
   ContractIcon,
