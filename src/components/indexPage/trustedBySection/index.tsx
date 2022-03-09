@@ -4,7 +4,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import Uc from '../../illustrations/uc'
+import In from '../../illustrations/in'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -12,19 +13,19 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingBottom: theme.spacing(10),
       paddingTop: theme.spacing(6),
     },
+    imageWrapper: {
+      gap: theme.spacing(4),
+
+      [theme.breakpoints.up('sm')]: {
+        flexDirection: 'row',
+      },
+    },
   })
 )
 
 const TrustedBySection = () => {
   const {
-    graphCmsPageSection: {
-      heading,
-      body: {
-        markdownNode: {
-          childMdx: { body },
-        },
-      },
-    },
+    graphCmsPageSection: { heading },
   } = useStaticQuery(graphql`
     query trustedBySectionQuery {
       graphCmsPageSection(title: { eq: "Index Page - Trusted-by-section" }) {
@@ -52,8 +53,16 @@ const TrustedBySection = () => {
       >
         {heading}
       </Typography>
-      <Box display='flex' justifyContent='space-between' marginTop={4}>
-        <MDXRenderer>{body}</MDXRenderer>
+      <Box
+        alignItems='center'
+        className={classes.imageWrapper}
+        display='flex'
+        flexDirection='column'
+        justifyContent='center'
+        marginTop={4}
+      >
+        <Uc />
+        <In />
       </Box>
     </Container>
   )
