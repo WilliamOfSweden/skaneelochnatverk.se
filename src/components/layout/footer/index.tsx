@@ -11,9 +11,15 @@ import BusinessIcon from '@material-ui/icons/Business'
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber'
 
 import useStore from '../../../stores/contactModalStore'
+import Elsakerhetsverket from '../../illustrations/elsakerhetsverket'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    columnWrapper: {
+      [theme.breakpoints.up('md')]: {
+        alignItems: `flex-end`,
+      },
+    },
     copyWrite: {
       color: `#fff`,
       fontSize: `1rem`,
@@ -97,7 +103,7 @@ const Footer = () => {
                 245 34 Staffanstorp
               </Typography>
             </Box>
-            <Box display='flex' mb={2}>
+            <Box display='flex'>
               <ConfirmationNumberIcon className={classes.icon} />
               <Typography>
                 Organisationsnummer <br />
@@ -118,7 +124,28 @@ const Footer = () => {
           <Grid className={classes.mobileOnly} item xs={12}>
             <Divider className={classes.divider} />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            className={classes.columnWrapper}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+            alignItems='center'
+          >
+            <a
+              aria-label='Link to authority website.'
+              href='https://e-tjanster.elsakerhetsverket.se/foretag/kolla-elforetaget'
+              rel='noreferrer noopener'
+              target='_blank'
+              style={{ marginBottom: '2rem' }}
+            >
+              <Elsakerhetsverket />
+            </a>
+            <Divider className={classes.divider} />
             <a
               aria-label='Link to developers website.'
               href='https://daghouz.com'
