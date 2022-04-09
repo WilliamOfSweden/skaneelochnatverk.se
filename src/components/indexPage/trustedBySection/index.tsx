@@ -30,13 +30,6 @@ const TrustedBySection = () => {
     query trustedBySectionQuery {
       graphCmsPageSection(title: { eq: "Index Page - Trusted-by-section" }) {
         heading
-        body {
-          markdownNode {
-            childMdx {
-              body
-            }
-          }
-        }
       }
     }
   `)

@@ -1,11 +1,9 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Button from '@material-ui/core/Button'
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -42,34 +40,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-interface MDXparagraphProps {
-  children: ReactNode
-}
-
-const MDXparagraph = ({ children }: MDXparagraphProps) => {
-  const classes = useStyles()
-
-  return (
-    <Typography
-      className={classes.paragraph}
-      component='p'
-      paragraph
-      variant='body1'
-    >
-      {children}
-    </Typography>
-  )
-}
-
 const Masthead = () => {
   const {
     graphCmsPageSection: {
       heading,
-      body: {
-        markdownNode: {
-          childMdx: { body },
-        },
-      },
+      body: { text },
       buttonText,
     },
   } = useStaticQuery(graphql`
@@ -77,11 +52,7 @@ const Masthead = () => {
       graphCmsPageSection(title: { eq: "Index Page - Masthead" }) {
         heading
         body {
-          markdownNode {
-            childMdx {
-              body
-            }
-          }
+          text
         }
         buttonText
       }
@@ -115,13 +86,7 @@ const Masthead = () => {
             <Typography className={classes.h1} variant='h1'>
               {heading}
             </Typography>
-            <MDXProvider
-              components={{
-                p: MDXparagraph,
-              }}
-            >
-              <MDXRenderer>{body}</MDXRenderer>
-            </MDXProvider>
+            <Typography paragraph>{text}</Typography>
             <Button
               className={classes.btn}
               color='primary'

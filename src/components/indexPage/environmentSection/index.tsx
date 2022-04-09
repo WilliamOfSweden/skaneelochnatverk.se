@@ -2,7 +2,6 @@ import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Typography from '@material-ui/core/Typography'
 
 import PlantIcon from '../../illustrations/icons/plantIcon'
@@ -20,22 +19,14 @@ const EnviromentSection = () => {
   const {
     graphCmsPageSection: {
       heading,
-      body: {
-        markdownNode: {
-          childMdx: { body },
-        },
-      },
+      body: { text },
     },
   } = useStaticQuery(graphql`
     query environmentSectionQuery {
       graphCmsPageSection(title: { eq: "Index Page - Environment-section" }) {
         heading
         body {
-          markdownNode {
-            childMdx {
-              body
-            }
-          }
+          text
         }
       }
     }
@@ -49,7 +40,9 @@ const EnviromentSection = () => {
       <Typography align='center' variant='h2'>
         {heading}
       </Typography>
-      <MDXRenderer>{body}</MDXRenderer>
+      <Typography align='center' paragraph>
+        {text}
+      </Typography>
     </Container>
   )
 }

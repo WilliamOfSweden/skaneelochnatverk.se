@@ -8,8 +8,6 @@ import ListItemText from '@material-ui/core/ListItemText'
 import { useStaticQuery, graphql } from 'gatsby'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import CheckMarkIcon from '../../illustrations/icons/checkMarkIcon'
@@ -21,7 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     paragraph: {
       fontWeight: 700,
-      marginBottom: theme.spacing(2),
     },
     section: {
       paddingTop: theme.spacing(7),
@@ -35,61 +32,13 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-interface MDXProps {
-  children: ReactNode
-}
-
-const MDXparagraph = ({ children }: MDXProps) => {
-  const classes = useStyles()
-
-  return (
-    <Typography
-      align='left'
-      className={classes.paragraph}
-      component='p'
-      variant='body1'
-    >
-      {children}
-    </Typography>
-  )
-}
-
-const MDXul = ({ children }: MDXProps) => <List>{children}</List>
-
-const MDXli = ({ children }: MDXProps) => {
-  const classes = useStyles()
-
-  return (
-    <ListItem>
-      <ListItemIcon className={classes.iconWrapper}>
-        <CheckMarkIcon />
-      </ListItemIcon>
-      <ListItemText>{children}</ListItemText>
-    </ListItem>
-  )
-}
-
 const USPSection = () => {
   const {
-    graphCmsPageSection: {
-      heading,
-      body: {
-        markdownNode: {
-          childMdx: { body },
-        },
-      },
-    },
+    graphCmsPageSection: { heading },
   } = useStaticQuery(graphql`
     query uspSectionQuery {
       graphCmsPageSection(title: { eq: "Index Page - USP-section" }) {
         heading
-        body {
-          markdownNode {
-            childMdx {
-              body
-            }
-          }
-        }
       }
     }
   `)
@@ -103,16 +52,76 @@ const USPSection = () => {
           <Typography className={classes.mainHeading} variant='h3'>
             {heading}
           </Typography>
+          <Typography
+            className={classes.paragraph}
+            style={{ marginBottom: '1rem' }}
+          >
+            Att välja rätt elektriker är väldigt viktigt. Eftersom
+            elektriciteten i ditt hem har med din säkerhet att göra är det
+            viktigt att de personer som utför jobbet har rätt kompetens.
+          </Typography>
           <Typography align='center' component='div' variant='body1'>
-            <MDXProvider
-              components={{
-                li: MDXli,
-                p: MDXparagraph,
-                ul: MDXul,
-              }}
-            >
-              <MDXRenderer>{body}</MDXRenderer>
-            </MDXProvider>
+            <List>
+              <ListItem>
+                <ListItemIcon className={classes.iconWrapper}>
+                  <CheckMarkIcon />
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography
+                    align='left'
+                    className={classes.paragraph}
+                    component='p'
+                    variant='body1'
+                  >
+                    Auktorisation
+                  </Typography>
+                  <Typography>
+                    Alla våra elektriker är auktoriserade. Vi vidareutbildar
+                    våra elektriker kontinuerligt.
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemIcon className={classes.iconWrapper}>
+                  <CheckMarkIcon />
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography
+                    align='left'
+                    className={classes.paragraph}
+                    component='p'
+                    variant='body1'
+                  >
+                    Kvalitet
+                  </Typography>
+                  <Typography>
+                    Vi har som mål att upprätthålla ett 100-procentigt nöjd kund
+                    index. Vi gör vårt yttersta i varje uppdrag för att du ska
+                    vara nöjd.
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemIcon className={classes.iconWrapper}>
+                  <CheckMarkIcon />
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography
+                    align='left'
+                    className={classes.paragraph}
+                    component='p'
+                    variant='body1'
+                  >
+                    Tillgänglighet
+                  </Typography>
+                  <Typography>
+                    Vi anpassar oss efter dina tider. Vi bistår med inledande
+                    hjälp via telefon och våra elektriker är tillgängliga för
+                    utryckningar i hela Skåne.
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+            </List>
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
