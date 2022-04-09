@@ -1,8 +1,11 @@
+import { GatsbyConfig } from 'gatsby'
+import path from 'path'
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-module.exports = {
+const gatsbyConfig: GatsbyConfig = {
   siteMetadata: {
     ogDescription: `Vi utför el- och nätverksarbete i Skåne.`,
     ogImageUrl: `https://skaneelochnatverk.netlify.app/banner.png`,
@@ -56,7 +59,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images/`,
+        path: path.resolve(`src/images/`),
       },
     },
     `gatsby-transformer-remark`,
@@ -66,3 +69,5 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
   ],
 }
+
+export default gatsbyConfig
