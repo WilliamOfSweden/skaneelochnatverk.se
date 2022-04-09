@@ -7,7 +7,7 @@ interface Props {
   title?: string
 }
 
-const SEO = ({ description, title }: Props) => {
+export const SEO = ({ description, title }: Props) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -49,5 +49,3 @@ const SEO = ({ description, title }: Props) => {
     </Helmet>
   )
 }
-
-export default SEO

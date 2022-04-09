@@ -5,7 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { IGatsbyImageDataParent } from 'gatsby-plugin-image/dist/src/components/hooks'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
-import AnimatedHeart from './animatedHeart'
+import { AnimatedHeart } from './animatedHeart'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const ReferencesSection = () => {
+export const ReferencesSection = () => {
   const {
     allGraphCmsReferencePost: { edges },
   } = useStaticQuery(graphql`
@@ -186,5 +186,3 @@ const ReferencesSection = () => {
     </Box>
   )
 }
-
-export default ReferencesSection

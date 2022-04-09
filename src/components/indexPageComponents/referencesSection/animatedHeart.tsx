@@ -30,7 +30,7 @@ const StyledSVG = styled.svg`
   }
 `
 
-const AnimatedHeart = () => (
+export const AnimatedHeart = () => (
   <StyledSVG viewBox='0 0 284 256' fill='none'>
     <path
       id='heartShape'
@@ -43,5 +43,3 @@ const AnimatedHeart = () => (
     />
   </StyledSVG>
 )
-
-export default AnimatedHeart

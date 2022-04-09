@@ -36,7 +36,7 @@ interface Props {
   hidden?: boolean
 }
 
-const ContactForm = ({ hidden }: Props) => {
+export const ContactForm = ({ hidden }: Props) => {
   const classes = useStyles()
 
   return (
@@ -104,5 +104,3 @@ const ContactForm = ({ hidden }: Props) => {
     </StyledForm>
   )
 }
-
-export default ContactForm

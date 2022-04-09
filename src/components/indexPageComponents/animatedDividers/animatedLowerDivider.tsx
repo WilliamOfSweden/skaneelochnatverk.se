@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { PALETTE } from '../../styles/theme'
+import { PALETTE } from '../../../styles/theme'
 
 const StyledSVG = styled.svg`
   @keyframes lowerDivider {
@@ -23,7 +23,7 @@ const StyledSVG = styled.svg`
   }
 `
 
-const AnimatedLowerDivider = () => (
+export const AnimatedLowerDivider = () => (
   <StyledSVG fill='none' viewBox='0 0 1441 130'>
     <defs>
       <linearGradient
@@ -55,5 +55,3 @@ const AnimatedLowerDivider = () => (
     />
   </StyledSVG>
 )
-
-export default AnimatedLowerDivider

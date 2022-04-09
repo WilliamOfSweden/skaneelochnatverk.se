@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useStaticQuery, graphql } from 'gatsby'
 import Grid from '@material-ui/core/Grid'
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const ServicesSection = () => {
+export const ServicesSection = () => {
   const {
     graphCmsPageSection: { heading },
   } = useStaticQuery(graphql`
@@ -108,5 +108,3 @@ const ServicesSection = () => {
     </Container>
   )
 }
-
-export default ServicesSection

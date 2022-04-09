@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const ContactSection = () => {
+export const ContactSection = () => {
   interface StateProps {
     activeContactModal: boolean
     openContactModal: () => void
@@ -197,5 +197,3 @@ const ContactSection = () => {
     </Box>
   )
 }
-
-export default ContactSection

@@ -36,7 +36,7 @@ interface Props {
   children: ReactElement<any, string | JSXElementConstructor<any>> | undefined
 }
 
-const ModalComponent = ({ children }: Props) => {
+export const AnimatedModal = ({ children }: Props) => {
   const classes = useStyles()
 
   interface StateProps {
@@ -91,5 +91,3 @@ const ModalComponent = ({ children }: Props) => {
     </Modal>
   )
 }
-
-export default ModalComponent

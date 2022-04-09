@@ -1,44 +1,42 @@
 import React, { Fragment } from 'react'
 
-import SEO from '../components/seo'
+import { AnimatedModal, ContactForm, SEO } from '../components/shared/'
 import Layout from '../components/layout/'
-import Masthead from '../components/indexPage/masthead/'
-import TrustedBySection from '../components/indexPage/trustedBySection/'
-import AnimatedUpperDivider from '../components/indexPage/animatedUpperDivider'
-import CTASection from '../components/indexPage/ctaSection/'
-import AnimatedMiddleDivider from '../components/indexPage/animatedMiddleDivider'
-import ServicesSection from '../components/indexPage/servicesSection/'
-import AnimatedLowerDivider from '../components/indexPage/animatedLowerDivider'
-import EnviromentSection from '../components/indexPage/environmentSection/'
-import ReferencesSection from '../components/indexPage/referencesSection/'
-import USPSection from '../components/indexPage/uspSection/'
-import ContactSection from '../components/indexPage/contactSection/'
-import ModalComponent from '../components/global/animatedModal/'
-import ContactForm from '../components/global/contactForm'
+import {
+  AnimatedLowerDivider,
+  AnimatedMiddleDivider,
+  AnimatedUpperDivider,
+  ContactSection,
+  CTASection,
+  EnviromentSection,
+  Masthead,
+  ReferencesSection,
+  ServicesSection,
+  TrustedBySection,
+  USPSection,
+} from '../components/indexPageComponents/'
 
-const IndexPage = () => {
-  return (
-    <Fragment>
-      <SEO />
-      <Layout>
-        <Masthead />
-        <TrustedBySection />
-        <AnimatedUpperDivider />
-        <CTASection />
-        <AnimatedMiddleDivider />
-        <ServicesSection />
-        <AnimatedLowerDivider />
-        <EnviromentSection />
-        <ReferencesSection />
-        <USPSection />
-        <ContactSection />
-        <ModalComponent>
-          <ContactForm />
-        </ModalComponent>
-        <ContactForm hidden />
-      </Layout>
-    </Fragment>
-  )
-}
+const IndexPage = () => (
+  <Fragment>
+    <SEO />
+    <Layout>
+      <Masthead />
+      <TrustedBySection />
+      <AnimatedUpperDivider />
+      <CTASection />
+      <AnimatedMiddleDivider />
+      <ServicesSection />
+      <AnimatedLowerDivider />
+      <EnviromentSection />
+      <ReferencesSection />
+      <USPSection />
+      <ContactSection />
+      <AnimatedModal>
+        <ContactForm />
+      </AnimatedModal>
+      <ContactForm hidden />
+    </Layout>
+  </Fragment>
+)
 
 export default IndexPage

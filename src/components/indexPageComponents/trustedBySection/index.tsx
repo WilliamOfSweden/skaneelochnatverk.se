@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const TrustedBySection = () => {
+export const TrustedBySection = () => {
   const {
     graphCmsPageSection: { heading },
   } = useStaticQuery(graphql`
@@ -60,5 +60,3 @@ const TrustedBySection = () => {
     </Container>
   )
 }
-
-export default TrustedBySection

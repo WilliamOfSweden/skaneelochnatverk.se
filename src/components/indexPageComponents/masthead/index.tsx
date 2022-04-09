@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const Masthead = () => {
+export const Masthead = () => {
   const {
     graphCmsPageSection: {
       heading,
@@ -114,5 +114,3 @@ const Masthead = () => {
     </section>
   )
 }
-
-export default Masthead

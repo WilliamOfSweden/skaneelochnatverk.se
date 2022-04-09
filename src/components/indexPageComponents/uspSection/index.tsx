@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const USPSection = () => {
+export const USPSection = () => {
   const {
     graphCmsPageSection: { heading },
   } = useStaticQuery(graphql`
@@ -138,5 +138,3 @@ const USPSection = () => {
     </Container>
   )
 }
-
-export default USPSection

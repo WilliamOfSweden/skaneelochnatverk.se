@@ -1,24 +1,22 @@
 import React from 'react'
+import Box from '@material-ui/core/Box'
+import Typography from '@material-ui/core/Typography'
 
 import Layout from '../components/layout/'
 
-const NotFoundPage = () => {
-  return (
-    <Layout>
-      <div
-        style={{
-          height: `100vh`,
-          display: `flex`,
-          justifyContent: `center`,
-          alignItems: `center`,
-        }}
-      >
-        <p style={{ textAlign: `center`, fontSize: `2rem` }}>
-          Sidan du försöker nå hittades inte.
-        </p>
-      </div>
-    </Layout>
-  )
-}
+const _404 = () => (
+  <Layout>
+    <Box
+      alignItems='center'
+      display='flex'
+      height='100vh'
+      justifyContent='center'
+    >
+      <Typography style={{ textAlign: `center`, fontSize: `2rem` }}>
+        Sidan du försöker nå hittades inte.
+      </Typography>
+    </Box>
+  </Layout>
+)
 
-export default NotFoundPage
+export default _404
