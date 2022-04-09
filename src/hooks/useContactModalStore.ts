@@ -10,7 +10,7 @@ interface Props {
   closeContactModal: () => void
 }
 
-const useStore = create<Props>(set => ({
+export const useContactModalStore = create<Props>(set => ({
   activeContactModal: false,
 
   openContactModal: () => set({ activeContactModal: true }),
@@ -20,5 +20,3 @@ const useStore = create<Props>(set => ({
 
   closeContactModal: () => set({ activeContactModal: false }),
 }))
-
-export default useStore

@@ -10,8 +10,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
 
-import useStore from '../../../stores/mobileNavStore'
-import useWindowSize from '../../../hooks/useWindowSize'
+import { useMobileNavStore, useWindowSize } from '../../../hooks/'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -45,9 +44,13 @@ interface Props {
 
 const MobileNav = ({ navLinks }: Props) => {
   const classes = useStyles()
-  const active = useStore((state: StateProps) => state.activeMobileNav)
-  const toggle = useStore((state: StateProps) => state.toggleActiveMobileNav)
-  const closeNav = useStore((state: StateProps) => state.resetActiveMobileNav)
+  const active = useMobileNavStore((state: StateProps) => state.activeMobileNav)
+  const toggle = useMobileNavStore(
+    (state: StateProps) => state.toggleActiveMobileNav
+  )
+  const closeNav = useMobileNavStore(
+    (state: StateProps) => state.resetActiveMobileNav
+  )
 
   const closeAndScroll = (section: string) => async () => {
     await closeNav()

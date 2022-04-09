@@ -7,8 +7,8 @@ import Box from '@material-ui/core/Box'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
 
-import useStore from '../../../stores/contactModalStore'
-import Fade from './fadeAnimation'
+import { useContactModalStore } from '../../../hooks/'
+import { FadeAnimation } from './fadeAnimation'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -44,11 +44,11 @@ export const AnimatedModal = ({ children }: Props) => {
     closeContactModal: () => void
   }
 
-  const activeContactModal = useStore(
+  const activeContactModal = useContactModalStore(
     (state: StateProps) => state.activeContactModal
   )
 
-  const closeContactModal = useStore(
+  const closeContactModal = useContactModalStore(
     (state: StateProps) => state.closeContactModal
   )
 
@@ -66,7 +66,7 @@ export const AnimatedModal = ({ children }: Props) => {
       }}
     >
       <Container className={classes.container} maxWidth='sm'>
-        <Fade in={activeContactModal}>
+        <FadeAnimation in={activeContactModal}>
           <Box
             borderRadius='10px'
             className={classes.box}
@@ -86,7 +86,7 @@ export const AnimatedModal = ({ children }: Props) => {
             </Box>
             {children}
           </Box>
-        </Fade>
+        </FadeAnimation>
       </Container>
     </Modal>
   )

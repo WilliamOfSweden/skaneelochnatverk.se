@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import { PALETTE } from '../../../styles/theme'
-import useStore from '../../../stores/contactModalStore'
+import { useContactModalStore } from '../../../hooks/'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -64,7 +64,7 @@ export const Masthead = () => {
     openContactModal: () => void
   }
 
-  const openContactModal = useStore(
+  const openContactModal = useContactModalStore(
     (state: StateProps) => state.openContactModal
   )
 

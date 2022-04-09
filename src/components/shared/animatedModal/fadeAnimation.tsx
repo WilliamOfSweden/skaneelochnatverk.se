@@ -8,7 +8,7 @@ interface Props {
   onExited?: () => {}
 }
 
-const Fade = forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const FadeAnimation = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { in: open, children, onEnter, onExited, ...other } = props
 
   const style = useSpring({
@@ -32,5 +32,3 @@ const Fade = forwardRef<HTMLDivElement, Props>((props, ref) => {
     </animated.div>
   )
 })
-
-export default Fade

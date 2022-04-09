@@ -8,7 +8,7 @@ interface Props {
   resetActiveMobileNav: () => void
 }
 
-const useStore = create<Props>(set => ({
+export const useMobileNavStore = create<Props>(set => ({
   activeMobileNav: false,
 
   toggleActiveMobileNav: () =>
@@ -16,5 +16,3 @@ const useStore = create<Props>(set => ({
 
   resetActiveMobileNav: () => set({ activeMobileNav: false }),
 }))
-
-export default useStore

@@ -10,7 +10,7 @@ import MailIcon from '@material-ui/icons/Mail'
 import BusinessIcon from '@material-ui/icons/Business'
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber'
 
-import useStore from '../../../stores/contactModalStore'
+import { useContactModalStore } from '../../../hooks/'
 import Elsakerhetsverket from '../../illustrations/elsakerhetsverket'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -63,7 +63,7 @@ const Footer = () => {
     openContactModal: () => void
   }
 
-  const openContactModal = useStore(
+  const openContactModal = useContactModalStore(
     (state: StateProps) => state.openContactModal
   )
 

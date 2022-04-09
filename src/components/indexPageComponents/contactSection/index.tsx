@@ -14,7 +14,7 @@ import InstagramIcon from '@material-ui/icons/Instagram'
 import Button from '@material-ui/core/Button'
 
 import { PALETTE } from '../../../styles/theme'
-import useStore from '../../../stores/contactModalStore'
+import { useContactModalStore } from '../../../hooks/'
 import PaperLamp from '../../illustrations/paperLamp'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -77,7 +77,7 @@ export const ContactSection = () => {
     openContactModal: () => void
   }
 
-  const openContactModal = useStore(
+  const openContactModal = useContactModalStore(
     (state: StateProps) => state.openContactModal
   )
 

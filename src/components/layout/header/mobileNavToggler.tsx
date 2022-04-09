@@ -1,8 +1,9 @@
 import React from 'react'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
-import useStore from '../../../stores/mobileNavStore'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
+
+import { useMobileNavStore } from '../../../hooks/'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +24,9 @@ const MobileNavToggler = () => {
     toggleActiveMobileNav: () => void
   }
 
-  const toggle = useStore((state: StateProps) => state.toggleActiveMobileNav)
+  const toggle = useMobileNavStore(
+    (state: StateProps) => state.toggleActiveMobileNav
+  )
 
   return (
     <IconButton
