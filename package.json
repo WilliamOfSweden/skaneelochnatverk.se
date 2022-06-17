@@ -31,8 +31,8 @@
     "gatsby-source-graphcms": "2.8.0",
     "gatsby-transformer-remark": "5.16.0",
     "gatsby-transformer-sharp": "4.16.0",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-helmet": "6.1.0",
     "styled-components": "5.3.5",
     "zustand": "3.7.2"
